@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data.SqlClient;
-using PersonalFinanceManager.src.Controller;
+using PersonalFinanceManager.Controller;
 
 namespace PersonalFinanceManager
 {

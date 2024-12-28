@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalFinanceManager.src.Model.Entity
+namespace PersonalFinanceManager.Model.Entity
 {
     public class Categories
     {

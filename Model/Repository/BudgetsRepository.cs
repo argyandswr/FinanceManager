@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
-using PersonalFinanceManager.src.Model.Context;
-using PersonalFinanceManager.src.Model.Entity;
+using PersonalFinanceManager.Model.Context;
+using PersonalFinanceManager.Model.Entity;
 
-namespace PersonalFinanceManager.src.Model.Repository
+namespace PersonalFinanceManager.Model.Repository
 {
     public class BudgetsRepository
     {

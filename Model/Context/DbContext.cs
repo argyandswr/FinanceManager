@@ -2,7 +2,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace PersonalFinanceManager.src.Model.Context
+namespace PersonalFinanceManager.Model.Context
 {
     public class DbContext : IDisposable
     {

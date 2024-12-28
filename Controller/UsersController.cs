@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PersonalFinanceManager.src.Model.Context;
-using PersonalFinanceManager.src.Model.Entity;
-using PersonalFinanceManager.src.Model.Repository;
+using PersonalFinanceManager.Model.Context;
+using PersonalFinanceManager.Model.Entity;
+using PersonalFinanceManager.Model.Repository;
 
-namespace PersonalFinanceManager.src.Controller
+namespace PersonalFinanceManager.Controller
 {
     public class UsersController
     {
