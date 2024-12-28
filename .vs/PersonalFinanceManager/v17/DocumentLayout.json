@@ -1,33 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\",
+  "WorkspaceRootPath": "D:\\dev\\FinanceManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\context\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\context\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\repository\\categoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\repository\\categoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\SQLQuery4.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\repository\\budgetsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\repository\\budgetsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\view\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:view\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\repository\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\repository\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\controller\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:controller\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\college life\\semester 3\\advance programming\\final project\\personalfinancemanager\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\view\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:view\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\entity\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\entity\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\view\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:view\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\view\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:view\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|d:\\dev\\financemanager\\model\\repository\\transactionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE507172-2F51-4A27-8B49-3CEBA9826304}|PersonalFinanceManager.csproj|solutionrelative:model\\repository\\transactionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,99 +54,147 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T11:04:08.612Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SQLQuery4.sql",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\SQLQuery4.sql",
-              "RelativeDocumentMoniker": "..\\SQLQuery4.sql",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\SQLQuery4.sql",
-              "RelativeToolTip": "..\\SQLQuery4.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-26T10:37:14.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "registerForm.cs",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\registerForm.cs",
-              "RelativeDocumentMoniker": "registerForm.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\registerForm.cs",
-              "RelativeToolTip": "registerForm.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAADIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T19:22:20.27Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "registerForm.cs [Design]",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\registerForm.cs",
-              "RelativeDocumentMoniker": "registerForm.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\registerForm.cs [Design]",
-              "RelativeToolTip": "registerForm.cs [Design]",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\View\\registerForm.cs",
+              "RelativeDocumentMoniker": "View\\registerForm.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\View\\registerForm.cs [Design]",
+              "RelativeToolTip": "View\\registerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T19:13:08.068Z",
+              "WhenOpened": "2024-12-28T07:43:11.067Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "loginForm.cs [Design]",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\loginForm.cs",
-              "RelativeDocumentMoniker": "loginForm.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\loginForm.cs [Design]",
-              "RelativeToolTip": "loginForm.cs [Design]",
+              "DocumentIndex": 7,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Entity\\Users.cs",
+              "RelativeDocumentMoniker": "Model\\Entity\\Users.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Entity\\Users.cs",
+              "RelativeToolTip": "Model\\Entity\\Users.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T19:12:37.858Z",
+              "WhenOpened": "2024-12-28T07:34:57.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "loginForm.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\View\\loginForm.cs",
+              "RelativeDocumentMoniker": "View\\loginForm.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\View\\loginForm.cs",
+              "RelativeToolTip": "View\\loginForm.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:30:32.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "loginForm.cs [Design]",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\View\\loginForm.cs",
+              "RelativeDocumentMoniker": "View\\loginForm.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\View\\loginForm.cs [Design]",
+              "RelativeToolTip": "View\\loginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:30:28.344Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "registerForm.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\View\\registerForm.cs",
+              "RelativeDocumentMoniker": "View\\registerForm.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\View\\registerForm.cs",
+              "RelativeToolTip": "View\\registerForm.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwCUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:20:34.528Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "loginForm.cs",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\loginForm.cs",
-              "RelativeDocumentMoniker": "loginForm.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\loginForm.cs",
-              "RelativeToolTip": "loginForm.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAABMAAAAaAAAA",
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Context\\DbContext.cs",
+              "RelativeDocumentMoniker": "Model\\Context\\DbContext.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Context\\DbContext.cs",
+              "RelativeToolTip": "Model\\Context\\DbContext.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T14:26:07.337Z",
+              "WhenOpened": "2024-12-28T06:01:52.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Controller\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controller\\UsersController.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Controller\\UsersController.cs",
+              "RelativeToolTip": "Controller\\UsersController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T05:54:12.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\College Life\\Semester 3\\Advance Programming\\Final Project\\PersonalFinanceManager\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Repository\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "Model\\Repository\\UsersRepository.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Repository\\UsersRepository.cs",
+              "RelativeToolTip": "Model\\Repository\\UsersRepository.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAADgv3MAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T12:00:08.684Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-28T04:15:13.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TransactionsRepository.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Repository\\TransactionsRepository.cs",
+              "RelativeDocumentMoniker": "Model\\Repository\\TransactionsRepository.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Repository\\TransactionsRepository.cs",
+              "RelativeToolTip": "Model\\Repository\\TransactionsRepository.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T04:12:09.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriesRepository.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Repository\\CategoriesRepository.cs",
+              "RelativeDocumentMoniker": "Model\\Repository\\CategoriesRepository.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Repository\\CategoriesRepository.cs",
+              "RelativeToolTip": "Model\\Repository\\CategoriesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T03:47:51.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BudgetsRepository.cs",
+              "DocumentMoniker": "D:\\dev\\FinanceManager\\Model\\Repository\\BudgetsRepository.cs",
+              "RelativeDocumentMoniker": "Model\\Repository\\BudgetsRepository.cs",
+              "ToolTip": "D:\\dev\\FinanceManager\\Model\\Repository\\BudgetsRepository.cs",
+              "RelativeToolTip": "Model\\Repository\\BudgetsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T03:47:25.434Z",
+              "EditorCaption": ""
             }
           ]
         }

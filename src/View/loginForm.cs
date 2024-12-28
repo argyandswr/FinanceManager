@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using Microsoft.Data.SqlClient;
 using System.Data.SqlClient;
+using PersonalFinanceManager.src.Controller;
 
 namespace PersonalFinanceManager
 {
     public partial class loginForm : Form
     {
-        //SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\argya\OneDrive\Documents\finance.mdf;Integrated Security=True;Connect Timeout=30");
-        string stringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\argya\\OneDrive\\Documents\\FinanceManager.mdf;Integrated Security=True;Connect Timeout=30";
         public loginForm()
         {
             InitializeComponent();
@@ -33,7 +31,15 @@ namespace PersonalFinanceManager
 
         private void login_Btn_Click(object sender, EventArgs e)
         {
-            using(SqlConnection connect = new SqlConnection(stringConnection))
+            UsersController controller = new UsersController();
+
+            bool isValidUser = controller.IsValidUser(usernameLogin_Txt.Text, passLogin_Txt.Text);
+            if (isValidUser)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            /*using(SqlConnection connect = new SqlConnection(stringConnection))
             {
                 connect.Open();
 
@@ -57,7 +63,7 @@ namespace PersonalFinanceManager
                         MessageBox.Show("Wrong username/password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)
