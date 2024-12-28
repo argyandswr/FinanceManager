@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace PersonalFinanceManager.Model.Entity
 {
@@ -10,15 +11,27 @@ namespace PersonalFinanceManager.Model.Entity
     {
         public enum TransactionType
         {
-            income,
-            expense
+            Income,
+            Expense
         }
+
+        // Get type from database (convert type from database (string) to TransactionType (Enum))
+        public TransactionType GetType(string type)
+        {
+            if (type == "Expense")
+            {
+                return TransactionType.Expense;
+            }
+            
+            return TransactionType.Income;
+        }
+
         public int TransactionID { get; set; }
         public int UserID { get; set; }
         public TransactionType Type { get; set; }
         public DateTime Date { get; set; }
-        public double Amount { get; set; }
-        public Decimal CategoryID { get; set; }
+        public float Amount { get; set; }
+        public int CategoryID { get; set; }
         public string Description { get; set; }
     }
 }

@@ -19,15 +19,6 @@ namespace PersonalFinanceManager
         {
             InitializeComponent();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void login_Btn_Click(object sender, EventArgs e)
         {
@@ -36,52 +27,24 @@ namespace PersonalFinanceManager
             bool isValidUser = controller.IsValidUser(usernameLogin_Txt.Text, passLogin_Txt.Text);
             if (isValidUser)
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                CurrentUser.UserID = controller.GetUserID(usernameLogin_Txt.Text, passLogin_Txt.Text);
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
             }
-            /*using(SqlConnection connect = new SqlConnection(stringConnection))
-            {
-                connect.Open();
-
-                string selectData = "SELECT * FROM users WHERE username = @usern AND password = @pass";
-
-                using(SqlCommand cmd = new SqlCommand(selectData, connect))
-                {
-                    cmd.Parameters .AddWithValue("@usern", usernameLogin_Txt.Text.Trim());
-                    cmd.Parameters.AddWithValue("@pass", passLogin_Txt.Text.Trim());
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd); 
-                    DataTable table = new DataTable();
-
-                    adapter.Fill(table);
-
-                    if (table.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Login Successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    } else
-                    {
-                        MessageBox.Show("Wrong username/password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }*/
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            registerForm regForm = new registerForm();
-            regForm.Show();
-
-            this.Hide();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void showPass_CheckedChanged(object sender, EventArgs e)
         {
             passLogin_Txt.PasswordChar = showPass.Checked ? '\0' : '*';
+        }
+
+        private void reg_Btn_Click(object sender, EventArgs e)
+        {
+            registerForm regForm = new registerForm();
+            regForm.Show();
+
+            this.Hide();
         }
     }
 }

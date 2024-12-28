@@ -41,13 +41,24 @@ namespace PersonalFinanceManager.Controller
 
             if (!isValidUser)
             {
-                MessageBox.Show("Username or Password Incorrect!", "Error Message",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Username or Password Incorrect!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return false;
             }
 
             return true;
+        }
+
+        public int GetUserID(string username, string password)
+        {
+            int current_user_id = -1;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new UsersRepository(context);
+
+                return current_user_id = _repository.GetUserID(username, password);
+            }
         }
 
         // Check if username is already exist in the database
@@ -64,17 +75,21 @@ namespace PersonalFinanceManager.Controller
             {
                 MessageBox.Show("Password cannot be empty!", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
             if (string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("Confirmation Password cannot be empty!", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Password doesn't match!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Password doesn't match!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
             bool isUsernameAvailable = false;
@@ -128,8 +143,8 @@ namespace PersonalFinanceManager.Controller
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Register Process Failed", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Register Process Failed!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             return result;
         }

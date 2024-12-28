@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PersonalFinanceManager.View;
 
 namespace PersonalFinanceManager
 {
@@ -15,6 +16,14 @@ namespace PersonalFinanceManager
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void addTransactionBtn_Click(object sender, EventArgs e)
+        {
+            addTransactionForm addTransactionForm = new addTransactionForm();
+            addTransactionForm.Show();
+
+            this.Close();
         }
     }
 }

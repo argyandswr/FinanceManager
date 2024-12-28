@@ -99,13 +99,35 @@ namespace PersonalFinanceManager.Model.Repository
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("username", username);
-                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
 
                 using SqlDataReader dtr = cmd.ExecuteReader();
                 if (dtr.Read())
                 {
                     result = Convert.ToInt32(dtr["row_count"]) > 0;
+                }
+            }
+
+            return result;
+        }
+
+        public int GetUserID(string username, string password)
+        {
+            int result = -1;
+
+            string sql = @"SELECT user_id FROM users
+                         WHERE username = @username AND password = @password";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                using SqlDataReader dtr = cmd.ExecuteReader();
+                while (dtr.Read())
+                {
+                    result = (int)dtr["user_id"];
                 }
             }
 
@@ -121,7 +143,7 @@ namespace PersonalFinanceManager.Model.Repository
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("@username", username);
 
                 using SqlDataReader dtr = cmd.ExecuteReader();
                 // panggil method Read untuk mendapatkan baris dari result set

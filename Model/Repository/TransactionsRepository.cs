@@ -24,7 +24,8 @@ namespace PersonalFinanceManager.Model.Repository
             int result = 0;
 
             string sql = @"INSERT INTO transactions (user_id, type, date, amount, category_id, description)
-                         VALUES (@user_id, @type, @date, @amount, @category_id, @description)";
+                         VALUES (@user_id, @type, @date, @amount, @category_id, @description)
+                         WHERE user_id = @user_id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
@@ -34,6 +35,8 @@ namespace PersonalFinanceManager.Model.Repository
                 cmd.Parameters.AddWithValue("@amount", transactions.Amount);
                 cmd.Parameters.AddWithValue("@category_id", transactions.CategoryID);
                 cmd.Parameters.AddWithValue("@description", transactions.Description);
+                cmd.Parameters.AddWithValue("@user_id", transactions.Description);
+
 
                 try
                 {
@@ -98,6 +101,41 @@ namespace PersonalFinanceManager.Model.Repository
                 }
             }
             return result;
+        }
+
+        public List<Transactions> GetTransactions()
+        {
+            List<Transactions> list = new List<Transactions>();
+
+            try
+            {
+                string sql = @"SELECT transaction_id, user_id, type, date, amount, category_id, description FROM users";
+
+                using (SqlCommand cmd = new SqlCommand(sql, _conn))
+                {
+                    using (SqlDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            Transactions transactions = new Transactions();
+                            transactions.TransactionID = (int)dtr["transaction_id"];
+                            transactions.UserID = (int)dtr["user_id"];
+                            transactions.Type = transactions.GetType((string)dtr["type"]);
+                            transactions.Amount = (float)dtr["amount"];
+                            transactions.CategoryID = (int)dtr["category_id"];
+                            transactions.Description = (string)dtr["description"];
+
+                            list.Add(transactions);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+            }
+
+            return list;
         }
     }
 }
