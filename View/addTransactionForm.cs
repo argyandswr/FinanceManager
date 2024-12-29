@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using PersonalFinanceManager.Controller;
+using PersonalFinanceManager.Model.Entity;
 
 namespace PersonalFinanceManager.View
 {
@@ -51,9 +53,12 @@ namespace PersonalFinanceManager.View
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            TransactionsController controller = new TransactionsController();
+            /*TransactionsController controller = new TransactionsController();
 
-            controller.Create();
+            Transactions transactions = new Transactions();
+            transactions.Type = transactions.GetType(comboBoxType.SelectedValue.ToString);
+
+            controller.Create(transactions);*/
         }
     }
 }
