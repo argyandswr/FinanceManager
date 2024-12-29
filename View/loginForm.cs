@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data.SqlClient;
 using PersonalFinanceManager.Controller;
+using PersonalFinanceManager.View;
 
 namespace PersonalFinanceManager
 {

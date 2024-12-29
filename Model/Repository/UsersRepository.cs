@@ -36,6 +36,9 @@ namespace PersonalFinanceManager.Model.Repository
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                } finally
+                {
+                    _conn.Close();
                 }
             }
 

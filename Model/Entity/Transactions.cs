@@ -27,11 +27,11 @@ namespace PersonalFinanceManager.Model.Entity
         }
 
         public int TransactionID { get; set; }
+        public string TransactionName { get; set; }
         public int UserID { get; set; }
-        public TransactionType Type { get; set; }
+        public string Type { get; set; }
         public DateTime Date { get; set; }
         public float Amount { get; set; }
         public int CategoryID { get; set; }
-        public string Description { get; set; }
     }
 }

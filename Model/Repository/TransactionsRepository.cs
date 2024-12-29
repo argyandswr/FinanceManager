@@ -23,19 +23,18 @@ namespace PersonalFinanceManager.Model.Repository
         {
             int result = 0;
 
-            string sql = @"INSERT INTO transactions (user_id, type, date, amount, category_id, description)
-                         VALUES (@user_id, @type, @date, @amount, @category_id, @description)
+            string sql = @"INSERT INTO transactions (user_id, transaction_name, type, date, amount, category_id)
+                         VALUES (@user_id,@name, @type, @date, @amount, @category_id, @description)
                          WHERE user_id = @user_id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
                 cmd.Parameters.AddWithValue("@user_id", transactions.UserID);
+                cmd.Parameters.AddWithValue("@name", transactions.TransactionName);
                 cmd.Parameters.AddWithValue("@type", transactions.Type);
                 cmd.Parameters.AddWithValue("@date", transactions.Date);
                 cmd.Parameters.AddWithValue("@amount", transactions.Amount);
                 cmd.Parameters.AddWithValue("@category_id", transactions.CategoryID);
-                cmd.Parameters.AddWithValue("@description", transactions.Description);
-                cmd.Parameters.AddWithValue("@user_id", transactions.Description);
 
 
                 try
@@ -55,18 +54,18 @@ namespace PersonalFinanceManager.Model.Repository
             int result = 0;
 
             string sql = @"UPDATE transactions
-                           SET user_id = @user_id, type = @type, date = @date, amount = @amount,
+                           SET user_id = @user_id,transaction_name = @name, type = @type, date = @date, amount = @amount,
                                category_id = @category-id, description = @description
                            WHERE transaction_id = @transaction_id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
                 cmd.Parameters.AddWithValue("@user_id", transactions.UserID);
+                cmd.Parameters.AddWithValue("@name", transactions.TransactionName);
                 cmd.Parameters.AddWithValue("@type", transactions.Type);
                 cmd.Parameters.AddWithValue("@date", transactions.Date);
                 cmd.Parameters.AddWithValue("@amount", transactions.Amount);
                 cmd.Parameters.AddWithValue("@category_id", transactions.CategoryID);
-                cmd.Parameters.AddWithValue("@description", transactions.Description);
                 cmd.Parameters.AddWithValue("@transaction_id", transactions.TransactionID);
 
                 try
@@ -85,11 +84,11 @@ namespace PersonalFinanceManager.Model.Repository
         {
             int result = 0;
 
-            string sql = @"DELETE FROM transactions transaction_id = @transaction_id";
+            string sql = @"DELETE FROM transactions transaction_name = @name";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@transaction_id", transactions.TransactionID);
+                cmd.Parameters.AddWithValue("@name", transactions.TransactionName);
 
                 try
                 {
@@ -109,7 +108,7 @@ namespace PersonalFinanceManager.Model.Repository
 
             try
             {
-                string sql = @"SELECT transaction_id, user_id, type, date, amount, category_id, description FROM users";
+                string sql = @"SELECT transaction_id, user_id,transaction_name, type, date, amount, category_id, FROM users";
 
                 using (SqlCommand cmd = new SqlCommand(sql, _conn))
                 {
@@ -120,11 +119,11 @@ namespace PersonalFinanceManager.Model.Repository
                             Transactions transactions = new Transactions();
                             transactions.TransactionID = (int)dtr["transaction_id"];
                             transactions.UserID = (int)dtr["user_id"];
-                            transactions.Type = transactions.GetType((string)dtr["type"]);
+                            transactions.TransactionName = (string)dtr["transaction_name"];
+                            transactions.Type = (string)dtr["type"];
                             transactions.Amount = (float)dtr["amount"];
                             transactions.CategoryID = (int)dtr["category_id"];
-                            transactions.Description = (string)dtr["description"];
-
+                            
                             list.Add(transactions);
                         }
                     }

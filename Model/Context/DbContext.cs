@@ -18,7 +18,7 @@ namespace PersonalFinanceManager.Model.Context
 
             try
             {
-                string connectionString = string.Format("Data Source=DELYSIUM_T14;Initial Catalog=finance_manager;Integrated Security=True;TrustServerCertificate=True");
+                string connectionString = string.Format("Data Source=.;Initial Catalog=finance_manager;Integrated Security=True;Trust Server Certificate=True");
                 //string connectionString = string.Format(@"Data Source=DELYSIUM_T14;AttachDbFilename=D:\dev\database_system\finance_manager\db\finance_manager_dat.mdf;Initial Catalog=finance_manager;Integrated Security=True;TrustServerCertificate=True");
 
                 conn = new SqlConnection(connectionString);

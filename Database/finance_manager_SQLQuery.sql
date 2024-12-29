@@ -3,13 +3,13 @@ GO
 
 CREATE DATABASE finance_manager ON
 (NAME = finance_manager_dat,
-    FILENAME = 'D:\dev\database_system\finance_manager\db\finance_manager_dat.mdf',
+    FILENAME = 'D:\College Life\Semester 3\Advance Programming\Final Project3\FinanceManager\Database\finance_manager_dat.mdf',
     SIZE = 10,
     MAXSIZE = 50,
     FILEGROWTH = 5)
 LOG ON
 (NAME = finance_manager_log,
-    FILENAME = 'D:\dev\database_system\finance_manager\db\finance_manager_log.ldf',
+    FILENAME = 'D:\College Life\Semester 3\Advance Programming\Final Project3\FinanceManager\Database\finance_manager_log.ldf',
     SIZE = 5 MB,
     MAXSIZE = 25 MB,
     FILEGROWTH = 5 MB);
@@ -37,22 +37,26 @@ GO
 CREATE TABLE budgets (
 	budget_id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	user_id INT FOREIGN KEY REFERENCES users(user_id),
+	budget_name NVARCHAR (32) NOT NULL,
 	category_id INT FOREIGN KEY REFERENCES categories(category_id),
 	amount FLOAT NOT NULL,
 	start_date DATE NOT NULL,
 	end_date DATE NOT NULL,
 	is_active CHAR(1) NOT NULL CHECK(is_active = 'y' OR is_active = 'n')
 )
+
+DROP TABLE transcations
+
 GO
 
 CREATE TABLE transactions (
 	transaction_id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	user_id INT FOREIGN KEY REFERENCES users(user_id),
+	transaction_name NVARCHAR (32) NOT NULL,
 	type VARCHAR(7) NOT NULL CHECK(type = 'income' OR type = 'expense'),
 	date DATETIME NOT NULL,
 	amount FLOAT NOT NULL,
 	category_id INT FOREIGN KEY REFERENCES categories(category_id),
-	description NVARCHAR(100) NOT NULL
 )
 GO
 
