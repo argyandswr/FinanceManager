@@ -29,6 +29,7 @@ GO
 CREATE TABLE categories (
 	category_id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	user_id INT FOREIGN KEY REFERENCES users(user_id),
+	type VARCHAR(7) NOT NULL CHECK(type = 'Income' OR type = 'Expense'),
 	name NVARCHAR(32) NOT NULL,
 	description NVARCHAR(100)
 )
@@ -48,7 +49,7 @@ GO
 CREATE TABLE transactions (
 	transaction_id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	user_id INT FOREIGN KEY REFERENCES users(user_id),
-	type VARCHAR(7) NOT NULL CHECK(type = 'income' OR type = 'expense'),
+	type VARCHAR(7) NOT NULL CHECK(type = 'Income' OR type = 'Expense'),
 	date DATETIME NOT NULL,
 	amount FLOAT NOT NULL,
 	category_id INT FOREIGN KEY REFERENCES categories(category_id),
@@ -58,5 +59,11 @@ GO
 
 -- Default Value
 INSERT INTO users(username, password) VALUES ('joe', 'joe')
-INSERT INTO categories(user_id, name, description)
-VALUES (1, 'Education', 'Everything related to education; tuition, books, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Education', 'Tuition, books, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Transportation', 'Gas, service, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Food', 'Daily food, Weekly/monthly stock, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Housing', 'Rent, toiletries, kitchen stuff, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Utilities', 'WiFi plan, electricity, water fee, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Finance', 'Savings, investment, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Clothing', 'T-shirt, shoes, jeans, etc.')
+INSERT INTO categories (user_id, name, description) VALUES (1, 'Health', 'Hospital, medicine, etc.')

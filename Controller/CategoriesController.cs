@@ -16,7 +16,6 @@ namespace PersonalFinanceManager.Controller
 
         public List<Categories> GetCategories()
         {
-            List<Categories> list = new List<Categories>();
             using (DbContext context = new DbContext())
             {
                 _categoriesRepository = new CategoriesRepository(context);

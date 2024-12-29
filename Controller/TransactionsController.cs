@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using PersonalFinanceManager.Model.Context;
 using PersonalFinanceManager.Model.Entity;
 using PersonalFinanceManager.Model.Repository;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PersonalFinanceManager.Controller
 {
@@ -17,6 +18,35 @@ namespace PersonalFinanceManager.Controller
         public int Create(Transactions transactions)
         {
             int result = 0;
+
+            //if (transactions.TransactionID !> 0 )
+            //{
+            //    MessageBox.Show("UserID cannot be empty!", "Error",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return 0;
+            //}
+
+            //if (string.IsNullOrEmpty(transactions.Type))
+            //{
+            //    MessageBox.Show("Type cannot be empty!", "Warning",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return 0;
+            //}
+
+            //if (transactions.CategoryID !> 0)
+            //{
+            //    MessageBox.Show("Category cannot be empty!", "Warning",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return 0;
+            //}
+
+            //if (transactions.Amount !> 0)
+            //{
+            //    MessageBox.Show("Amount cannot be empty!", "Warning",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return 0;
+            //}
+
             using (DbContext context = new DbContext())
             {
                 _repository = new TransactionsRepository(context);

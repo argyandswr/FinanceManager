@@ -34,11 +34,12 @@
             label4 = new Label();
             label5 = new Label();
             comboBoxType = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            datePicker = new DateTimePicker();
             comboBoxCategory = new ComboBox();
             textBoxAmount = new TextBox();
             richTextBoxDescription = new RichTextBox();
             addBtn = new Button();
+            timePicker = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -89,17 +90,19 @@
             // comboBoxType
             // 
             comboBoxType.FormattingEnabled = true;
+            comboBoxType.Items.AddRange(new object[] { "Income", "Expense" });
             comboBoxType.Location = new Point(303, 25);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(182, 33);
             comboBoxType.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            dateTimePicker1.Location = new Point(303, 78);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 6;
+            datePicker.CustomFormat = "yyyy-MM-dd";
+            datePicker.Location = new Point(303, 78);
+            datePicker.Name = "datePicker";
+            datePicker.Size = new Size(300, 31);
+            datePicker.TabIndex = 6;
             // 
             // comboBoxCategory
             // 
@@ -135,16 +138,25 @@
             addBtn.UseVisualStyleBackColor = true;
             addBtn.Click += addBtn_Click;
             // 
+            // timePicker
+            // 
+            timePicker.CustomFormat = "hh:mm:ss";
+            timePicker.Location = new Point(609, 78);
+            timePicker.Name = "timePicker";
+            timePicker.Size = new Size(179, 31);
+            timePicker.TabIndex = 11;
+            // 
             // addTransactionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(832, 450);
+            Controls.Add(timePicker);
             Controls.Add(addBtn);
             Controls.Add(richTextBoxDescription);
             Controls.Add(textBoxAmount);
             Controls.Add(comboBoxCategory);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(datePicker);
             Controls.Add(comboBoxType);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -166,10 +178,11 @@
         private Label label4;
         private Label label5;
         private ComboBox comboBoxType;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker datePicker;
         private ComboBox comboBoxCategory;
         private TextBox textBoxAmount;
         private RichTextBox richTextBoxDescription;
         private Button addBtn;
+        private DateTimePicker timePicker;
     }
 }

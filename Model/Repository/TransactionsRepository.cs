@@ -24,8 +24,7 @@ namespace PersonalFinanceManager.Model.Repository
             int result = 0;
 
             string sql = @"INSERT INTO transactions (user_id, type, date, amount, category_id, description)
-                         VALUES (@user_id, @type, @date, @amount, @category_id, @description)
-                         WHERE user_id = @user_id";
+                         VALUES (@user_id, @type, @date, @amount, @category_id, @description)";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
@@ -35,8 +34,6 @@ namespace PersonalFinanceManager.Model.Repository
                 cmd.Parameters.AddWithValue("@amount", transactions.Amount);
                 cmd.Parameters.AddWithValue("@category_id", transactions.CategoryID);
                 cmd.Parameters.AddWithValue("@description", transactions.Description);
-                cmd.Parameters.AddWithValue("@user_id", transactions.Description);
-
 
                 try
                 {
@@ -120,7 +117,7 @@ namespace PersonalFinanceManager.Model.Repository
                             Transactions transactions = new Transactions();
                             transactions.TransactionID = (int)dtr["transaction_id"];
                             transactions.UserID = (int)dtr["user_id"];
-                            transactions.Type = transactions.GetType((string)dtr["type"]);
+                            transactions.Type = (string)dtr["type"];
                             transactions.Amount = (float)dtr["amount"];
                             transactions.CategoryID = (int)dtr["category_id"];
                             transactions.Description = (string)dtr["description"];
