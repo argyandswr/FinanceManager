@@ -18,6 +18,7 @@ namespace PersonalFinanceManager.Model.Repository
             _conn = context.Conn;
         }
 
+        // Return category_id and name
         public List<Categories> GetCategories()
         {
             List<Categories> list = new List<Categories>();
@@ -44,7 +45,7 @@ namespace PersonalFinanceManager.Model.Repository
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+                System.Diagnostics.Debug.Print("GetCategories error: {0}", ex.Message);
             }
             
             return list;

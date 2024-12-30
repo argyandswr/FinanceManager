@@ -10,11 +10,19 @@ using System.Transactions;
 using System.Windows.Forms;
 using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.Model.Entity;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace PersonalFinanceManager.View
 {
     public partial class addTransactionForm : Form
     {
+        // For setting placeholder text into combo box
+        private const int CB_SETCUEBANNER = 0x1703;
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
+
+
         public addTransactionForm()
         {
             InitializeComponent();
@@ -24,13 +32,17 @@ namespace PersonalFinanceManager.View
         {
             CategoriesController controller = new CategoriesController();
 
-            comboBoxType.Items.Add("Income");
-            comboBoxType.Items.Add("Expense");
-
             // Bind categories data from database to category combo box
             comboBoxCategory.DataSource = controller.GetCategories();
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "CategoryID";
+            comboBoxCategory.SelectedItem = null;
+
+            timePicker.Format = DateTimePickerFormat.Time;
+            timePicker.ShowUpDown = true;
+
+            SendMessage(this.comboBoxCategory.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
+            SendMessage(this.comboBoxType.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
         }
 
         // Only allow numbers and decimal in amount
@@ -53,12 +65,32 @@ namespace PersonalFinanceManager.View
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            /*TransactionsController controller = new TransactionsController();
+            TransactionsController controller = new TransactionsController();
 
             Transactions transactions = new Transactions();
-            transactions.Type = transactions.GetType(comboBoxType.SelectedValue.ToString);
 
-            controller.Create(transactions);*/
+            DateTime dateTime = datePicker.Value.Date + timePicker.Value.TimeOfDay;
+
+            transactions.UserID = CurrentUser.UserID;
+            transactions.Date = dateTime;
+
+            // TODO: make sure value not null
+            transactions.Amount = float.Parse(textBoxAmount.Text);
+            transactions.Type = comboBoxType.SelectedItem.ToString();
+            transactions.CategoryID = (int)comboBoxCategory.SelectedValue;
+            transactions.Description = richTextBoxDescription.Text;
+
+            controller.Create(transactions);
+            ResetForm();
+        }
+
+        // Reset column value
+        private void ResetForm()
+        {
+            SendMessage(this.comboBoxType.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
+            textBoxAmount.Text = string.Empty;
+            SendMessage(this.comboBoxCategory.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
+            richTextBoxDescription.Text = string.Empty;
         }
     }
 }
