@@ -23,20 +23,20 @@ namespace PersonalFinanceManager.Model.Repository
         {
             List<Categories> list = new List<Categories>();
 
-            string sql = @"SELECT category_id, name FROM categories WHERE user_id = @user_id";
+            string sql = @"SELECT category_id, category_name FROM categories WHERE user_id = @user_id";
 
             try
             {
                 using (SqlCommand cmd = new SqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@user_id", CurrentUser.UserID);
+                    cmd.Parameters.AddWithValue("@user_id", GlobalVariable.UserID);
                     using (SqlDataReader dtr = cmd.ExecuteReader())
                     {
                         while (dtr.Read())
                         {
                             Categories categories = new Categories();
                             categories.CategoryID = (int)dtr["category_id"];
-                            categories.Name = (string)dtr["Name"];
+                            categories.Name = (string)dtr["category_name"];
 
                             list.Add(categories);
                         }

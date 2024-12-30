@@ -71,14 +71,13 @@ namespace PersonalFinanceManager.View
 
             DateTime dateTime = datePicker.Value.Date + timePicker.Value.TimeOfDay;
 
-            transactions.UserID = CurrentUser.UserID;
+            transactions.UserID = GlobalVariable.UserID;
             transactions.Date = dateTime;
 
             // TODO: make sure value not null
             transactions.Amount = float.Parse(textBoxAmount.Text);
             transactions.Type = comboBoxType.SelectedItem.ToString();
             transactions.CategoryID = (int)comboBoxCategory.SelectedValue;
-            transactions.Description = richTextBoxDescription.Text;
 
             controller.Create(transactions);
             ResetForm();

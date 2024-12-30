@@ -24,8 +24,7 @@ namespace PersonalFinanceManager.Model.Repository
             int result = 0;
 
             string sql = @"INSERT INTO transactions (user_id, transaction_name, type, date, amount, category_id)
-                         VALUES (@user_id,@name, @type, @date, @amount, @category_id, @description)
-                         WHERE user_id = @user_id";
+                         VALUES (@user_id, @name, @type, @date, @amount, @category_id)";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
@@ -54,8 +53,8 @@ namespace PersonalFinanceManager.Model.Repository
             int result = 0;
 
             string sql = @"UPDATE transactions
-                           SET user_id = @user_id,transaction_name = @name, type = @type, date = @date, amount = @amount,
-                               category_id = @category-id, description = @description
+                           SET user_id = @user_id, transaction_name = @name, type = @type, date = @date, amount = @amount,
+                               category_id = @category-id
                            WHERE transaction_id = @transaction_id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -121,6 +120,7 @@ namespace PersonalFinanceManager.Model.Repository
                             transactions.UserID = (int)dtr["user_id"];
                             transactions.TransactionName = (string)dtr["transaction_name"];
                             transactions.Type = (string)dtr["type"];
+                            //transactions.Date = (string)dtr["date"]; // todo
                             transactions.Amount = (float)dtr["amount"];
                             transactions.CategoryID = (int)dtr["category_id"];
                             

@@ -23,29 +23,26 @@ namespace PersonalFinanceManager.View
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TransactionForm_Load(object sender, EventArgs e)
         {
+            CategoriesController controller = new CategoriesController();
 
-        }
+            // Bind categories data from database to category combo box
+            transactionCategory.DataSource = controller.GetCategories();
+            transactionCategory.DisplayMember = "Name";
+            transactionCategory.ValueMember = "CategoryID";
+            transactionCategory.SelectedItem = null;
 
-        private void transactionName_txt_TextChanged(object sender, EventArgs e)
-        {
+            transactionTimePicker.Format = DateTimePickerFormat.Time;
+            transactionTimePicker.ShowUpDown = true;
 
+            GlobalVariable.SendMessage(this.transactionType.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
+            GlobalVariable.SendMessage(this.transactionCategory.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
         }
 
         private void transaction_addBtn_Click(object sender, EventArgs e)
         {
-            if (transactionName_txt.Text == "" || transactionCategory.SelectedIndex == -1 || transactionAmount_txt.Text == "")
+            if (transactionName_txt.Text == "" || transactionCategory.SelectedIndex == -1 || transactionType.SelectedIndex == -1 || transactionAmount_txt.Text == "")
             {
                 MessageBox.Show("Please fill all blank fields!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -54,16 +51,48 @@ namespace PersonalFinanceManager.View
                 TransactionsController controller = new TransactionsController();
 
                 Transactions transactions = new Transactions();
+                transactions.UserID = GlobalVariable.UserID;
                 transactions.TransactionName = transactionName_txt.Text;
-                transactions.Type = (string)transactionCategory.SelectedItem;
+                transactions.Type = (string)transactionType.SelectedItem;
+                transactions.CategoryID = int.Parse(transactionCategory.SelectedValue.ToString());
                 transactions.Amount = float.Parse(transactionAmount_txt.Text);
-                transactions.Date = transactionDate.Value;
+                transactions.Date = transactionDatePicker.Value;
 
                 controller.Create(transactions);
+                ResetInput();
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void transactionAmount_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allows 0-9, backspace, and decimal
+            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // checks to make sure only 1 decimal is allowed
+            if (e.KeyChar == 46)
+            {
+                if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
+                    e.Handled = true;
+            }
+        }
+
+        private void ResetInput()
+        {
+            transactionName_txt.Clear();
+            transactionType.SelectedIndex = -1;
+            GlobalVariable.SendMessage(this.transactionType.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
+            transactionCategory.SelectedIndex = -1;
+            GlobalVariable.SendMessage(this.transactionCategory.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
+            transactionDatePicker.Value = DateTime.Now;
+            transactionTimePicker.Value = DateTime.Now;
+            transactionAmount_txt.Clear();
+        }
+
+        private void transaction_updateBtn_Click(object sender, EventArgs e)
         {
 
         }
