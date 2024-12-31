@@ -33,7 +33,6 @@ namespace PersonalFinanceManager.View
             CategoriesController controller = new CategoriesController();
 
             // Bind categories data from database to category combo box
-            comboBoxCategory.DataSource = controller.GetCategories();
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "CategoryID";
             comboBoxCategory.SelectedItem = null;
@@ -42,7 +41,7 @@ namespace PersonalFinanceManager.View
             timePicker.ShowUpDown = true;
 
             SendMessage(this.comboBoxCategory.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
-            SendMessage(this.comboBoxType.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
+            SendMessage(this.comboBoxType.Handle, CB_SETCUEBANNER, 0, "Please select type first...");
         }
 
         // Only allow numbers and decimal in amount
@@ -88,7 +87,7 @@ namespace PersonalFinanceManager.View
         {
             SendMessage(this.comboBoxType.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
             textBoxAmount.Text = string.Empty;
-            SendMessage(this.comboBoxCategory.Handle, CB_SETCUEBANNER, 0, "Please select an item...");
+            SendMessage(this.comboBoxCategory.Handle, CB_SETCUEBANNER, 0, "Please select type first...");
             richTextBoxDescription.Text = string.Empty;
         }
     }

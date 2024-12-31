@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +56,7 @@ namespace PersonalFinanceManager.Model.Repository
 
             string sql = @"UPDATE transactions
                            SET user_id = @user_id, transaction_name = @name, type = @type, date = @date, amount = @amount,
-                               category_id = @category-id
+                               category_id = @category_id
                            WHERE transaction_id = @transaction_id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -101,13 +103,35 @@ namespace PersonalFinanceManager.Model.Repository
             return result;
         }
 
-        public List<Transactions> GetTransactions()
+        public DataTable DisplayData()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            string sql = @"SELECT t.type AS Type, transaction_name AS Name, amount AS Amount, category_name AS Category, date AS Date, transaction_id AS ID
+                           FROM transactions t
+                           JOIN categories c ON t.category_id = c.category_id
+                           WHERE t.user_id = @user_id";
+            
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("user_id", GlobalVariable.UserID);
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        public List<Transactions> ReadAll()
         {
             List<Transactions> list = new List<Transactions>();
 
             try
             {
-                string sql = @"SELECT transaction_id, user_id,transaction_name, type, date, amount, category_id, FROM users";
+                string sql = @"SELECT t.transaction_id, t.user_id, t.transaction_name, t.type, t.date, t.amount, t.category_id
+                               FROM transactions t
+                               JOIN categories c ON t.category_id = c.category_id
+                               WHERE t.user_id = @user_id";
 
                 using (SqlCommand cmd = new SqlCommand(sql, _conn))
                 {
@@ -120,7 +144,7 @@ namespace PersonalFinanceManager.Model.Repository
                             transactions.UserID = (int)dtr["user_id"];
                             transactions.TransactionName = (string)dtr["transaction_name"];
                             transactions.Type = (string)dtr["type"];
-                            //transactions.Date = (string)dtr["date"]; // todo
+                            transactions.Date = dtr.GetFieldValue<DateTime>(dtr.GetOrdinal("date"));
                             transactions.Amount = (float)dtr["amount"];
                             transactions.CategoryID = (int)dtr["category_id"];
                             

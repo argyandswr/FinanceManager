@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             transactionType = new ComboBox();
             label6 = new Label();
@@ -85,6 +86,8 @@
             transactionType.Size = new Size(355, 33);
             transactionType.TabIndex = 9;
             transactionType.TabStop = false;
+            transactionType.SelectedIndexChanged += transactionType_SelectedIndexChanged;
+            transactionType.SelectionChangeCommitted += transactionType_SelectionChangeCommitted;
             // 
             // label6
             // 
@@ -218,6 +221,7 @@
             transactionCategory.Size = new Size(355, 33);
             transactionCategory.TabIndex = 1;
             transactionCategory.TabStop = false;
+            transactionCategory.SelectedIndexChanged += transactionCategory_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -241,21 +245,27 @@
             panel2.Location = new Point(438, 54);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(615, 915);
+            panel2.Size = new Size(585, 915);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.ColumnHeadersVisible = false;
-            dataGridView1.Location = new Point(18, 91);
-            dataGridView1.Margin = new Padding(4);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(20, 76);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(579, 788);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(550, 821);
             dataGridView1.TabIndex = 9;
+            dataGridView1.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
             // 
             // label5
             // 
@@ -280,7 +290,7 @@
             Controls.Add(panel1);
             Margin = new Padding(4);
             Name = "TransactionForm";
-            Size = new Size(1076, 1038);
+            Size = new Size(1034, 1038);
             Load += TransactionForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -305,10 +315,11 @@
         private Button transaction_addBtn;
         private TextBox transactionAmount_txt;
         private Label label4;
-        private DataGridView dataGridView1;
         private Label label5;
         private Label label6;
         private DateTimePicker transactionTimePicker;
         private ComboBox transactionType;
+        private DataGridView dataGridView1;
+        private Label label7;
     }
 }

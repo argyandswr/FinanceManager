@@ -14,12 +14,20 @@ namespace PersonalFinanceManager.Controller
     {
         private CategoriesRepository _categoriesRepository;
 
-        public List<Categories> GetCategories()
+        public List<Categories> GetCategories(string type)
         {
             using (DbContext context = new DbContext())
             {
                 _categoriesRepository = new CategoriesRepository(context);
-                return _categoriesRepository.GetCategories();
+                return _categoriesRepository.GetCategories(type);
+            }
+        }
+
+        public int GetID(string category_name)
+        {
+            using (DbContext dbContext = new DbContext())
+            {
+                return _categoriesRepository.GetID(category_name);
             }
         }
     }
