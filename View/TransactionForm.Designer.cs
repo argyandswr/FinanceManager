@@ -121,6 +121,7 @@
             transaction_deleteBtn.TabIndex = 7;
             transaction_deleteBtn.Text = "Delete";
             transaction_deleteBtn.UseVisualStyleBackColor = false;
+            transaction_deleteBtn.Click += transaction_deleteBtn_Click;
             // 
             // transaction_updateBtn
             // 
@@ -245,7 +246,7 @@
             panel2.Location = new Point(438, 54);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(585, 915);
+            panel2.Size = new Size(644, 915);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -263,7 +264,7 @@
             dataGridView1.Location = new Point(20, 76);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(550, 821);
+            dataGridView1.Size = new Size(606, 821);
             dataGridView1.TabIndex = 9;
             dataGridView1.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
             // 
@@ -290,7 +291,7 @@
             Controls.Add(panel1);
             Margin = new Padding(4);
             Name = "TransactionForm";
-            Size = new Size(1034, 1038);
+            Size = new Size(1098, 1038);
             Load += TransactionForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

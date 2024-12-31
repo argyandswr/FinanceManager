@@ -62,6 +62,28 @@ namespace PersonalFinanceManager.Controller
             return result;
         }
 
+        public int Delete(Transactions transactions)
+        {
+            int result = 0;
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransactionsRepository(context);
+                result = _repository.Delete(transactions);
+            }
+
+            if (result > 0)
+            {
+                MessageBox.Show("Transaction Deleted Successfully", "Information",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Failed to Delete Transaction!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return result;
+        }
+
         public DataTable DisplayData()
         {
             using (DbContext context = new DbContext())

@@ -20,6 +20,7 @@ namespace PersonalFinanceManager.View
     {
         bool isRowSelected = false;
         string selectedRowCategory;
+        int headerRowTransID = 0;
 
         public TransactionForm()
         {
@@ -66,6 +67,7 @@ namespace PersonalFinanceManager.View
 
                 controller.Create(transactions);
                 ResetInput();
+                DisplayData();
             }
         }
 
@@ -90,6 +92,23 @@ namespace PersonalFinanceManager.View
         {
             TransactionsController controller = new TransactionsController();
             dataGridView1.DataSource = controller.DisplayData();
+
+            // Autosize column in datagrid view
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+            {
+                int colw = dataGridView1.Columns[i].Width;
+
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                dataGridView1.Columns[i].Width = colw;
+            }
         }
 
         private void ResetInput()
@@ -122,10 +141,11 @@ namespace PersonalFinanceManager.View
                 transactions.Amount = float.Parse(transactionAmount_txt.Text);
                 DateTime date = transactionDatePicker.Value.Date + transactionTimePicker.Value.TimeOfDay;
                 transactions.Date = date;
-
+                transactions.TransactionID = headerRowTransID;
 
                 controller.Update(transactions);
                 ResetInput();
+                DisplayData();
             }
         }
 
@@ -158,21 +178,9 @@ namespace PersonalFinanceManager.View
             DateTime dateTime = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
             transactionDatePicker.Value = dateTime;
             transactionTimePicker.Value = dateTime;
+            headerRowTransID = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
 
             isRowSelected = true;
-        }
-
-        static (string DateOnly, string TimeOnly) SplitDateTime(string dateTime)
-        {
-            string[] parts = dateTime.Split(' ');
-            if (parts.Length >= 2)
-            {
-                string dateOnly = parts[0];
-                string timeOnly = parts[1];
-                return (dateOnly, timeOnly);
-            }
-
-            throw new FormatException("Invalid DateTime format.");
         }
 
         private void transactionCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,6 +199,25 @@ namespace PersonalFinanceManager.View
             //        selectedRowCategory = null;
             //    }
             //}
+        }
+
+        private void transaction_deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (transactionName_txt.Text == "" || transactionType.SelectedIndex == -1 || transactionAmount_txt.Text == "")
+            {
+                MessageBox.Show("Please fill all blank fields!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                TransactionsController controller = new TransactionsController();
+
+                Transactions transactions = new Transactions();
+                transactions.TransactionID = headerRowTransID;
+
+                controller.Delete(transactions);
+                ResetInput();
+                DisplayData();
+            }
         }
     }
 }

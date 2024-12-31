@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using Microsoft.Data.SqlClient;
 
 using PersonalFinanceManager.Model.Context;
@@ -85,11 +79,11 @@ namespace PersonalFinanceManager.Model.Repository
         {
             int result = 0;
 
-            string sql = @"DELETE FROM transactions transaction_name = @name";
+            string sql = @"DELETE FROM transactions WHERE transaction_id = @id";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@name", transactions.TransactionName);
+                cmd.Parameters.AddWithValue("@id", transactions.TransactionID);
 
                 try
                 {
