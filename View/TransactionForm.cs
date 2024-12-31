@@ -18,6 +18,14 @@ namespace PersonalFinanceManager.View
 {
     public partial class TransactionForm : UserControl
     {
+<<<<<<< Updated upstream
+=======
+        bool isRowSelected = false;
+        string selectedRowCategory;
+        int headerRowTransID = 0;
+
+
+>>>>>>> Stashed changes
         public TransactionForm()
         {
             InitializeComponent();
@@ -80,6 +88,33 @@ namespace PersonalFinanceManager.View
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        private void DisplayData()
+        {
+            TransactionsController controller = new TransactionsController();
+            dataGridView1.DataSource = controller.DisplayData();
+            dataGridView1.DefaultCellStyle.ForeColor = SystemColors.ControlText;
+
+            // Autosize column in datagrid view
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+            {
+                int colw = dataGridView1.Columns[i].Width;
+
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                dataGridView1.Columns[i].Width = colw;
+            }
+        }
+
+>>>>>>> Stashed changes
         private void ResetInput()
         {
             transactionName_txt.Clear();
@@ -93,6 +128,11 @@ namespace PersonalFinanceManager.View
         }
 
         private void transaction_updateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

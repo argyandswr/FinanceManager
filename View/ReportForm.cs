@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using PersonalFinanceManager.Model.Entity;
+using PersonalFinanceManager.Controller;
 
 namespace PersonalFinanceManager.View
 {
@@ -20,6 +22,8 @@ namespace PersonalFinanceManager.View
             InitializeComponent();
             balanceCurrentBalance();
             expenseTotalExpense();
+
+            DisplayData();
         }
 
         // TOTAL EXPENSE 
@@ -86,6 +90,35 @@ namespace PersonalFinanceManager.View
         private void report_totalExpense_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DisplayData()
+        {
+            TransactionsController controller = new TransactionsController();
+            dataGridView1.DataSource = controller.DisplayData();
+            dataGridView1.DefaultCellStyle.ForeColor = SystemColors.ControlText;
+
+            // Autosize column in datagrid view
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+            {
+                int colw = dataGridView1.Columns[i].Width;
+
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                dataGridView1.Columns[i].Width = colw;
+            }
         }
     }
 }
