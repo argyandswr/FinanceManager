@@ -38,10 +38,10 @@
             label10 = new Label();
             label9 = new Label();
             panel11 = new Panel();
-            label26 = new Label();
+            report_currentBalance = new Label();
             label18 = new Label();
             panel10 = new Panel();
-            label25 = new Label();
+            report_totalExpense = new Label();
             label17 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -157,22 +157,22 @@
             // panel11
             // 
             panel11.BackColor = Color.LightSkyBlue;
-            panel11.Controls.Add(label26);
+            panel11.Controls.Add(report_currentBalance);
             panel11.Controls.Add(label18);
             panel11.Location = new Point(443, 56);
             panel11.Name = "panel11";
             panel11.Size = new Size(400, 132);
             panel11.TabIndex = 2;
             // 
-            // label26
+            // report_currentBalance
             // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Yu Gothic UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label26.Location = new Point(364, 55);
-            label26.Name = "label26";
-            label26.Size = new Size(33, 38);
-            label26.TabIndex = 6;
-            label26.Text = "0";
+            report_currentBalance.AutoSize = true;
+            report_currentBalance.Font = new Font("Yu Gothic UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            report_currentBalance.Location = new Point(60, 55);
+            report_currentBalance.Name = "report_currentBalance";
+            report_currentBalance.Size = new Size(33, 38);
+            report_currentBalance.TabIndex = 6;
+            report_currentBalance.Text = "0";
             // 
             // label18
             // 
@@ -187,22 +187,23 @@
             // panel10
             // 
             panel10.BackColor = Color.LightSkyBlue;
-            panel10.Controls.Add(label25);
+            panel10.Controls.Add(report_totalExpense);
             panel10.Controls.Add(label17);
             panel10.Location = new Point(12, 56);
             panel10.Name = "panel10";
             panel10.Size = new Size(400, 132);
             panel10.TabIndex = 1;
             // 
-            // label25
+            // report_totalExpense
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Yu Gothic UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.Location = new Point(364, 55);
-            label25.Name = "label25";
-            label25.Size = new Size(33, 38);
-            label25.TabIndex = 5;
-            label25.Text = "0";
+            report_totalExpense.AutoSize = true;
+            report_totalExpense.Font = new Font("Yu Gothic UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            report_totalExpense.Location = new Point(60, 55);
+            report_totalExpense.Name = "report_totalExpense";
+            report_totalExpense.Size = new Size(33, 38);
+            report_totalExpense.TabIndex = 5;
+            report_totalExpense.Text = "0";
+            report_totalExpense.Click += report_totalExpense_Click;
             // 
             // label17
             // 
@@ -251,10 +252,10 @@
         private Label label10;
         private Label label9;
         private Panel panel11;
-        private Label label26;
+        private Label report_currentBalance;
         private Label label18;
         private Panel panel10;
-        private Label label25;
+        private Label report_totalExpense;
         private Label label17;
     }
 }
