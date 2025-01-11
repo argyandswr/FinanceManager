@@ -48,5 +48,16 @@ namespace PersonalFinanceManager
 
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsersController controller = new UsersController();
+
+            GlobalVariable.UserID = controller.GetUserID("joe", "joe");
+            mainForm mainForm = new mainForm();
+            mainForm.Show();
+
+            this.Hide();
+        }
     }
 }

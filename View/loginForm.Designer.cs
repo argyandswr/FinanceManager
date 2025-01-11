@@ -39,6 +39,7 @@
             passLogin_Txt = new TextBox();
             login_Btn = new Button();
             showPass = new CheckBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -175,12 +176,23 @@
             showPass.UseVisualStyleBackColor = true;
             showPass.CheckedChanged += showPass_CheckedChanged;
             // 
+            // button1
+            // 
+            button1.Location = new Point(657, 67);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 5;
+            button1.Text = "skip";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // loginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(216, 222, 233);
             ClientSize = new Size(811, 561);
+            Controls.Add(button1);
             Controls.Add(showPass);
             Controls.Add(login_Btn);
             Controls.Add(passLogin_Txt);
@@ -212,5 +224,6 @@
         private Button reg_Btn;
         private Label label5;
         private CheckBox showPass;
+        private Button button1;
     }
 }

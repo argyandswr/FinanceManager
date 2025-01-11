@@ -37,13 +37,13 @@
             btnTransactions = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
             spacer1 = new Panel();
-            spacer = new Panel();
             spacer2 = new Panel();
             panelTopBar = new Panel();
             iconExit = new FontAwesome.Sharp.IconButton();
             iconMinimize = new FontAwesome.Sharp.IconButton();
             iconMaximize = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
+            iconApp = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelTopBar.SuspendLayout();
             SuspendLayout();
@@ -58,8 +58,8 @@
             panelMenu.Controls.Add(btnTransactions);
             panelMenu.Controls.Add(btnDashboard);
             panelMenu.Controls.Add(spacer1);
-            panelMenu.Controls.Add(spacer);
             panelMenu.Controls.Add(spacer2);
+            panelMenu.Controls.Add(iconApp);
             resources.ApplyResources(panelMenu, "panelMenu");
             panelMenu.ForeColor = SystemColors.ControlText;
             panelMenu.Name = "panelMenu";
@@ -148,12 +148,6 @@
             resources.ApplyResources(spacer1, "spacer1");
             spacer1.Name = "spacer1";
             // 
-            // spacer
-            // 
-            spacer.BackColor = Color.FromArgb(67, 76, 94);
-            resources.ApplyResources(spacer, "spacer");
-            spacer.Name = "spacer";
-            // 
             // spacer2
             // 
             resources.ApplyResources(spacer2, "spacer2");
@@ -213,6 +207,18 @@
             resources.ApplyResources(panelDesktop, "panelDesktop");
             panelDesktop.Name = "panelDesktop";
             // 
+            // iconApp
+            // 
+            iconApp.BackColor = Color.FromArgb(67, 76, 94);
+            resources.ApplyResources(iconApp, "iconApp");
+            iconApp.FlatAppearance.BorderSize = 0;
+            iconApp.ForeColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            iconApp.IconColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconApp.Name = "iconApp";
+            iconApp.UseVisualStyleBackColor = false;
+            // 
             // mainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -242,9 +248,9 @@
         private FontAwesome.Sharp.IconButton iconMaximize;
         private FontAwesome.Sharp.IconButton iconExit;
         private FontAwesome.Sharp.IconButton iconMinimize;
-        private Panel spacer;
         private Panel spacer1;
         private Panel panelDesktop;
         private Panel spacer2;
+        private FontAwesome.Sharp.IconButton iconApp;
     }
 }

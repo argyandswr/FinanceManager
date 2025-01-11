@@ -185,7 +185,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 331</value>
+    <value>0, 374</value>
   </data>
   <data name="btnSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
@@ -233,7 +233,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCategories.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 271</value>
+    <value>0, 314</value>
   </data>
   <data name="btnCategories.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
@@ -281,7 +281,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBudgets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 211</value>
+    <value>0, 254</value>
   </data>
   <data name="btnBudgets.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
@@ -329,7 +329,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnTransactions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 151</value>
+    <value>0, 194</value>
   </data>
   <data name="btnTransactions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
@@ -377,7 +377,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 91</value>
+    <value>0, 134</value>
   </data>
   <data name="btnDashboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
@@ -413,7 +413,7 @@
     <value>Top</value>
   </data>
   <data name="spacer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 71</value>
+    <value>0, 114</value>
   </data>
   <data name="spacer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 20</value>
@@ -432,30 +432,6 @@
   </data>
   <data name="&gt;&gt;spacer1.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="spacer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="spacer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="spacer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 71</value>
-  </data>
-  <data name="spacer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spacer.Name" xml:space="preserve">
-    <value>spacer</value>
-  </data>
-  <data name="&gt;&gt;spacer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacer.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;spacer.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="spacer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -482,6 +458,48 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;spacer2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="iconApp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="iconApp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="iconApp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt, style=Bold, Italic</value>
+  </data>
+  <data name="iconApp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="iconApp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="iconApp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="iconApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 114</value>
+  </data>
+  <data name="iconApp.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="iconApp.Text" xml:space="preserve">
+    <value>Finance Manager</value>
+  </data>
+  <data name="iconApp.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;iconApp.Name" xml:space="preserve">
+    <value>iconApp</value>
+  </data>
+  <data name="&gt;&gt;iconApp.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;iconApp.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;iconApp.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -507,6 +525,66 @@
   </data>
   <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;iconExit.Name" xml:space="preserve">
+    <value>iconExit</value>
+  </data>
+  <data name="&gt;&gt;iconExit.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;iconExit.Parent" xml:space="preserve">
+    <value>panelTopBar</value>
+  </data>
+  <data name="&gt;&gt;iconExit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;iconMinimize.Name" xml:space="preserve">
+    <value>iconMinimize</value>
+  </data>
+  <data name="&gt;&gt;iconMinimize.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;iconMinimize.Parent" xml:space="preserve">
+    <value>panelTopBar</value>
+  </data>
+  <data name="&gt;&gt;iconMinimize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;iconMaximize.Name" xml:space="preserve">
+    <value>iconMaximize</value>
+  </data>
+  <data name="&gt;&gt;iconMaximize.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;iconMaximize.Parent" xml:space="preserve">
+    <value>panelTopBar</value>
+  </data>
+  <data name="&gt;&gt;iconMaximize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelTopBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelTopBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 0</value>
+  </data>
+  <data name="panelTopBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>860, 50</value>
+  </data>
+  <data name="panelTopBar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelTopBar.Name" xml:space="preserve">
+    <value>panelTopBar</value>
+  </data>
+  <data name="&gt;&gt;panelTopBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTopBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelTopBar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="iconExit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -603,30 +681,6 @@
   </data>
   <data name="&gt;&gt;iconMaximize.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="panelTopBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelTopBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 0</value>
-  </data>
-  <data name="panelTopBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>860, 50</value>
-  </data>
-  <data name="panelTopBar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelTopBar.Name" xml:space="preserve">
-    <value>panelTopBar</value>
-  </data>
-  <data name="&gt;&gt;panelTopBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelTopBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelTopBar.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="panelDesktop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
