@@ -29,8 +29,9 @@ namespace PersonalFinanceManager
             if (isValidUser)
             {
                 GlobalVariable.UserID = controller.GetUserID(usernameLogin_Txt.Text, passLogin_Txt.Text);
-                MainForm mainForm = new MainForm();
+                mainForm mainForm = new mainForm();
                 mainForm.Show();
+
                 this.Hide();
             }
         }

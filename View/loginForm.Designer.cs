@@ -44,13 +44,13 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.LightSkyBlue;
+            panel1.BackColor = Color.FromArgb(76, 86, 106);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(reg_Btn);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(394, 561);
             panel1.TabIndex = 0;
@@ -59,6 +59,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Lucida Sans Typewriter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(236, 239, 244);
             label5.Location = new Point(55, 366);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
@@ -68,13 +69,15 @@
             // 
             // reg_Btn
             // 
-            reg_Btn.BackColor = Color.White;
+            reg_Btn.BackColor = Color.FromArgb(236, 239, 244);
+            reg_Btn.FlatStyle = FlatStyle.Flat;
             reg_Btn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reg_Btn.ForeColor = Color.FromArgb(46, 52, 64);
             reg_Btn.Location = new Point(69, 410);
-            reg_Btn.Margin = new Padding(4, 4, 4, 4);
+            reg_Btn.Margin = new Padding(4);
             reg_Btn.Name = "reg_Btn";
             reg_Btn.Size = new Size(249, 84);
-            reg_Btn.TabIndex = 7;
+            reg_Btn.TabIndex = 5;
             reg_Btn.Text = "Register";
             reg_Btn.UseVisualStyleBackColor = false;
             reg_Btn.Click += reg_Btn_Click;
@@ -82,6 +85,7 @@
             // label1
             // 
             label1.Font = new Font("MS Reference Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(236, 239, 244);
             label1.Location = new Point(15, 228);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -94,7 +98,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Lucida Sans Typewriter", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(401, 115);
+            label2.ForeColor = Color.FromArgb(46, 52, 64);
+            label2.Location = new Point(411, 115);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(133, 32);
@@ -105,7 +110,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Sans Typewriter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(401, 176);
+            label3.ForeColor = Color.FromArgb(46, 52, 64);
+            label3.Location = new Point(411, 187);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(116, 25);
@@ -114,17 +120,18 @@
             // 
             // usernameLogin_Txt
             // 
-            usernameLogin_Txt.Location = new Point(401, 206);
-            usernameLogin_Txt.Margin = new Padding(4, 4, 4, 4);
+            usernameLogin_Txt.Location = new Point(411, 217);
+            usernameLogin_Txt.Margin = new Padding(4);
             usernameLogin_Txt.Name = "usernameLogin_Txt";
-            usernameLogin_Txt.Size = new Size(394, 31);
-            usernameLogin_Txt.TabIndex = 3;
+            usernameLogin_Txt.Size = new Size(386, 31);
+            usernameLogin_Txt.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Lucida Sans Typewriter", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(401, 279);
+            label4.ForeColor = Color.FromArgb(46, 52, 64);
+            label4.Location = new Point(411, 279);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(129, 25);
@@ -133,22 +140,24 @@
             // 
             // passLogin_Txt
             // 
-            passLogin_Txt.Location = new Point(401, 309);
-            passLogin_Txt.Margin = new Padding(4, 4, 4, 4);
+            passLogin_Txt.Location = new Point(411, 309);
+            passLogin_Txt.Margin = new Padding(4);
             passLogin_Txt.Name = "passLogin_Txt";
             passLogin_Txt.PasswordChar = '*';
-            passLogin_Txt.Size = new Size(394, 31);
-            passLogin_Txt.TabIndex = 5;
+            passLogin_Txt.Size = new Size(386, 31);
+            passLogin_Txt.TabIndex = 2;
             // 
             // login_Btn
             // 
-            login_Btn.BackColor = Color.SkyBlue;
+            login_Btn.BackColor = Color.FromArgb(76, 86, 106);
+            login_Btn.FlatStyle = FlatStyle.Flat;
             login_Btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            login_Btn.Location = new Point(419, 394);
-            login_Btn.Margin = new Padding(4, 4, 4, 4);
+            login_Btn.ForeColor = Color.FromArgb(236, 239, 244);
+            login_Btn.Location = new Point(429, 394);
+            login_Btn.Margin = new Padding(4);
             login_Btn.Name = "login_Btn";
             login_Btn.Size = new Size(148, 55);
-            login_Btn.TabIndex = 6;
+            login_Btn.TabIndex = 3;
             login_Btn.Text = "Login";
             login_Btn.UseVisualStyleBackColor = false;
             login_Btn.Click += login_Btn_Click;
@@ -156,11 +165,12 @@
             // showPass
             // 
             showPass.AutoSize = true;
-            showPass.Location = new Point(631, 350);
-            showPass.Margin = new Padding(4, 4, 4, 4);
+            showPass.ForeColor = Color.FromArgb(46, 52, 64);
+            showPass.Location = new Point(635, 350);
+            showPass.Margin = new Padding(4);
             showPass.Name = "showPass";
             showPass.Size = new Size(162, 29);
-            showPass.TabIndex = 8;
+            showPass.TabIndex = 4;
             showPass.Text = "Show Password";
             showPass.UseVisualStyleBackColor = true;
             showPass.CheckedChanged += showPass_CheckedChanged;
@@ -169,6 +179,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(216, 222, 233);
             ClientSize = new Size(811, 561);
             Controls.Add(showPass);
             Controls.Add(login_Btn);
@@ -178,10 +189,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "loginForm";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "loginForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

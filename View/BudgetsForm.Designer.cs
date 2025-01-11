@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager.View
 {
-    partial class dashboardForm
+    partial class BudgetsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(413, 294);
+            label1.Location = new Point(379, 220);
             label1.Name = "label1";
-            label1.Size = new Size(98, 25);
+            label1.Size = new Size(78, 25);
             label1.TabIndex = 0;
-            label1.Text = "dashboard";
+            label1.Text = "budgets";
             // 
-            // dashboardForm
+            // BudgetsForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 614);
             Controls.Add(label1);
-            Name = "dashboardForm";
-            Text = "DashboardForm";
+            Name = "BudgetsForm";
+            Text = "BudgetsForm";
             ResumeLayout(false);
             PerformLayout();
         }

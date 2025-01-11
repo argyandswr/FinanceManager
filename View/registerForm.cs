@@ -16,7 +16,6 @@ namespace PersonalFinanceManager
     public partial class registerForm : Form
     {
 
-        //SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\argya\OneDrive\Documents\FinanceManager.mdf;Integrated Security=True;Connect Timeout=30");
         public registerForm()
         {
             InitializeComponent();
@@ -52,7 +51,7 @@ namespace PersonalFinanceManager
             loginForm logForm = new loginForm();
             logForm.Show();
 
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PersonalFinanceManager.View
 {
-    public partial class dashboardForm : Form
+    public partial class categoriesForm : Form
     {
-        public dashboardForm()
+        public categoriesForm()
         {
             InitializeComponent();
         }
