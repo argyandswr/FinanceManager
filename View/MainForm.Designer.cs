@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager.View
 {
-    partial class MainForm
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,178 +28,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
-            LogOut_Btn = new Button();
-            Report_Btn = new Button();
-            Budgeting_Btn = new Button();
-            Transaction_Btn = new Button();
-            Dashboard_Btn = new Button();
-            panel3 = new Panel();
-            reportForm1 = new ReportForm();
-            budgetingForm1 = new BudgetingForm();
-            dashboardForm1 = new DashboardForm();
-            transactionForm1 = new TransactionForm();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            panelMenu = new Panel();
+            btnLogout = new FontAwesome.Sharp.IconButton();
+            btnSettings = new FontAwesome.Sharp.IconButton();
+            btnCategories = new FontAwesome.Sharp.IconButton();
+            btnBudgets = new FontAwesome.Sharp.IconButton();
+            btnTransactions = new FontAwesome.Sharp.IconButton();
+            btnDashboard = new FontAwesome.Sharp.IconButton();
+            spacer1 = new Panel();
+            spacer2 = new Panel();
+            panelTopBar = new Panel();
+            iconExit = new FontAwesome.Sharp.IconButton();
+            iconMinimize = new FontAwesome.Sharp.IconButton();
+            iconMaximize = new FontAwesome.Sharp.IconButton();
+            panelDesktop = new Panel();
+            iconApp = new FontAwesome.Sharp.IconButton();
+            panelMenu.SuspendLayout();
+            panelTopBar.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelMenu
             // 
-            panel1.AutoSize = true;
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(0, 830);
-            panel1.TabIndex = 0;
+            panelMenu.BackColor = Color.FromArgb(76, 86, 106);
+            panelMenu.Controls.Add(btnLogout);
+            panelMenu.Controls.Add(btnSettings);
+            panelMenu.Controls.Add(btnCategories);
+            panelMenu.Controls.Add(btnBudgets);
+            panelMenu.Controls.Add(btnTransactions);
+            panelMenu.Controls.Add(btnDashboard);
+            panelMenu.Controls.Add(spacer1);
+            panelMenu.Controls.Add(spacer2);
+            panelMenu.Controls.Add(iconApp);
+            resources.ApplyResources(panelMenu, "panelMenu");
+            panelMenu.ForeColor = SystemColors.ControlText;
+            panelMenu.Name = "panelMenu";
             // 
-            // panel2
+            // btnLogout
             // 
-            panel2.BackColor = Color.LightSkyBlue;
-            panel2.Controls.Add(LogOut_Btn);
-            panel2.Controls.Add(Report_Btn);
-            panel2.Controls.Add(Budgeting_Btn);
-            panel2.Controls.Add(Transaction_Btn);
-            panel2.Controls.Add(Dashboard_Btn);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(275, 830);
-            panel2.TabIndex = 1;
+            resources.ApplyResources(btnLogout, "btnLogout");
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.ForeColor = Color.FromArgb(236, 239, 244);
+            btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            btnLogout.IconColor = Color.FromArgb(236, 239, 244);
+            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogout.IconSize = 32;
+            btnLogout.Name = "btnLogout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // LogOut_Btn
+            // btnSettings
             // 
-            LogOut_Btn.BackColor = Color.AliceBlue;
-            LogOut_Btn.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOut_Btn.Location = new Point(3, 710);
-            LogOut_Btn.Name = "LogOut_Btn";
-            LogOut_Btn.Size = new Size(269, 55);
-            LogOut_Btn.TabIndex = 2;
-            LogOut_Btn.Text = "Log Out";
-            LogOut_Btn.UseVisualStyleBackColor = false;
-            LogOut_Btn.Click += LogOut_Btn_Click;
+            resources.ApplyResources(btnSettings, "btnSettings");
+            btnSettings.FlatAppearance.BorderSize = 0;
+            btnSettings.ForeColor = Color.FromArgb(236, 239, 244);
+            btnSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            btnSettings.IconColor = Color.FromArgb(236, 239, 244);
+            btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSettings.IconSize = 32;
+            btnSettings.Name = "btnSettings";
+            btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.Click += btnSettings_Click;
             // 
-            // Report_Btn
+            // btnCategories
             // 
-            Report_Btn.BackColor = Color.LightBlue;
-            Report_Btn.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Report_Btn.Location = new Point(0, 466);
-            Report_Btn.Name = "Report_Btn";
-            Report_Btn.Size = new Size(275, 106);
-            Report_Btn.TabIndex = 5;
-            Report_Btn.Text = "Report Page";
-            Report_Btn.UseVisualStyleBackColor = false;
-            Report_Btn.Click += Report_Btn_Click;
+            resources.ApplyResources(btnCategories, "btnCategories");
+            btnCategories.FlatAppearance.BorderSize = 0;
+            btnCategories.ForeColor = Color.FromArgb(236, 239, 244);
+            btnCategories.IconChar = FontAwesome.Sharp.IconChar.ListSquares;
+            btnCategories.IconColor = Color.FromArgb(236, 239, 244);
+            btnCategories.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCategories.IconSize = 32;
+            btnCategories.Name = "btnCategories";
+            btnCategories.UseVisualStyleBackColor = true;
+            btnCategories.Click += btnCategories_Click;
             // 
-            // Budgeting_Btn
+            // btnBudgets
             // 
-            Budgeting_Btn.BackColor = Color.LightBlue;
-            Budgeting_Btn.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Budgeting_Btn.Location = new Point(0, 312);
-            Budgeting_Btn.Name = "Budgeting_Btn";
-            Budgeting_Btn.Size = new Size(275, 106);
-            Budgeting_Btn.TabIndex = 4;
-            Budgeting_Btn.Text = "Budgeting Page";
-            Budgeting_Btn.UseVisualStyleBackColor = false;
-            Budgeting_Btn.Click += button1_Click_1;
+            resources.ApplyResources(btnBudgets, "btnBudgets");
+            btnBudgets.FlatAppearance.BorderSize = 0;
+            btnBudgets.ForeColor = Color.FromArgb(236, 239, 244);
+            btnBudgets.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            btnBudgets.IconColor = Color.FromArgb(236, 239, 244);
+            btnBudgets.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBudgets.IconSize = 32;
+            btnBudgets.Name = "btnBudgets";
+            btnBudgets.UseVisualStyleBackColor = true;
+            btnBudgets.Click += btnBudgets_Click;
             // 
-            // Transaction_Btn
+            // btnTransactions
             // 
-            Transaction_Btn.BackColor = Color.LightBlue;
-            Transaction_Btn.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Transaction_Btn.Location = new Point(0, 154);
-            Transaction_Btn.Name = "Transaction_Btn";
-            Transaction_Btn.Size = new Size(275, 106);
-            Transaction_Btn.TabIndex = 3;
-            Transaction_Btn.Text = "Transaction";
-            Transaction_Btn.UseVisualStyleBackColor = false;
-            Transaction_Btn.Click += Transaction_Btn_Click;
+            resources.ApplyResources(btnTransactions, "btnTransactions");
+            btnTransactions.FlatAppearance.BorderSize = 0;
+            btnTransactions.ForeColor = Color.FromArgb(236, 239, 244);
+            btnTransactions.IconChar = FontAwesome.Sharp.IconChar.Usd;
+            btnTransactions.IconColor = Color.FromArgb(236, 239, 244);
+            btnTransactions.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTransactions.IconSize = 32;
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.UseVisualStyleBackColor = true;
+            btnTransactions.Click += btnTransactions_Click;
             // 
-            // Dashboard_Btn
+            // btnDashboard
             // 
-            Dashboard_Btn.BackColor = Color.LightBlue;
-            Dashboard_Btn.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Dashboard_Btn.Location = new Point(0, 0);
-            Dashboard_Btn.Name = "Dashboard_Btn";
-            Dashboard_Btn.Size = new Size(275, 106);
-            Dashboard_Btn.TabIndex = 2;
-            Dashboard_Btn.Text = "Dashboard ";
-            Dashboard_Btn.UseVisualStyleBackColor = false;
-            Dashboard_Btn.Click += button1_Click;
+            resources.ApplyResources(btnDashboard, "btnDashboard");
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.ForeColor = Color.FromArgb(236, 239, 244);
+            btnDashboard.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            btnDashboard.IconColor = Color.FromArgb(236, 239, 244);
+            btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDashboard.IconSize = 32;
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
-            // panel3
+            // spacer1
             // 
-            panel3.Controls.Add(reportForm1);
-            panel3.Controls.Add(budgetingForm1);
-            panel3.Controls.Add(dashboardForm1);
-            panel3.Controls.Add(transactionForm1);
-            panel3.Location = new Point(278, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(861, 830);
-            panel3.TabIndex = 2;
+            spacer1.BackColor = Color.FromArgb(76, 86, 106);
+            resources.ApplyResources(spacer1, "spacer1");
+            spacer1.Name = "spacer1";
             // 
-            // reportForm1
+            // spacer2
             // 
-            reportForm1.BackColor = SystemColors.ControlLightLight;
-            reportForm1.Location = new Point(0, 3);
-            reportForm1.Name = "reportForm1";
-            reportForm1.Size = new Size(865, 1038);
-            reportForm1.TabIndex = 3;
+            resources.ApplyResources(spacer2, "spacer2");
+            spacer2.Name = "spacer2";
             // 
-            // budgetingForm1
+            // panelTopBar
             // 
-            budgetingForm1.BackColor = SystemColors.ControlLightLight;
-            budgetingForm1.Location = new Point(0, 0);
-            budgetingForm1.Name = "budgetingForm1";
-            budgetingForm1.Size = new Size(865, 1038);
-            budgetingForm1.TabIndex = 3;
+            panelTopBar.BackColor = Color.FromArgb(59, 66, 82);
+            panelTopBar.Controls.Add(iconExit);
+            panelTopBar.Controls.Add(iconMinimize);
+            panelTopBar.Controls.Add(iconMaximize);
+            resources.ApplyResources(panelTopBar, "panelTopBar");
+            panelTopBar.Name = "panelTopBar";
+            panelTopBar.MouseDown += panelTopBar_MouseDown;
             // 
-            // dashboardForm1
+            // iconExit
             // 
-            dashboardForm1.BackColor = Color.AliceBlue;
-            dashboardForm1.Location = new Point(0, 3);
-            dashboardForm1.Name = "dashboardForm1";
-            dashboardForm1.Size = new Size(865, 1038);
-            dashboardForm1.TabIndex = 1;
+            resources.ApplyResources(iconExit, "iconExit");
+            iconExit.BackColor = Color.FromArgb(59, 66, 82);
+            iconExit.FlatAppearance.BorderSize = 0;
+            iconExit.IconChar = FontAwesome.Sharp.IconChar.Close;
+            iconExit.IconColor = Color.FromArgb(236, 239, 244);
+            iconExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconExit.IconSize = 28;
+            iconExit.Name = "iconExit";
+            iconExit.UseVisualStyleBackColor = false;
+            iconExit.Click += iconExit_Click;
             // 
-            // transactionForm1
+            // iconMinimize
             // 
-            transactionForm1.AccessibleName = "";
-            transactionForm1.BackColor = Color.White;
-            transactionForm1.Location = new Point(0, 3);
-            transactionForm1.Name = "transactionForm1";
-            transactionForm1.Size = new Size(865, 1038);
-            transactionForm1.TabIndex = 0;
+            resources.ApplyResources(iconMinimize, "iconMinimize");
+            iconMinimize.BackColor = Color.FromArgb(59, 66, 82);
+            iconMinimize.FlatAppearance.BorderSize = 0;
+            iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            iconMinimize.IconColor = Color.FromArgb(236, 239, 244);
+            iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMinimize.IconSize = 28;
+            iconMinimize.Name = "iconMinimize";
+            iconMinimize.UseVisualStyleBackColor = false;
+            iconMinimize.Click += iconMinimize_Click;
             // 
-            // MainForm
+            // iconMaximize
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(iconMaximize, "iconMaximize");
+            iconMaximize.BackColor = Color.FromArgb(59, 66, 82);
+            iconMaximize.FlatAppearance.BorderSize = 0;
+            iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            iconMaximize.IconColor = Color.FromArgb(236, 239, 244);
+            iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMaximize.IconSize = 28;
+            iconMaximize.Name = "iconMaximize";
+            iconMaximize.UseVisualStyleBackColor = false;
+            iconMaximize.Click += iconMaximize_Click;
+            // 
+            // panelDesktop
+            // 
+            resources.ApplyResources(panelDesktop, "panelDesktop");
+            panelDesktop.Name = "panelDesktop";
+            // 
+            // iconApp
+            // 
+            iconApp.BackColor = Color.FromArgb(67, 76, 94);
+            resources.ApplyResources(iconApp, "iconApp");
+            iconApp.FlatAppearance.BorderSize = 0;
+            iconApp.ForeColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            iconApp.IconColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconApp.Name = "iconApp";
+            iconApp.UseVisualStyleBackColor = false;
+            // 
+            // mainForm
+            // 
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1139, 830);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "MainForm";
-            Text = "MainForm";
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            BackColor = Color.FromArgb(216, 222, 233);
+            Controls.Add(panelDesktop);
+            Controls.Add(panelTopBar);
+            Controls.Add(panelMenu);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "mainForm";
+            Load += mainForm_Load;
+            panelMenu.ResumeLayout(false);
+            panelTopBar.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private Button Dashboard_Btn;
-        private Button Budgeting_Btn;
-        private Button Transaction_Btn;
-        private Button LogOut_Btn;
-        private Button Report_Btn;
-        private Panel panel3;
-        private TransactionForm transactionForm1;
-        private DashboardForm dashboardForm1;
-        private ReportForm reportForm1;
-        private BudgetingForm budgetingForm1;
+        private Panel panelMenu;
+        private FontAwesome.Sharp.IconButton btnDashboard;
+        private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnSettings;
+        private FontAwesome.Sharp.IconButton btnCategories;
+        private FontAwesome.Sharp.IconButton btnBudgets;
+        private FontAwesome.Sharp.IconButton btnTransactions;
+        private Panel panelTopBar;
+        private FontAwesome.Sharp.IconButton iconMaximize;
+        private FontAwesome.Sharp.IconButton iconExit;
+        private FontAwesome.Sharp.IconButton iconMinimize;
+        private Panel spacer1;
+        private Panel panelDesktop;
+        private Panel spacer2;
+        private FontAwesome.Sharp.IconButton iconApp;
     }
 }

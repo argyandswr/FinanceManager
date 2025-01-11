@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PersonalFinanceManager.View
 {
-    public partial class BudgetingForm : UserControl
+    public partial class BudgetsForm : Form
     {
-        public BudgetingForm()
+        public BudgetsForm()
         {
             InitializeComponent();
         }
