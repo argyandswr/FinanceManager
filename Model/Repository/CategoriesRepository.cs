@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,22 @@ namespace PersonalFinanceManager.Model.Repository
                 System.Diagnostics.Debug.Print("GetID error: {0}", ex.Message);
             }
             return result;
+        }
+
+        public DataTable DisplayData()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            string sql = @"SELECT type AS Type, category_name AS Name, description AS Description, category_id AS ID FROM categories WHERE user_id = @user_id";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("user_id", GlobalVariable.UserID);
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+                return dt;
+            }
         }
 
         // Return category_id and name

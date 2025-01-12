@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             btnDelete = new FontAwesome.Sharp.IconButton();
-            panelBottom = new Panel();
             dataGridViewTransactions = new DataGridView();
             tableLayoutMain = new TableLayoutPanel();
             panelMainRight = new Panel();
@@ -56,13 +55,12 @@
             labelType = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnUpdate = new FontAwesome.Sharp.IconButton();
             btnAdd = new FontAwesome.Sharp.IconButton();
+            btnUpdate = new FontAwesome.Sharp.IconButton();
             panelMainLeft = new Panel();
             panelGridView = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnRefresh = new FontAwesome.Sharp.IconButton();
-            panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).BeginInit();
             tableLayoutMain.SuspendLayout();
             panelMainRight.SuspendLayout();
@@ -102,11 +100,11 @@
             btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             btnDelete.IconColor = Color.FromArgb(236, 239, 244);
             btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDelete.IconSize = 38;
-            btnDelete.Location = new Point(417, 0);
+            btnDelete.IconSize = 32;
+            btnDelete.Location = new Point(419, 480);
             btnDelete.Margin = new Padding(0);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(137, 50);
+            btnDelete.Size = new Size(137, 45);
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Delete";
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
@@ -114,54 +112,44 @@
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
-            // panelBottom
-            // 
-            panelBottom.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelBottom.Controls.Add(btnDelete);
-            panelBottom.ForeColor = SystemColors.ControlText;
-            panelBottom.Location = new Point(0, 508);
-            panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(579, 50);
-            panelBottom.TabIndex = 8;
-            // 
             // dataGridViewTransactions
             // 
             dataGridViewTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewTransactions.BackgroundColor = Color.FromArgb(216, 222, 233);
+            dataGridViewTransactions.BackgroundColor = Color.FromArgb(236, 239, 244);
             dataGridViewTransactions.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(236, 242, 253);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(46, 52, 64);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(236, 242, 253);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(46, 52, 64);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(216, 222, 233);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(46, 52, 64);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(216, 222, 233);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(46, 52, 64);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewTransactions.Dock = DockStyle.Fill;
             dataGridViewTransactions.GridColor = Color.Black;
             dataGridViewTransactions.Location = new Point(0, 0);
             dataGridViewTransactions.Margin = new Padding(0);
             dataGridViewTransactions.Name = "dataGridViewTransactions";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(236, 242, 253);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(236, 242, 253);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTransactions.RowHeadersWidth = 62;
-            dataGridViewTransactions.Size = new Size(579, 528);
+            dataGridViewTransactions.Size = new Size(582, 566);
             dataGridViewTransactions.TabIndex = 4;
             dataGridViewTransactions.RowHeaderMouseClick += dataGridViewTransactions_RowHeaderMouseClick;
             // 
@@ -175,10 +163,10 @@
             tableLayoutMain.Dock = DockStyle.Fill;
             tableLayoutMain.Location = new Point(0, 0);
             tableLayoutMain.Name = "tableLayoutMain";
-            tableLayoutMain.Padding = new Padding(1);
+            tableLayoutMain.Padding = new Padding(10);
             tableLayoutMain.RowCount = 1;
             tableLayoutMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutMain.Size = new Size(838, 614);
+            tableLayoutMain.Size = new Size(860, 670);
             tableLayoutMain.TabIndex = 9;
             // 
             // panelMainRight
@@ -187,15 +175,15 @@
             panelMainRight.Controls.Add(tableLayoutPanel3);
             panelMainRight.Controls.Add(tableLayoutPanel2);
             panelMainRight.Dock = DockStyle.Fill;
-            panelMainRight.Location = new Point(591, 6);
+            panelMainRight.Location = new Point(603, 15);
             panelMainRight.Margin = new Padding(5);
             panelMainRight.Name = "panelMainRight";
-            panelMainRight.Size = new Size(241, 602);
+            panelMainRight.Size = new Size(242, 640);
             panelMainRight.TabIndex = 5;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.BackColor = Color.FromArgb(196, 202, 213);
+            tableLayoutPanel3.BackColor = Color.FromArgb(216, 222, 233);
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Controls.Add(panel3, 0, 3);
@@ -214,7 +202,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 27.6575928F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6037178F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 2.96331358F));
-            tableLayoutPanel3.Size = new Size(241, 460);
+            tableLayoutPanel3.Size = new Size(242, 498);
             tableLayoutPanel3.TabIndex = 1;
             // 
             // panel3
@@ -222,9 +210,9 @@
             panel3.Controls.Add(comboBoxCategory);
             panel3.Controls.Add(labelCategory);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(3, 168);
+            panel3.Location = new Point(3, 181);
             panel3.Name = "panel3";
-            panel3.Size = new Size(235, 70);
+            panel3.Size = new Size(236, 76);
             panel3.TabIndex = 1;
             // 
             // comboBoxCategory
@@ -234,7 +222,7 @@
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Location = new Point(15, 38);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(205, 33);
+            comboBoxCategory.Size = new Size(206, 33);
             comboBoxCategory.TabIndex = 3;
             // 
             // labelCategory
@@ -244,7 +232,7 @@
             labelCategory.ForeColor = Color.FromArgb(59, 66, 82);
             labelCategory.Location = new Point(0, 0);
             labelCategory.Name = "labelCategory";
-            labelCategory.Size = new Size(235, 25);
+            labelCategory.Size = new Size(236, 25);
             labelCategory.TabIndex = 2;
             labelCategory.Text = "Category";
             labelCategory.TextAlign = ContentAlignment.MiddleCenter;
@@ -254,9 +242,9 @@
             panel4.Controls.Add(textBoxName);
             panel4.Controls.Add(labelName);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 16);
+            panel4.Location = new Point(3, 17);
             panel4.Name = "panel4";
-            panel4.Size = new Size(235, 70);
+            panel4.Size = new Size(236, 76);
             panel4.TabIndex = 2;
             // 
             // textBoxName
@@ -265,7 +253,7 @@
             textBoxName.BackColor = SystemColors.Window;
             textBoxName.Location = new Point(15, 40);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(205, 31);
+            textBoxName.Size = new Size(206, 31);
             textBoxName.TabIndex = 1;
             // 
             // labelName
@@ -275,7 +263,7 @@
             labelName.ForeColor = Color.FromArgb(59, 66, 82);
             labelName.Location = new Point(0, 0);
             labelName.Name = "labelName";
-            labelName.Size = new Size(235, 25);
+            labelName.Size = new Size(236, 25);
             labelName.TabIndex = 0;
             labelName.Text = "Name";
             labelName.TextAlign = ContentAlignment.MiddleCenter;
@@ -286,9 +274,9 @@
             panel5.Controls.Add(datePicker);
             panel5.Controls.Add(labelDate);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(3, 244);
+            panel5.Location = new Point(3, 263);
             panel5.Name = "panel5";
-            panel5.Size = new Size(235, 121);
+            panel5.Size = new Size(236, 131);
             panel5.TabIndex = 3;
             // 
             // timePicker
@@ -297,7 +285,7 @@
             timePicker.CalendarTrailingForeColor = Color.FromArgb(59, 66, 82);
             timePicker.Location = new Point(15, 88);
             timePicker.Name = "timePicker";
-            timePicker.Size = new Size(205, 31);
+            timePicker.Size = new Size(206, 31);
             timePicker.TabIndex = 5;
             // 
             // datePicker
@@ -306,7 +294,7 @@
             datePicker.CalendarTrailingForeColor = Color.FromArgb(59, 66, 82);
             datePicker.Location = new Point(15, 40);
             datePicker.Name = "datePicker";
-            datePicker.Size = new Size(205, 31);
+            datePicker.Size = new Size(206, 31);
             datePicker.TabIndex = 4;
             // 
             // labelDate
@@ -316,7 +304,7 @@
             labelDate.ForeColor = Color.FromArgb(59, 66, 82);
             labelDate.Location = new Point(0, 0);
             labelDate.Name = "labelDate";
-            labelDate.Size = new Size(235, 25);
+            labelDate.Size = new Size(236, 25);
             labelDate.TabIndex = 3;
             labelDate.Text = "Date";
             labelDate.TextAlign = ContentAlignment.MiddleCenter;
@@ -326,9 +314,9 @@
             panel6.Controls.Add(textBoxAmount);
             panel6.Controls.Add(labelAmount);
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(3, 371);
+            panel6.Location = new Point(3, 400);
             panel6.Name = "panel6";
-            panel6.Size = new Size(235, 70);
+            panel6.Size = new Size(236, 76);
             panel6.TabIndex = 4;
             // 
             // textBoxAmount
@@ -337,7 +325,7 @@
             textBoxAmount.BackColor = SystemColors.Window;
             textBoxAmount.Location = new Point(15, 40);
             textBoxAmount.Name = "textBoxAmount";
-            textBoxAmount.Size = new Size(205, 31);
+            textBoxAmount.Size = new Size(206, 31);
             textBoxAmount.TabIndex = 2;
             textBoxAmount.KeyPress += textBoxAmount_KeyPress;
             // 
@@ -348,7 +336,7 @@
             labelAmount.ForeColor = Color.FromArgb(59, 66, 82);
             labelAmount.Location = new Point(0, 0);
             labelAmount.Name = "labelAmount";
-            labelAmount.Size = new Size(235, 25);
+            labelAmount.Size = new Size(236, 25);
             labelAmount.TabIndex = 4;
             labelAmount.Text = "Amount";
             labelAmount.TextAlign = ContentAlignment.MiddleCenter;
@@ -358,9 +346,9 @@
             panel7.Controls.Add(comboBoxType);
             panel7.Controls.Add(labelType);
             panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(3, 92);
+            panel7.Location = new Point(3, 99);
             panel7.Name = "panel7";
-            panel7.Size = new Size(235, 70);
+            panel7.Size = new Size(236, 76);
             panel7.TabIndex = 5;
             // 
             // comboBoxType
@@ -371,7 +359,7 @@
             comboBoxType.Items.AddRange(new object[] { "Expense", "Income" });
             comboBoxType.Location = new Point(15, 38);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(205, 33);
+            comboBoxType.Size = new Size(206, 33);
             comboBoxType.TabIndex = 2;
             comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
             // 
@@ -382,25 +370,25 @@
             labelType.ForeColor = Color.FromArgb(59, 66, 82);
             labelType.Location = new Point(0, 0);
             labelType.Name = "labelType";
-            labelType.Size = new Size(235, 25);
+            labelType.Size = new Size(236, 25);
             labelType.TabIndex = 1;
             labelType.Text = "Type";
             labelType.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.BackColor = Color.FromArgb(196, 202, 213);
+            tableLayoutPanel2.BackColor = Color.FromArgb(216, 222, 233);
             tableLayoutPanel2.ColumnCount = 3;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel2.Controls.Add(flowLayoutPanel1, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Bottom;
-            tableLayoutPanel2.Location = new Point(0, 460);
+            tableLayoutPanel2.Location = new Point(0, 498);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(241, 142);
+            tableLayoutPanel2.Size = new Size(242, 142);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -410,31 +398,8 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(51, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(138, 136);
+            flowLayoutPanel1.Size = new Size(139, 136);
             flowLayoutPanel1.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnUpdate.BackColor = Color.FromArgb(76, 86, 106);
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnUpdate.ForeColor = Color.FromArgb(236, 239, 244);
-            btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnUpdate.IconColor = Color.FromArgb(236, 239, 244);
-            btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnUpdate.IconSize = 38;
-            btnUpdate.Location = new Point(5, 5);
-            btnUpdate.Margin = new Padding(5, 5, 5, 10);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(137, 50);
-            btnUpdate.TabIndex = 0;
-            btnUpdate.Text = "Update";
-            btnUpdate.TextAlign = ContentAlignment.MiddleRight;
-            btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -447,35 +412,58 @@
             btnAdd.IconChar = FontAwesome.Sharp.IconChar.Add;
             btnAdd.IconColor = Color.FromArgb(236, 239, 244);
             btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAdd.IconSize = 38;
-            btnAdd.Location = new Point(5, 70);
+            btnAdd.IconSize = 32;
+            btnAdd.Location = new Point(5, 65);
             btnAdd.Margin = new Padding(5, 5, 5, 10);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(137, 50);
+            btnAdd.Size = new Size(130, 45);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
             btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnUpdate.BackColor = Color.FromArgb(76, 86, 106);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnUpdate.ForeColor = Color.FromArgb(236, 239, 244);
+            btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnUpdate.IconColor = Color.FromArgb(236, 239, 244);
+            btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUpdate.IconSize = 32;
+            btnUpdate.Location = new Point(5, 5);
+            btnUpdate.Margin = new Padding(5, 5, 5, 10);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(130, 45);
+            btnUpdate.TabIndex = 0;
+            btnUpdate.Text = "Update";
+            btnUpdate.TextAlign = ContentAlignment.MiddleRight;
+            btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
             // panelMainLeft
             // 
-            panelMainLeft.Controls.Add(panelBottom);
             panelMainLeft.Controls.Add(panelGridView);
             panelMainLeft.Controls.Add(tableLayoutPanel1);
             panelMainLeft.Dock = DockStyle.Fill;
-            panelMainLeft.Location = new Point(4, 4);
+            panelMainLeft.Location = new Point(13, 13);
             panelMainLeft.Name = "panelMainLeft";
-            panelMainLeft.Size = new Size(579, 606);
+            panelMainLeft.Size = new Size(582, 644);
             panelMainLeft.TabIndex = 6;
             // 
             // panelGridView
             // 
+            panelGridView.Controls.Add(btnDelete);
             panelGridView.Controls.Add(dataGridViewTransactions);
-            panelGridView.Dock = DockStyle.Top;
+            panelGridView.Dock = DockStyle.Fill;
             panelGridView.Location = new Point(0, 78);
             panelGridView.Name = "panelGridView";
-            panelGridView.Size = new Size(579, 528);
+            panelGridView.Size = new Size(582, 566);
             panelGridView.TabIndex = 11;
             // 
             // tableLayoutPanel1
@@ -490,7 +478,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(579, 78);
+            tableLayoutPanel1.Size = new Size(582, 78);
             tableLayoutPanel1.TabIndex = 10;
             // 
             // btnRefresh
@@ -504,11 +492,11 @@
             btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Refresh;
             btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRefresh.IconSize = 38;
-            btnRefresh.Location = new Point(219, 13);
+            btnRefresh.IconSize = 32;
+            btnRefresh.Location = new Point(221, 18);
             btnRefresh.Margin = new Padding(0, 10, 0, 15);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(140, 50);
+            btnRefresh.Size = new Size(140, 45);
             btnRefresh.TabIndex = 9;
             btnRefresh.Text = "Refresh";
             btnRefresh.TextAlign = ContentAlignment.MiddleRight;
@@ -520,15 +508,14 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(216, 222, 233);
-            ClientSize = new Size(838, 614);
+            BackColor = Color.FromArgb(236, 239, 244);
+            ClientSize = new Size(860, 670);
             Controls.Add(tableLayoutMain);
             FormBorderStyle = FormBorderStyle.None;
             Name = "transactionsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "TransactionsForm";
             Load += transactionsForm_Load;
-            panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).EndInit();
             tableLayoutMain.ResumeLayout(false);
             panelMainRight.ResumeLayout(false);
@@ -551,7 +538,6 @@
         #endregion
         private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
         private FontAwesome.Sharp.IconButton btnDelete;
-        private Panel panelBottom;
         private DataGridView dataGridViewTransactions;
         private TableLayoutPanel tableLayoutMain;
         private Panel panelMainRight;
@@ -577,8 +563,8 @@
         private DateTimePicker timePicker;
         private DateTimePicker datePicker;
         private ComboBox comboBoxType;
-        private Panel panelGridView;
         private FontAwesome.Sharp.IconButton btnRefresh;
         private TableLayoutPanel tableLayoutPanel1;
+        private Panel panelGridView;
     }
 }

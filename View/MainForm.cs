@@ -44,7 +44,7 @@ namespace PersonalFinanceManager.View
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(86, 96, 116);
+                currentBtn.BackColor = Color.FromArgb(91, 103, 127);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -117,11 +117,6 @@ namespace PersonalFinanceManager.View
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
-                if (currentChildForm.Text == "transactionsForm")
-                {
-                    currentChildForm.Close();
-                    currentChildForm = new transactionsForm();
-                }
             }
             else
                 WindowState = FormWindowState.Normal;
@@ -130,22 +125,6 @@ namespace PersonalFinanceManager.View
         private void iconMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void MaximizeWindow()
-        {
-            var rectangle = Screen.FromControl(this).Bounds;
-            this.FormBorderStyle = FormBorderStyle.None;
-            Size = new Size(rectangle.Width, rectangle.Height);
-            Location = new Point(0, 0);
-            Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
-            this.Size = new Size(workingRectangle.Width, workingRectangle.Height);
-        }
-
-        private void ResizableWindow()
-        {
-            this.ControlBox = false;
-            this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -163,7 +142,7 @@ namespace PersonalFinanceManager.View
         private void btnBudgets_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorSnowWhite);
-            OpenChildForm(new BudgetsForm());
+            OpenChildForm(new budgetsForm());
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
@@ -175,6 +154,7 @@ namespace PersonalFinanceManager.View
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorSnowWhite);
+            OpenChildForm(new settingsForm());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

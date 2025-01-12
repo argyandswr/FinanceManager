@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager.View
 {
-    partial class BudgetsForm
+    partial class budgetsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,13 +40,13 @@
             label1.TabIndex = 0;
             label1.Text = "budgets";
             // 
-            // BudgetsForm
+            // budgetsForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 614);
             Controls.Add(label1);
-            Name = "BudgetsForm";
+            Name = "budgetsForm";
             Text = "BudgetsForm";
             ResumeLayout(false);
             PerformLayout();

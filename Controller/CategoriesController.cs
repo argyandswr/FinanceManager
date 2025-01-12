@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace PersonalFinanceManager.Controller
 {
     public class CategoriesController
     {
-        private CategoriesRepository _categoriesRepository;
+        private CategoriesRepository _repository;
 
         public List<Categories> GetCategories(string type)
         {
             using (DbContext context = new DbContext())
             {
-                _categoriesRepository = new CategoriesRepository(context);
-                return _categoriesRepository.GetCategories(type);
+                _repository = new CategoriesRepository(context);
+                return _repository.GetCategories(type);
             }
         }
 
@@ -27,7 +28,16 @@ namespace PersonalFinanceManager.Controller
         {
             using (DbContext dbContext = new DbContext())
             {
-                return _categoriesRepository.GetID(category_name);
+                return _repository.GetID(category_name);
+            }
+        }
+
+        public DataTable DisplayData()
+        {
+            using (DbContext context = new DbContext())
+            {
+                _repository = new CategoriesRepository(context);
+                return _repository.DisplayData();
             }
         }
     }

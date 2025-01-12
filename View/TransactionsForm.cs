@@ -206,6 +206,7 @@ namespace PersonalFinanceManager.View
         {
             TransactionsController controller = new TransactionsController();
             dataGridViewTransactions.DataSource = controller.DisplayData();
+            dataGridViewTransactions.MaximumSize = panelGridView.Size;
 
             // Autosize column in datagrid view
             dataGridViewTransactions.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -213,7 +214,7 @@ namespace PersonalFinanceManager.View
             dataGridViewTransactions.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTransactions.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTransactions.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTransactions.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTransactions.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             for (int i = 0; i <= dataGridViewTransactions.Columns.Count - 1; i++)
             {
