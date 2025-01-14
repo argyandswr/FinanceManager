@@ -9,20 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.Model.Entity;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace PersonalFinanceManager.View
 {
     public partial class transactionsForm : Form
     {
-        // Keep track of DataGridView selected item
+        // Keep track of DataGridView selected filter and selected item
+        enum SelectedFilter
+        {
+            all,
+            today,
+            last7days
+        }
+
+        private SelectedFilter selectedFilter = SelectedFilter.today;
         private bool isRowSelected = false;
         private string selectedRowCategory;
-        int headerRowTransID = 0;
+        private int headerRowTransID = 0;
 
         public transactionsForm()
         {
             InitializeComponent();
-            DisplayData();
+            btnToday.PerformClick();
 
             // Bind categories data from database to category combo box
             comboBoxCategory.DisplayMember = "Name";
@@ -65,7 +74,6 @@ namespace PersonalFinanceManager.View
         private void dataGridViewTransactions_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ResetInput();
-            Transactions transactions = new Transactions();
             comboBoxType.SelectedItem = dataGridViewTransactions.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBoxName.Text = dataGridViewTransactions.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBoxAmount.Text = dataGridViewTransactions.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -116,7 +124,6 @@ namespace PersonalFinanceManager.View
 
 
         // CRUD
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text == "" || comboBoxCategory.SelectedIndex == -1 || comboBoxType.SelectedIndex == -1 || textBoxAmount.Text == "")
@@ -132,7 +139,7 @@ namespace PersonalFinanceManager.View
 
                 controller.Delete(transactions);
                 ResetInput();
-                DisplayData();
+                clickSelectedFilter();
             }
         }
 
@@ -158,7 +165,7 @@ namespace PersonalFinanceManager.View
 
                 controller.Update(transactions);
                 ResetInput();
-                DisplayData();
+                clickSelectedFilter();
             }
         }
 
@@ -183,13 +190,13 @@ namespace PersonalFinanceManager.View
 
                 controller.Create(transactions);
                 ResetInput();
-                DisplayData();
+                clickSelectedFilter();
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            DisplayData();
+            clickSelectedFilter();
         }
 
 
@@ -202,10 +209,10 @@ namespace PersonalFinanceManager.View
 
 
 
-        private void DisplayData()
+        private void DisplayData(DateTime startDate, DateTime endDate)
         {
             TransactionsController controller = new TransactionsController();
-            dataGridViewTransactions.DataSource = controller.DisplayData();
+            dataGridViewTransactions.DataSource = controller.DisplayData(startDate, endDate);
             dataGridViewTransactions.MaximumSize = panelGridView.Size;
 
             // Autosize column in datagrid view
@@ -238,6 +245,44 @@ namespace PersonalFinanceManager.View
             textBoxAmount.Clear();
         }
 
-        
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+            DateTime start = DateTime.Today;
+            DateTime end = DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59);
+            DisplayData(start, end);
+        }
+
+        private void btnLast7Days_Click(object sender, EventArgs e)
+        {
+            DisplayData(DateTime.Today.AddDays(-7), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
+        }
+
+        private void clickSelectedFilter()
+        {
+            if (selectedFilter == SelectedFilter.today)
+            {
+                btnToday.PerformClick();
+            }
+            else
+            {
+                btnLast7Days.PerformClick();
+            }
+        }
+
+
+
+        private bool btnCustomState = false;
+        private void btnCustom_Click(object sender, EventArgs e)
+        {
+            btnCustomState = !btnCustomState;
+            if (btnCustomState)
+            {
+                panelBtnCustom.Size = panelBtnCustom.MaximumSize;
+            }
+            else
+            {
+                panelBtnCustom.Size = panelBtnCustom.MinimumSize;
+            }
+        }
     }
 }

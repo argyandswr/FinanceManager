@@ -93,6 +93,15 @@ namespace PersonalFinanceManager.Controller
             }
         }
 
+        public DataTable DisplayData(DateTime startDate, DateTime endDate)
+        {
+            using (DbContext context = new DbContext())
+            {
+                _repository = new TransactionsRepository(context);
+                return _repository.DisplayData(startDate, endDate);
+            }
+        }
+
         public List<Transactions> ReadAll()
         {
             using (DbContext context = new DbContext())

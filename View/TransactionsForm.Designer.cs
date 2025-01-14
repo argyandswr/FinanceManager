@@ -55,12 +55,20 @@
             labelType = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnAdd = new FontAwesome.Sharp.IconButton();
             btnUpdate = new FontAwesome.Sharp.IconButton();
+            btnAdd = new FontAwesome.Sharp.IconButton();
             panelMainLeft = new Panel();
-            panelGridView = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            panelBtnCustom = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            btnCustom = new FontAwesome.Sharp.IconButton();
             btnRefresh = new FontAwesome.Sharp.IconButton();
+            btnLast7Days = new FontAwesome.Sharp.IconButton();
+            btnToday = new FontAwesome.Sharp.IconButton();
+            panelGridView = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).BeginInit();
             tableLayoutMain.SuspendLayout();
             panelMainRight.SuspendLayout();
@@ -73,8 +81,9 @@
             tableLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panelMainLeft.SuspendLayout();
-            panelGridView.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            panelBtnCustom.SuspendLayout();
+            panelGridView.SuspendLayout();
             SuspendLayout();
             // 
             // iconSplitButton1
@@ -101,7 +110,7 @@
             btnDelete.IconColor = Color.FromArgb(236, 239, 244);
             btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDelete.IconSize = 32;
-            btnDelete.Location = new Point(419, 480);
+            btnDelete.Location = new Point(419, 558);
             btnDelete.Margin = new Padding(0);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(137, 45);
@@ -114,6 +123,7 @@
             // 
             // dataGridViewTransactions
             // 
+            dataGridViewTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewTransactions.BackgroundColor = Color.FromArgb(236, 239, 244);
@@ -135,9 +145,8 @@
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(248, 249, 251);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewTransactions.Dock = DockStyle.Fill;
             dataGridViewTransactions.GridColor = Color.Black;
-            dataGridViewTransactions.Location = new Point(0, 0);
+            dataGridViewTransactions.Location = new Point(0, 68);
             dataGridViewTransactions.Margin = new Padding(0);
             dataGridViewTransactions.Name = "dataGridViewTransactions";
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -149,7 +158,7 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
             dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTransactions.RowHeadersWidth = 62;
-            dataGridViewTransactions.Size = new Size(582, 566);
+            dataGridViewTransactions.Size = new Size(582, 576);
             dataGridViewTransactions.TabIndex = 4;
             dataGridViewTransactions.RowHeaderMouseClick += dataGridViewTransactions_RowHeaderMouseClick;
             // 
@@ -401,28 +410,6 @@
             flowLayoutPanel1.Size = new Size(139, 136);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnAdd.BackColor = Color.FromArgb(76, 86, 106);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnAdd.ForeColor = Color.FromArgb(236, 239, 244);
-            btnAdd.IconChar = FontAwesome.Sharp.IconChar.Add;
-            btnAdd.IconColor = Color.FromArgb(236, 239, 244);
-            btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAdd.IconSize = 32;
-            btnAdd.Location = new Point(5, 65);
-            btnAdd.Margin = new Padding(5, 5, 5, 10);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(130, 45);
-            btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add";
-            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -446,45 +433,136 @@
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnAdd.BackColor = Color.FromArgb(76, 86, 106);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAdd.ForeColor = Color.FromArgb(236, 239, 244);
+            btnAdd.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnAdd.IconColor = Color.FromArgb(236, 239, 244);
+            btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdd.IconSize = 32;
+            btnAdd.Location = new Point(5, 65);
+            btnAdd.Margin = new Padding(5, 5, 5, 10);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(130, 45);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "Add";
+            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // panelMainLeft
             // 
-            panelMainLeft.Controls.Add(panelGridView);
             panelMainLeft.Controls.Add(tableLayoutPanel1);
+            panelMainLeft.Controls.Add(panelGridView);
             panelMainLeft.Dock = DockStyle.Fill;
             panelMainLeft.Location = new Point(13, 13);
             panelMainLeft.Name = "panelMainLeft";
             panelMainLeft.Size = new Size(582, 644);
             panelMainLeft.TabIndex = 6;
             // 
-            // panelGridView
-            // 
-            panelGridView.Controls.Add(btnDelete);
-            panelGridView.Controls.Add(dataGridViewTransactions);
-            panelGridView.Dock = DockStyle.Fill;
-            panelGridView.Location = new Point(0, 78);
-            panelGridView.Name = "panelGridView";
-            panelGridView.Size = new Size(582, 566);
-            panelGridView.TabIndex = 11;
-            // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 9;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.Controls.Add(panelBtnCustom, 7, 0);
             tableLayoutPanel1.Controls.Add(btnRefresh, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Controls.Add(btnLast7Days, 5, 0);
+            tableLayoutPanel1.Controls.Add(btnToday, 3, 0);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(582, 78);
+            tableLayoutPanel1.Size = new Size(582, 240);
             tableLayoutPanel1.TabIndex = 10;
+            // 
+            // panelBtnCustom
+            // 
+            panelBtnCustom.Controls.Add(label2);
+            panelBtnCustom.Controls.Add(label1);
+            panelBtnCustom.Controls.Add(dateTimePicker2);
+            panelBtnCustom.Controls.Add(dateTimePicker1);
+            panelBtnCustom.Controls.Add(btnCustom);
+            panelBtnCustom.Location = new Point(447, 0);
+            panelBtnCustom.Margin = new Padding(0);
+            panelBtnCustom.MaximumSize = new Size(120, 237);
+            panelBtnCustom.MinimumSize = new Size(120, 50);
+            panelBtnCustom.Name = "panelBtnCustom";
+            panelBtnCustom.Size = new Size(120, 50);
+            panelBtnCustom.TabIndex = 12;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Location = new Point(0, 143);
+            label2.Name = "label2";
+            label2.Size = new Size(120, 31);
+            label2.TabIndex = 16;
+            label2.Text = "End Date";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Location = new Point(0, 63);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 31);
+            label1.TabIndex = 15;
+            label1.Text = "Start Date";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(3, 180);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(114, 31);
+            dateTimePicker2.TabIndex = 14;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(3, 102);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(114, 31);
+            dateTimePicker1.TabIndex = 13;
+            // 
+            // btnCustom
+            // 
+            btnCustom.BackColor = Color.FromArgb(76, 86, 106);
+            btnCustom.FlatAppearance.BorderSize = 0;
+            btnCustom.FlatStyle = FlatStyle.Flat;
+            btnCustom.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCustom.ForeColor = Color.FromArgb(236, 239, 244);
+            btnCustom.IconChar = FontAwesome.Sharp.IconChar.Sliders;
+            btnCustom.IconColor = Color.FromArgb(236, 239, 244);
+            btnCustom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCustom.IconSize = 32;
+            btnCustom.Location = new Point(0, 10);
+            btnCustom.Margin = new Padding(0, 10, 0, 15);
+            btnCustom.Name = "btnCustom";
+            btnCustom.Size = new Size(120, 40);
+            btnCustom.TabIndex = 12;
+            btnCustom.Text = "Custom";
+            btnCustom.TextAlign = ContentAlignment.MiddleRight;
+            btnCustom.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCustom.UseVisualStyleBackColor = false;
+            btnCustom.Click += btnCustom_Click;
             // 
             // btnRefresh
             // 
             btnRefresh.BackColor = Color.FromArgb(76, 86, 106);
-            btnRefresh.Dock = DockStyle.Bottom;
             btnRefresh.FlatAppearance.BorderSize = 0;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
@@ -493,16 +571,70 @@
             btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRefresh.IconSize = 32;
-            btnRefresh.Location = new Point(221, 18);
+            btnRefresh.Location = new Point(26, 10);
             btnRefresh.Margin = new Padding(0, 10, 0, 15);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(140, 45);
+            btnRefresh.Size = new Size(120, 40);
             btnRefresh.TabIndex = 9;
             btnRefresh.Text = "Refresh";
             btnRefresh.TextAlign = ContentAlignment.MiddleRight;
             btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
+            // 
+            // btnLast7Days
+            // 
+            btnLast7Days.BackColor = Color.FromArgb(76, 86, 106);
+            btnLast7Days.FlatAppearance.BorderSize = 0;
+            btnLast7Days.FlatStyle = FlatStyle.Flat;
+            btnLast7Days.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLast7Days.ForeColor = Color.FromArgb(236, 239, 244);
+            btnLast7Days.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            btnLast7Days.IconColor = Color.FromArgb(236, 239, 244);
+            btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLast7Days.IconSize = 32;
+            btnLast7Days.Location = new Point(287, 10);
+            btnLast7Days.Margin = new Padding(0, 10, 0, 15);
+            btnLast7Days.Name = "btnLast7Days";
+            btnLast7Days.Size = new Size(150, 40);
+            btnLast7Days.TabIndex = 11;
+            btnLast7Days.Text = "Last 7 Days";
+            btnLast7Days.TextAlign = ContentAlignment.MiddleRight;
+            btnLast7Days.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLast7Days.UseVisualStyleBackColor = false;
+            btnLast7Days.Click += btnLast7Days_Click;
+            // 
+            // btnToday
+            // 
+            btnToday.BackColor = Color.FromArgb(76, 86, 106);
+            btnToday.FlatAppearance.BorderSize = 0;
+            btnToday.FlatStyle = FlatStyle.Flat;
+            btnToday.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnToday.ForeColor = Color.FromArgb(236, 239, 244);
+            btnToday.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            btnToday.IconColor = Color.FromArgb(236, 239, 244);
+            btnToday.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnToday.IconSize = 32;
+            btnToday.Location = new Point(172, 10);
+            btnToday.Margin = new Padding(0, 10, 0, 15);
+            btnToday.Name = "btnToday";
+            btnToday.Size = new Size(105, 40);
+            btnToday.TabIndex = 10;
+            btnToday.Text = "Today";
+            btnToday.TextAlign = ContentAlignment.MiddleRight;
+            btnToday.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnToday.UseVisualStyleBackColor = false;
+            btnToday.Click += btnToday_Click;
+            // 
+            // panelGridView
+            // 
+            panelGridView.Controls.Add(dataGridViewTransactions);
+            panelGridView.Controls.Add(btnDelete);
+            panelGridView.Dock = DockStyle.Fill;
+            panelGridView.Location = new Point(0, 0);
+            panelGridView.Name = "panelGridView";
+            panelGridView.Size = new Size(582, 644);
+            panelGridView.TabIndex = 11;
             // 
             // transactionsForm
             // 
@@ -530,8 +662,9 @@
             tableLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panelMainLeft.ResumeLayout(false);
-            panelGridView.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            panelBtnCustom.ResumeLayout(false);
+            panelGridView.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -566,5 +699,13 @@
         private FontAwesome.Sharp.IconButton btnRefresh;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panelGridView;
+        private FontAwesome.Sharp.IconButton btnLast7Days;
+        private FontAwesome.Sharp.IconButton btnToday;
+        private FontAwesome.Sharp.IconButton btnCustom;
+        private Panel panelBtnCustom;
+        private Label label1;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private Label label2;
     }
 }

@@ -19,6 +19,81 @@ namespace PersonalFinanceManager.Model.Repository
             _conn = context.Conn;
         }
 
+        public int Create(Categories categories)
+        {
+            int result = 0;
+
+            string sql = @"INSERT INTO categories (user_id, type, category_name, description)
+                         VALUES (@user_id, @type, @category_name, @description)";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@user_id", categories.UserID);
+                cmd.Parameters.AddWithValue("@type", categories.Type);
+                cmd.Parameters.AddWithValue("@category_name", categories.Name);
+                cmd.Parameters.AddWithValue("@description", categories.Description);
+
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+
+        public int Update(Categories categories)
+        {
+            int result = 0;
+
+            string sql = @"UPDATE categories SET user_id=@user_id, type=@type, category_name=@category_name, description=@description
+                         WHERE category_id=@category_id";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@user_id", categories.UserID);
+                cmd.Parameters.AddWithValue("@type", categories.Type);
+                cmd.Parameters.AddWithValue("@category_name", categories.Name);
+                cmd.Parameters.AddWithValue("@description", categories.Description);
+                cmd.Parameters.AddWithValue("@category_id", categories.CategoryID);
+
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Update error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+
+        public int Delete(Categories categories)
+        {
+            int result = 0;
+
+            string sql = @"DELETE FROM categories WHERE category_id = @category_id";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@category_id", categories.CategoryID);
+
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+
         public int GetID(string category_name)
         {
             string sql = @"SELECT category_id FROM categories WHERE category_name = @category_name";

@@ -32,8 +32,8 @@
             panelDesktop = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnRefresh = new FontAwesome.Sharp.IconButton();
-            btnDelete = new FontAwesome.Sharp.IconButton();
             panelDataGridView = new Panel();
+            btnDelete = new FontAwesome.Sharp.IconButton();
             dataGridViewCategories = new DataGridView();
             panelMenu = new Panel();
             tableLayoutPanelMenu = new TableLayoutPanel();
@@ -43,16 +43,16 @@
             panelMenuName = new Panel();
             panel2 = new Panel();
             addButtonSpacer = new TableLayoutPanel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnAdd = new FontAwesome.Sharp.IconButton();
             menuNameSpacer = new Panel();
             textBoxName = new TextBox();
             labelName = new Label();
             panelMenuType = new Panel();
             panel1 = new Panel();
             typeBtnSpacer = new TableLayoutPanel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            btnUpdate = new FontAwesome.Sharp.IconButton();
             menuTypeSpacer = new Panel();
-            comboBox1 = new ComboBox();
+            comboBoxType = new ComboBox();
             labelType = new Label();
             tableLayoutPanelMain.SuspendLayout();
             panelDesktop.SuspendLayout();
@@ -138,6 +138,16 @@
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
+            // panelDataGridView
+            // 
+            panelDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelDataGridView.Controls.Add(btnDelete);
+            panelDataGridView.Controls.Add(dataGridViewCategories);
+            panelDataGridView.Location = new Point(0, 63);
+            panelDataGridView.Name = "panelDataGridView";
+            panelDataGridView.Size = new Size(608, 367);
+            panelDataGridView.TabIndex = 3;
+            // 
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -159,16 +169,7 @@
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // panelDataGridView
-            // 
-            panelDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelDataGridView.Controls.Add(btnDelete);
-            panelDataGridView.Controls.Add(dataGridViewCategories);
-            panelDataGridView.Location = new Point(0, 63);
-            panelDataGridView.Name = "panelDataGridView";
-            panelDataGridView.Size = new Size(608, 367);
-            panelDataGridView.TabIndex = 3;
+            btnDelete.Click += btnDelete_Click;
             // 
             // dataGridViewCategories
             // 
@@ -181,6 +182,7 @@
             dataGridViewCategories.RowHeadersWidth = 62;
             dataGridViewCategories.Size = new Size(608, 367);
             dataGridViewCategories.TabIndex = 1;
+            dataGridViewCategories.RowHeaderMouseClick += dataGridViewCategories_RowHeaderMouseClick;
             // 
             // panelMenu
             // 
@@ -230,7 +232,6 @@
             labelDescription.TabIndex = 5;
             labelDescription.Text = "Description";
             labelDescription.TextAlign = ContentAlignment.MiddleCenter;
-            labelDescription.Click += label3_Click;
             // 
             // richTextBoxDescription
             // 
@@ -267,7 +268,7 @@
             addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
             addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
             addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            addButtonSpacer.Controls.Add(iconButton1, 1, 1);
+            addButtonSpacer.Controls.Add(btnAdd, 1, 1);
             addButtonSpacer.Dock = DockStyle.Fill;
             addButtonSpacer.Location = new Point(0, 0);
             addButtonSpacer.Name = "addButtonSpacer";
@@ -278,27 +279,28 @@
             addButtonSpacer.Size = new Size(176, 95);
             addButtonSpacer.TabIndex = 5;
             // 
-            // iconButton1
+            // btnAdd
             // 
-            iconButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            iconButton1.BackColor = Color.FromArgb(76, 86, 106);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            iconButton1.ForeColor = Color.FromArgb(236, 239, 244);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Add;
-            iconButton1.IconColor = Color.FromArgb(236, 239, 244);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 32;
-            iconButton1.Location = new Point(15, 25);
-            iconButton1.Margin = new Padding(0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(137, 45);
-            iconButton1.TabIndex = 9;
-            iconButton1.Text = "Add";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.BackColor = Color.FromArgb(76, 86, 106);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAdd.ForeColor = Color.FromArgb(236, 239, 244);
+            btnAdd.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnAdd.IconColor = Color.FromArgb(236, 239, 244);
+            btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdd.IconSize = 32;
+            btnAdd.Location = new Point(15, 25);
+            btnAdd.Margin = new Padding(0);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(137, 45);
+            btnAdd.TabIndex = 9;
+            btnAdd.Text = "Add";
+            btnAdd.TextAlign = ContentAlignment.MiddleRight;
+            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // menuNameSpacer
             // 
@@ -354,7 +356,7 @@
             typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
             typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
-            typeBtnSpacer.Controls.Add(iconButton2, 1, 1);
+            typeBtnSpacer.Controls.Add(btnUpdate, 1, 1);
             typeBtnSpacer.Dock = DockStyle.Fill;
             typeBtnSpacer.Location = new Point(0, 0);
             typeBtnSpacer.Name = "typeBtnSpacer";
@@ -365,45 +367,47 @@
             typeBtnSpacer.Size = new Size(176, 93);
             typeBtnSpacer.TabIndex = 11;
             // 
-            // iconButton2
+            // btnUpdate
             // 
-            iconButton2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            iconButton2.BackColor = Color.FromArgb(76, 86, 106);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            iconButton2.ForeColor = Color.FromArgb(236, 239, 244);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            iconButton2.IconColor = Color.FromArgb(236, 239, 244);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 32;
-            iconButton2.Location = new Point(24, 24);
-            iconButton2.Margin = new Padding(0);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(137, 45);
-            iconButton2.TabIndex = 10;
-            iconButton2.Text = "Update";
-            iconButton2.TextAlign = ContentAlignment.MiddleRight;
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = false;
+            btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnUpdate.BackColor = Color.FromArgb(76, 86, 106);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnUpdate.ForeColor = Color.FromArgb(236, 239, 244);
+            btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnUpdate.IconColor = Color.FromArgb(236, 239, 244);
+            btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUpdate.IconSize = 32;
+            btnUpdate.Location = new Point(24, 24);
+            btnUpdate.Margin = new Padding(0);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(137, 45);
+            btnUpdate.TabIndex = 10;
+            btnUpdate.Text = "Update";
+            btnUpdate.TextAlign = ContentAlignment.MiddleRight;
+            btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // menuTypeSpacer
             // 
-            menuTypeSpacer.Controls.Add(comboBox1);
+            menuTypeSpacer.Controls.Add(comboBoxType);
             menuTypeSpacer.Dock = DockStyle.Top;
             menuTypeSpacer.Location = new Point(0, 50);
             menuTypeSpacer.Name = "menuTypeSpacer";
             menuTypeSpacer.Size = new Size(176, 33);
             menuTypeSpacer.TabIndex = 3;
             // 
-            // comboBox1
+            // comboBoxType
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(11, 0);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(155, 33);
-            comboBox1.TabIndex = 2;
+            comboBoxType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Items.AddRange(new object[] { "Expense", "Income" });
+            comboBoxType.Location = new Point(11, 0);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(155, 33);
+            comboBoxType.TabIndex = 2;
             // 
             // labelType
             // 
@@ -455,7 +459,7 @@
         private Label labelDescription;
         private Label labelName;
         private Label labelType;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxType;
         private RichTextBox richTextBoxDescription;
         private TextBox textBoxName;
         private FontAwesome.Sharp.IconButton btnDelete;
@@ -463,8 +467,8 @@
         private Panel panelMenuDescription;
         private Panel panelMenuName;
         private Panel panelMenuType;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnAdd;
+        private FontAwesome.Sharp.IconButton btnUpdate;
         private TableLayoutPanel addButtonSpacer;
         private TableLayoutPanel typeBtnSpacer;
         private Panel menuNameSpacer;

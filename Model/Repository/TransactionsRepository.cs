@@ -116,6 +116,28 @@ namespace PersonalFinanceManager.Model.Repository
             }
         }
 
+        public DataTable DisplayData(DateTime startDate, DateTime endDate)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            string sql = @"SELECT t.type AS Type, transaction_name AS Name, amount AS Amount, category_name AS Category, date AS Date, transaction_id AS ID
+                           FROM transactions t
+                           JOIN categories c ON t.category_id = c.category_id
+                           WHERE t.user_id = @user_id AND t.date BETWEEN @startDate AND @endDate";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("user_id", GlobalVariable.UserID);
+                cmd.Parameters.AddWithValue("startDate", startDate);
+                cmd.Parameters.AddWithValue("endDate", endDate);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
         public List<Transactions> ReadAll()
         {
             List<Transactions> list = new List<Transactions>();
