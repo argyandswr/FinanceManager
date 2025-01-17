@@ -30,20 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             panelMenu = new Panel();
-            btnLogout = new FontAwesome.Sharp.IconButton();
             btnSettings = new FontAwesome.Sharp.IconButton();
-            btnCategories = new FontAwesome.Sharp.IconButton();
-            btnBudgets = new FontAwesome.Sharp.IconButton();
             btnTransactions = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
-            spacer1 = new Panel();
-            spacer2 = new Panel();
+            spacerPanel1 = new Panel();
+            iconApp = new FontAwesome.Sharp.IconButton();
+            btnLogout = new FontAwesome.Sharp.IconButton();
+            spacerPanel2 = new Panel();
             panelTopBar = new Panel();
             iconExit = new FontAwesome.Sharp.IconButton();
             iconMinimize = new FontAwesome.Sharp.IconButton();
             iconMaximize = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
-            iconApp = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelTopBar.SuspendLayout();
             SuspendLayout();
@@ -51,31 +49,16 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(76, 86, 106);
-            panelMenu.Controls.Add(btnLogout);
             panelMenu.Controls.Add(btnSettings);
-            panelMenu.Controls.Add(btnCategories);
-            panelMenu.Controls.Add(btnBudgets);
             panelMenu.Controls.Add(btnTransactions);
             panelMenu.Controls.Add(btnDashboard);
-            panelMenu.Controls.Add(spacer1);
-            panelMenu.Controls.Add(spacer2);
+            panelMenu.Controls.Add(spacerPanel1);
             panelMenu.Controls.Add(iconApp);
+            panelMenu.Controls.Add(btnLogout);
+            panelMenu.Controls.Add(spacerPanel2);
             resources.ApplyResources(panelMenu, "panelMenu");
             panelMenu.ForeColor = SystemColors.ControlText;
             panelMenu.Name = "panelMenu";
-            // 
-            // btnLogout
-            // 
-            resources.ApplyResources(btnLogout, "btnLogout");
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.ForeColor = Color.FromArgb(236, 239, 244);
-            btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            btnLogout.IconColor = Color.FromArgb(236, 239, 244);
-            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLogout.IconSize = 32;
-            btnLogout.Name = "btnLogout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
             // 
             // btnSettings
             // 
@@ -89,32 +72,6 @@
             btnSettings.Name = "btnSettings";
             btnSettings.UseVisualStyleBackColor = true;
             btnSettings.Click += btnSettings_Click;
-            // 
-            // btnCategories
-            // 
-            resources.ApplyResources(btnCategories, "btnCategories");
-            btnCategories.FlatAppearance.BorderSize = 0;
-            btnCategories.ForeColor = Color.FromArgb(236, 239, 244);
-            btnCategories.IconChar = FontAwesome.Sharp.IconChar.ListSquares;
-            btnCategories.IconColor = Color.FromArgb(236, 239, 244);
-            btnCategories.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCategories.IconSize = 32;
-            btnCategories.Name = "btnCategories";
-            btnCategories.UseVisualStyleBackColor = true;
-            btnCategories.Click += btnCategories_Click;
-            // 
-            // btnBudgets
-            // 
-            resources.ApplyResources(btnBudgets, "btnBudgets");
-            btnBudgets.FlatAppearance.BorderSize = 0;
-            btnBudgets.ForeColor = Color.FromArgb(236, 239, 244);
-            btnBudgets.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            btnBudgets.IconColor = Color.FromArgb(236, 239, 244);
-            btnBudgets.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnBudgets.IconSize = 32;
-            btnBudgets.Name = "btnBudgets";
-            btnBudgets.UseVisualStyleBackColor = true;
-            btnBudgets.Click += btnBudgets_Click;
             // 
             // btnTransactions
             // 
@@ -142,16 +99,41 @@
             btnDashboard.UseVisualStyleBackColor = true;
             btnDashboard.Click += btnDashboard_Click;
             // 
-            // spacer1
+            // spacerPanel1
             // 
-            spacer1.BackColor = Color.FromArgb(76, 86, 106);
-            resources.ApplyResources(spacer1, "spacer1");
-            spacer1.Name = "spacer1";
+            spacerPanel1.BackColor = Color.FromArgb(76, 86, 106);
+            resources.ApplyResources(spacerPanel1, "spacerPanel1");
+            spacerPanel1.Name = "spacerPanel1";
             // 
-            // spacer2
+            // iconApp
             // 
-            resources.ApplyResources(spacer2, "spacer2");
-            spacer2.Name = "spacer2";
+            iconApp.BackColor = Color.FromArgb(67, 76, 94);
+            resources.ApplyResources(iconApp, "iconApp");
+            iconApp.FlatAppearance.BorderSize = 0;
+            iconApp.ForeColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            iconApp.IconColor = Color.FromArgb(248, 249, 251);
+            iconApp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconApp.Name = "iconApp";
+            iconApp.UseVisualStyleBackColor = false;
+            // 
+            // btnLogout
+            // 
+            resources.ApplyResources(btnLogout, "btnLogout");
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.ForeColor = Color.FromArgb(236, 239, 244);
+            btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            btnLogout.IconColor = Color.FromArgb(236, 239, 244);
+            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogout.IconSize = 32;
+            btnLogout.Name = "btnLogout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // spacerPanel2
+            // 
+            resources.ApplyResources(spacerPanel2, "spacerPanel2");
+            spacerPanel2.Name = "spacerPanel2";
             // 
             // panelTopBar
             // 
@@ -204,20 +186,9 @@
             // 
             // panelDesktop
             // 
+            panelDesktop.BackColor = Color.FromArgb(236, 239, 244);
             resources.ApplyResources(panelDesktop, "panelDesktop");
             panelDesktop.Name = "panelDesktop";
-            // 
-            // iconApp
-            // 
-            iconApp.BackColor = Color.FromArgb(67, 76, 94);
-            resources.ApplyResources(iconApp, "iconApp");
-            iconApp.FlatAppearance.BorderSize = 0;
-            iconApp.ForeColor = Color.FromArgb(248, 249, 251);
-            iconApp.IconChar = FontAwesome.Sharp.IconChar.Coins;
-            iconApp.IconColor = Color.FromArgb(248, 249, 251);
-            iconApp.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconApp.Name = "iconApp";
-            iconApp.UseVisualStyleBackColor = false;
             // 
             // mainForm
             // 
@@ -229,7 +200,6 @@
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mainForm";
-            Load += mainForm_Load;
             panelMenu.ResumeLayout(false);
             panelTopBar.ResumeLayout(false);
             ResumeLayout(false);
@@ -248,9 +218,9 @@
         private FontAwesome.Sharp.IconButton iconMaximize;
         private FontAwesome.Sharp.IconButton iconExit;
         private FontAwesome.Sharp.IconButton iconMinimize;
-        private Panel spacer1;
+        private Panel spacerPanel1;
         private Panel panelDesktop;
-        private Panel spacer2;
+        private Panel spacerPanel2;
         private FontAwesome.Sharp.IconButton iconApp;
     }
 }
