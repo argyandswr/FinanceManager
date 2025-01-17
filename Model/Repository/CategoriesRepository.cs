@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using Microsoft.Data.SqlClient;
 using PersonalFinanceManager.Model.Context;
 using PersonalFinanceManager.Model.Entity;
@@ -141,7 +136,7 @@ namespace PersonalFinanceManager.Model.Repository
         {
             List<Categories> list = new List<Categories>();
 
-            string sql = @"SELECT category_id, category_name FROM categories WHERE user_id = @user_id AND type = @type";
+            string sql = @"SELECT category_id, category_name FROM categories WHERE user_id = @user_id AND type = @type ORDER BY category_name";
 
             try
             {
@@ -169,6 +164,25 @@ namespace PersonalFinanceManager.Model.Repository
             }
             
             return list;
+        }
+
+        // Return 
+        public DataTable GetIndexCategories(string type)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            string sql = @"SELECT ROW_NUMBER() OVER(ORDER BY category_name) AS 'Index', category_name AS Name, category_id AS Id FROM categories WHERE user_id = @user_id AND type = @type";
+
+            using (SqlCommand cmd = new SqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@user_id", GlobalVariable.UserID);
+                cmd.Parameters.AddWithValue("@type", type);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+                return dt;
+            }
         }
     }
 }

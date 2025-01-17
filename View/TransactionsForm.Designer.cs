@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             btnDelete = new FontAwesome.Sharp.IconButton();
             dataGridViewTransactions = new DataGridView();
@@ -58,17 +58,18 @@
             btnUpdate = new FontAwesome.Sharp.IconButton();
             btnAdd = new FontAwesome.Sharp.IconButton();
             panelMainLeft = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            panelGridView = new Panel();
             panelBtnCustom = new Panel();
+            btnOk = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             label1 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerEnd = new DateTimePicker();
+            dateTimePickerStart = new DateTimePicker();
             btnCustom = new FontAwesome.Sharp.IconButton();
-            btnRefresh = new FontAwesome.Sharp.IconButton();
-            btnLast7Days = new FontAwesome.Sharp.IconButton();
             btnToday = new FontAwesome.Sharp.IconButton();
-            panelGridView = new Panel();
+            btnLast7Days = new FontAwesome.Sharp.IconButton();
+            tableLayoutPanelTopButton = new TableLayoutPanel();
+            btnRefresh = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).BeginInit();
             tableLayoutMain.SuspendLayout();
             panelMainRight.SuspendLayout();
@@ -81,9 +82,9 @@
             tableLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panelMainLeft.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            panelBtnCustom.SuspendLayout();
             panelGridView.SuspendLayout();
+            panelBtnCustom.SuspendLayout();
+            tableLayoutPanelTopButton.SuspendLayout();
             SuspendLayout();
             // 
             // iconSplitButton1
@@ -128,35 +129,35 @@
             dataGridViewTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewTransactions.BackgroundColor = Color.FromArgb(236, 239, 244);
             dataGridViewTransactions.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(236, 242, 253);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(46, 52, 64);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridViewTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(236, 242, 253);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(46, 52, 64);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(216, 222, 233);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(46, 52, 64);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(216, 222, 233);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(46, 52, 64);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTransactions.GridColor = Color.Black;
             dataGridViewTransactions.Location = new Point(0, 68);
             dataGridViewTransactions.Margin = new Padding(0);
             dataGridViewTransactions.Name = "dataGridViewTransactions";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(236, 242, 253);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(94, 129, 172);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(248, 249, 251);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(236, 242, 253);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(94, 129, 172);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(248, 249, 251);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewTransactions.RowHeadersWidth = 62;
             dataGridViewTransactions.Size = new Size(582, 576);
             dataGridViewTransactions.TabIndex = 4;
@@ -457,7 +458,6 @@
             // 
             // panelMainLeft
             // 
-            panelMainLeft.Controls.Add(tableLayoutPanel1);
             panelMainLeft.Controls.Add(panelGridView);
             panelMainLeft.Dock = DockStyle.Fill;
             panelMainLeft.Location = new Point(13, 13);
@@ -465,44 +465,58 @@
             panelMainLeft.Size = new Size(582, 644);
             panelMainLeft.TabIndex = 6;
             // 
-            // tableLayoutPanel1
+            // panelGridView
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 9;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Controls.Add(panelBtnCustom, 7, 0);
-            tableLayoutPanel1.Controls.Add(btnRefresh, 1, 0);
-            tableLayoutPanel1.Controls.Add(btnLast7Days, 5, 0);
-            tableLayoutPanel1.Controls.Add(btnToday, 3, 0);
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(582, 240);
-            tableLayoutPanel1.TabIndex = 10;
+            panelGridView.Controls.Add(panelBtnCustom);
+            panelGridView.Controls.Add(btnToday);
+            panelGridView.Controls.Add(btnLast7Days);
+            panelGridView.Controls.Add(tableLayoutPanelTopButton);
+            panelGridView.Controls.Add(dataGridViewTransactions);
+            panelGridView.Controls.Add(btnDelete);
+            panelGridView.Dock = DockStyle.Fill;
+            panelGridView.Location = new Point(0, 0);
+            panelGridView.Name = "panelGridView";
+            panelGridView.Size = new Size(582, 644);
+            panelGridView.TabIndex = 11;
             // 
             // panelBtnCustom
             // 
+            panelBtnCustom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelBtnCustom.Controls.Add(btnOk);
             panelBtnCustom.Controls.Add(label2);
             panelBtnCustom.Controls.Add(label1);
-            panelBtnCustom.Controls.Add(dateTimePicker2);
-            panelBtnCustom.Controls.Add(dateTimePicker1);
+            panelBtnCustom.Controls.Add(dateTimePickerEnd);
+            panelBtnCustom.Controls.Add(dateTimePickerStart);
             panelBtnCustom.Controls.Add(btnCustom);
-            panelBtnCustom.Location = new Point(447, 0);
+            panelBtnCustom.Location = new Point(453, 0);
             panelBtnCustom.Margin = new Padding(0);
-            panelBtnCustom.MaximumSize = new Size(120, 237);
+            panelBtnCustom.MaximumSize = new Size(120, 290);
             panelBtnCustom.MinimumSize = new Size(120, 50);
             panelBtnCustom.Name = "panelBtnCustom";
-            panelBtnCustom.Size = new Size(120, 50);
+            panelBtnCustom.Size = new Size(120, 52);
             panelBtnCustom.TabIndex = 12;
+            // 
+            // btnOk
+            // 
+            btnOk.BackColor = Color.FromArgb(76, 86, 106);
+            btnOk.FlatAppearance.BorderSize = 0;
+            btnOk.FlatStyle = FlatStyle.Flat;
+            btnOk.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnOk.ForeColor = Color.FromArgb(236, 239, 244);
+            btnOk.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            btnOk.IconColor = Color.FromArgb(236, 239, 244);
+            btnOk.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnOk.IconSize = 32;
+            btnOk.Location = new Point(0, 232);
+            btnOk.Margin = new Padding(0, 10, 0, 15);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new Size(120, 40);
+            btnOk.TabIndex = 17;
+            btnOk.Text = "Ok";
+            btnOk.TextAlign = ContentAlignment.MiddleRight;
+            btnOk.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnOk.UseVisualStyleBackColor = false;
+            btnOk.Click += btnOk_Click;
             // 
             // label2
             // 
@@ -524,19 +538,19 @@
             label1.Text = "Start Date";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker2
+            // dateTimePickerEnd
             // 
-            dateTimePicker2.Location = new Point(3, 180);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(114, 31);
-            dateTimePicker2.TabIndex = 14;
+            dateTimePickerEnd.Location = new Point(3, 180);
+            dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.Size = new Size(114, 31);
+            dateTimePickerEnd.TabIndex = 14;
             // 
-            // dateTimePicker1
+            // dateTimePickerStart
             // 
-            dateTimePicker1.Location = new Point(3, 102);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(114, 31);
-            dateTimePicker1.TabIndex = 13;
+            dateTimePickerStart.Location = new Point(3, 102);
+            dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.Size = new Size(114, 31);
+            dateTimePickerStart.TabIndex = 13;
             // 
             // btnCustom
             // 
@@ -560,52 +574,9 @@
             btnCustom.UseVisualStyleBackColor = false;
             btnCustom.Click += btnCustom_Click;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.BackColor = Color.FromArgb(76, 86, 106);
-            btnRefresh.FlatAppearance.BorderSize = 0;
-            btnRefresh.FlatStyle = FlatStyle.Flat;
-            btnRefresh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnRefresh.ForeColor = Color.FromArgb(236, 239, 244);
-            btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Refresh;
-            btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
-            btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRefresh.IconSize = 32;
-            btnRefresh.Location = new Point(26, 10);
-            btnRefresh.Margin = new Padding(0, 10, 0, 15);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(120, 40);
-            btnRefresh.TabIndex = 9;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.TextAlign = ContentAlignment.MiddleRight;
-            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click;
-            // 
-            // btnLast7Days
-            // 
-            btnLast7Days.BackColor = Color.FromArgb(76, 86, 106);
-            btnLast7Days.FlatAppearance.BorderSize = 0;
-            btnLast7Days.FlatStyle = FlatStyle.Flat;
-            btnLast7Days.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnLast7Days.ForeColor = Color.FromArgb(236, 239, 244);
-            btnLast7Days.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
-            btnLast7Days.IconColor = Color.FromArgb(236, 239, 244);
-            btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLast7Days.IconSize = 32;
-            btnLast7Days.Location = new Point(287, 10);
-            btnLast7Days.Margin = new Padding(0, 10, 0, 15);
-            btnLast7Days.Name = "btnLast7Days";
-            btnLast7Days.Size = new Size(150, 40);
-            btnLast7Days.TabIndex = 11;
-            btnLast7Days.Text = "Last 7 Days";
-            btnLast7Days.TextAlign = ContentAlignment.MiddleRight;
-            btnLast7Days.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLast7Days.UseVisualStyleBackColor = false;
-            btnLast7Days.Click += btnLast7Days_Click;
-            // 
             // btnToday
             // 
+            btnToday.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnToday.BackColor = Color.FromArgb(76, 86, 106);
             btnToday.FlatAppearance.BorderSize = 0;
             btnToday.FlatStyle = FlatStyle.Flat;
@@ -626,15 +597,72 @@
             btnToday.UseVisualStyleBackColor = false;
             btnToday.Click += btnToday_Click;
             // 
-            // panelGridView
+            // btnLast7Days
             // 
-            panelGridView.Controls.Add(dataGridViewTransactions);
-            panelGridView.Controls.Add(btnDelete);
-            panelGridView.Dock = DockStyle.Fill;
-            panelGridView.Location = new Point(0, 0);
-            panelGridView.Name = "panelGridView";
-            panelGridView.Size = new Size(582, 644);
-            panelGridView.TabIndex = 11;
+            btnLast7Days.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLast7Days.BackColor = Color.FromArgb(76, 86, 106);
+            btnLast7Days.FlatAppearance.BorderSize = 0;
+            btnLast7Days.FlatStyle = FlatStyle.Flat;
+            btnLast7Days.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLast7Days.ForeColor = Color.FromArgb(236, 239, 244);
+            btnLast7Days.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            btnLast7Days.IconColor = Color.FromArgb(236, 239, 244);
+            btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLast7Days.IconSize = 32;
+            btnLast7Days.Location = new Point(290, 10);
+            btnLast7Days.Margin = new Padding(0, 10, 0, 15);
+            btnLast7Days.Name = "btnLast7Days";
+            btnLast7Days.Size = new Size(150, 40);
+            btnLast7Days.TabIndex = 11;
+            btnLast7Days.Text = "Last 7 Days";
+            btnLast7Days.TextAlign = ContentAlignment.MiddleRight;
+            btnLast7Days.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLast7Days.UseVisualStyleBackColor = false;
+            btnLast7Days.Click += btnLast7Days_Click;
+            // 
+            // tableLayoutPanelTopButton
+            // 
+            tableLayoutPanelTopButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanelTopButton.BackColor = Color.FromArgb(236, 239, 244);
+            tableLayoutPanelTopButton.ColumnCount = 3;
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTopButton.Controls.Add(btnRefresh, 1, 0);
+            tableLayoutPanelTopButton.Location = new Point(0, 0);
+            tableLayoutPanelTopButton.Name = "tableLayoutPanelTopButton";
+            tableLayoutPanelTopButton.RowCount = 1;
+            tableLayoutPanelTopButton.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelTopButton.Size = new Size(169, 65);
+            tableLayoutPanelTopButton.TabIndex = 10;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.FromArgb(76, 86, 106);
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRefresh.ForeColor = Color.FromArgb(236, 239, 244);
+            btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Refresh;
+            btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
+            btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRefresh.IconSize = 32;
+            btnRefresh.Location = new Point(24, 10);
+            btnRefresh.Margin = new Padding(0, 10, 0, 15);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(120, 40);
+            btnRefresh.TabIndex = 9;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextAlign = ContentAlignment.MiddleRight;
+            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // transactionsForm
             // 
@@ -647,7 +675,6 @@
             Name = "transactionsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "TransactionsForm";
-            Load += transactionsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).EndInit();
             tableLayoutMain.ResumeLayout(false);
             panelMainRight.ResumeLayout(false);
@@ -662,9 +689,9 @@
             tableLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panelMainLeft.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            panelBtnCustom.ResumeLayout(false);
             panelGridView.ResumeLayout(false);
+            panelBtnCustom.ResumeLayout(false);
+            tableLayoutPanelTopButton.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -697,15 +724,16 @@
         private DateTimePicker datePicker;
         private ComboBox comboBoxType;
         private FontAwesome.Sharp.IconButton btnRefresh;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanelTopButton;
         private Panel panelGridView;
         private FontAwesome.Sharp.IconButton btnLast7Days;
         private FontAwesome.Sharp.IconButton btnToday;
         private FontAwesome.Sharp.IconButton btnCustom;
         private Panel panelBtnCustom;
         private Label label1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerEnd;
+        private DateTimePicker dateTimePickerStart;
         private Label label2;
+        private FontAwesome.Sharp.IconButton btnOk;
     }
 }

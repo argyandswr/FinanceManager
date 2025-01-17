@@ -200,7 +200,6 @@
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mainForm";
-            Load += mainForm_Load;
             panelMenu.ResumeLayout(false);
             panelTopBar.ResumeLayout(false);
             ResumeLayout(false);

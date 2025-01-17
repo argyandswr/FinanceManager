@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+using FontAwesome.Sharp;
 using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.Model.Entity;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace PersonalFinanceManager.View
 {
@@ -18,15 +10,19 @@ namespace PersonalFinanceManager.View
         // Keep track of DataGridView selected filter and selected item
         enum SelectedFilter
         {
-            all,
             today,
-            last7days
+            last7days,
+            custom
         }
 
+        private IconButton currentBtn;
+        private IconChar currentIcon;
+        private static Color selectColor = Color.FromArgb(248, 249, 251);
+
         private SelectedFilter selectedFilter = SelectedFilter.today;
-        private bool isRowSelected = false;
         private string selectedRowCategory;
         private int headerRowTransID = 0;
+        private DataTable categoryData = new DataTable(); // Save the current categories
 
         public transactionsForm()
         {
@@ -45,13 +41,6 @@ namespace PersonalFinanceManager.View
             GlobalVariable.SendMessage(this.comboBoxCategory.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Please select type first...");
         }
 
-        private void transactionsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         // Get category value after selecting comboBoxType
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,13 +48,15 @@ namespace PersonalFinanceManager.View
 
             if (comboBoxType.SelectedIndex == 0)
             {
-                comboBoxCategory.DataSource = controller.GetCategories("Expense");
+                categoryData = controller.GetIndexCategories("Expense");
+                comboBoxCategory.DataSource = categoryData;
                 comboBoxCategory.SelectedItem = null;
                 GlobalVariable.SendMessage(this.comboBoxCategory.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
             }
             else if (comboBoxType.SelectedIndex == 1)
             {
-                comboBoxCategory.DataSource = controller.GetCategories("Income");
+                categoryData = controller.GetIndexCategories("Income");
+                comboBoxCategory.DataSource = categoryData;
                 comboBoxCategory.SelectedItem = null;
                 GlobalVariable.SendMessage(this.comboBoxCategory.Handle, GlobalVariable.CB_SETCUEBANNER, 0, "Select an item...");
             }
@@ -77,7 +68,14 @@ namespace PersonalFinanceManager.View
             comboBoxType.SelectedItem = dataGridViewTransactions.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBoxName.Text = dataGridViewTransactions.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBoxAmount.Text = dataGridViewTransactions.Rows[e.RowIndex].Cells[2].Value.ToString();
-            selectedRowCategory = dataGridViewTransactions.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string categoryName = dataGridViewTransactions.Rows[e.RowIndex].Cells[3].Value.ToString();
+            for (int i = 0; i < categoryData.Rows.Count; i++)
+            {
+                if (categoryData.Rows[i]["Name"].Equals(categoryName))
+                {
+                    comboBoxCategory.SelectedIndex = i;
+                }
+            }
 
             DateTime dateTime;
             if (DateTime.TryParse(dataGridViewTransactions.Rows[e.RowIndex].Cells[4].Value.ToString(), out dateTime))
@@ -95,11 +93,6 @@ namespace PersonalFinanceManager.View
             if (int.TryParse(dataGridViewTransactions.Rows[e.RowIndex].Cells[5].Value.ToString(), out headerRowTransID))
             {
                 headerRowTransID = int.Parse(dataGridViewTransactions.Rows[e.RowIndex].Cells[5].Value.ToString());
-                isRowSelected = true;
-            }
-            else
-            {
-                isRowSelected = false;
             }
         }
 
@@ -123,7 +116,8 @@ namespace PersonalFinanceManager.View
 
 
 
-        // CRUD
+
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text == "" || comboBoxCategory.SelectedIndex == -1 || comboBoxType.SelectedIndex == -1 || textBoxAmount.Text == "")
@@ -199,11 +193,46 @@ namespace PersonalFinanceManager.View
             clickSelectedFilter();
         }
 
+        private bool btnCustomState = false;
+        private void btnCustom_Click(object sender, EventArgs e)
+        {
+            selectedFilter = SelectedFilter.custom;
+            ActivateButton(sender, selectColor);
 
+            btnCustomState = !btnCustomState;
+            if (btnCustomState)
+            {
+                panelBtnCustom.Size = panelBtnCustom.MaximumSize;
+            }
+            else
+            {
+                panelBtnCustom.Size = panelBtnCustom.MinimumSize;
+            }
+        }
 
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            DisplayData(dateTimePickerStart.Value, dateTimePickerEnd.Value);
+            panelBtnCustom.Size = panelBtnCustom.MinimumSize;
+        }
 
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+            selectedFilter = SelectedFilter.today;
+            ActivateButton(sender, selectColor);
 
+            DateTime start = DateTime.Today;
+            DateTime end = DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59);
+            DisplayData(start, end);
+        }
 
+        private void btnLast7Days_Click(object sender, EventArgs e)
+        {
+            selectedFilter = SelectedFilter.last7days;
+            ActivateButton(sender, selectColor);
+
+            DisplayData(DateTime.Today.AddDays(-7), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
+        }
 
 
 
@@ -213,7 +242,6 @@ namespace PersonalFinanceManager.View
         {
             TransactionsController controller = new TransactionsController();
             dataGridViewTransactions.DataSource = controller.DisplayData(startDate, endDate);
-            dataGridViewTransactions.MaximumSize = panelGridView.Size;
 
             // Autosize column in datagrid view
             dataGridViewTransactions.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -245,44 +273,60 @@ namespace PersonalFinanceManager.View
             textBoxAmount.Clear();
         }
 
-        private void btnToday_Click(object sender, EventArgs e)
-        {
-            DateTime start = DateTime.Today;
-            DateTime end = DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59);
-            DisplayData(start, end);
-        }
-
-        private void btnLast7Days_Click(object sender, EventArgs e)
-        {
-            DisplayData(DateTime.Today.AddDays(-7), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
-        }
-
         private void clickSelectedFilter()
         {
             if (selectedFilter == SelectedFilter.today)
             {
                 btnToday.PerformClick();
             }
-            else
+            else if(selectedFilter == SelectedFilter.last7days)
             {
                 btnLast7Days.PerformClick();
             }
-        }
-
-
-
-        private bool btnCustomState = false;
-        private void btnCustom_Click(object sender, EventArgs e)
-        {
-            btnCustomState = !btnCustomState;
-            if (btnCustomState)
-            {
-                panelBtnCustom.Size = panelBtnCustom.MaximumSize;
-            }
             else
             {
+                btnOk.PerformClick();
+            }
+        }
+
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+                //Button
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(91, 103, 127);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentIcon = currentBtn.IconChar;
+                currentBtn.IconChar = IconChar.CheckSquare;
+            }
+
+            // Close custom filter (if still expanded) if other filter is selected
+            if (btnCustomState == true && selectedFilter != SelectedFilter.custom)
+            {
+                btnCustomState = false;
                 panelBtnCustom.Size = panelBtnCustom.MinimumSize;
             }
         }
+
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(76, 86, 106);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconChar = currentIcon;
+            }
+        }
+
     }
 }

@@ -17,7 +17,7 @@ namespace PersonalFinanceManager.View
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        private static Color colorSnowWhite = Color.FromArgb(59, 66, 82);
+        private static Color selectColor = Color.FromArgb(59, 66, 82);
 
         public settingsForm()
         {
@@ -32,20 +32,20 @@ namespace PersonalFinanceManager.View
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorSnowWhite);
+            ActivateButton(sender, selectColor);
             OpenChildForm(new categoriesForm());
         }
 
         private void btnBudgets_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorSnowWhite);
+            ActivateButton(sender, selectColor);
             OpenChildForm(new budgetsForm());
 
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorSnowWhite);
+            ActivateButton(sender, selectColor);
         }
 
 

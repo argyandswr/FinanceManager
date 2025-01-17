@@ -109,7 +109,7 @@ namespace PersonalFinanceManager.Model.Repository
             
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("user_id", GlobalVariable.UserID);
+                cmd.Parameters.AddWithValue("@user_id", GlobalVariable.UserID);
                 adapter.SelectCommand = cmd;
                 adapter.Fill(dt);
                 return dt;
@@ -128,9 +128,9 @@ namespace PersonalFinanceManager.Model.Repository
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("user_id", GlobalVariable.UserID);
-                cmd.Parameters.AddWithValue("startDate", startDate);
-                cmd.Parameters.AddWithValue("endDate", endDate);
+                cmd.Parameters.AddWithValue("@user_id", GlobalVariable.UserID);
+                cmd.Parameters.AddWithValue("@startDate", startDate);
+                cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 adapter.SelectCommand = cmd;
                 adapter.Fill(dt);

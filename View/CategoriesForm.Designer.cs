@@ -430,7 +430,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "categoriesForm";
             Text = "CategoriesForm";
-            Load += categoriesForm_Load;
             tableLayoutPanelMain.ResumeLayout(false);
             panelDesktop.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

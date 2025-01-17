@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PersonalFinanceManager.Controller;
+﻿using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.Model.Entity;
 
 namespace PersonalFinanceManager.View
@@ -22,10 +13,22 @@ namespace PersonalFinanceManager.View
             DisplayData();
         }
 
-        private void categoriesForm_Load(object sender, EventArgs e)
+        private void dataGridViewCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            ResetInput();
+            comboBoxType.SelectedItem = dataGridViewCategories.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxName.Text = dataGridViewCategories.Rows[e.RowIndex].Cells[1].Value.ToString();
+            richTextBoxDescription.Text = dataGridViewCategories.Rows[e.RowIndex].Cells[2].Value.ToString();
 
+            if (int.TryParse(dataGridViewCategories.Rows[e.RowIndex].Cells[3].Value.ToString(), out headerRowCatID))
+            {
+                headerRowCatID = int.Parse(dataGridViewCategories.Rows[e.RowIndex].Cells[3].Value.ToString());
+            }
         }
+
+
+
+
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -103,15 +106,10 @@ namespace PersonalFinanceManager.View
 
 
 
-
-
-
-
         private void DisplayData()
         {
             CategoriesController controller = new();
             dataGridViewCategories.DataSource = controller.DisplayData();
-            dataGridViewCategories.MaximumSize = panelDataGridView.Size;
 
             // Autosize column in datagrid view
             dataGridViewCategories.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -134,19 +132,6 @@ namespace PersonalFinanceManager.View
             comboBoxType.SelectedIndex = -1;
             textBoxName.Clear();
             richTextBoxDescription.Clear();
-        }
-
-        private void dataGridViewCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            ResetInput();
-            comboBoxType.SelectedItem = dataGridViewCategories.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBoxName.Text = dataGridViewCategories.Rows[e.RowIndex].Cells[1].Value.ToString();
-            richTextBoxDescription.Text = dataGridViewCategories.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-            if (int.TryParse(dataGridViewCategories.Rows[e.RowIndex].Cells[3].Value.ToString(), out headerRowCatID))
-            {
-                headerRowCatID = int.Parse(dataGridViewCategories.Rows[e.RowIndex].Cells[3].Value.ToString());
-            }
         }
     }
 }

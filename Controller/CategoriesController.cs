@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 using PersonalFinanceManager.Model.Context;
 using PersonalFinanceManager.Model.Entity;
@@ -21,6 +16,15 @@ namespace PersonalFinanceManager.Controller
             {
                 _repository = new CategoriesRepository(context);
                 return _repository.GetCategories(type);
+            }
+        }
+
+        public DataTable GetIndexCategories(string type)
+        {
+            using (DbContext context = new DbContext())
+            {
+                _repository = new CategoriesRepository(context);
+                return _repository.GetIndexCategories(type);
             }
         }
 
