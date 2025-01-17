@@ -47,22 +47,13 @@ namespace PersonalFinanceManager
             }
         }
 
-        private void OpenChildForm(Form currentChildForm, Panel destinationPanel, Form childForm)
+        // Keep track of DataGridView selected filter and selected item
+        public enum SelectedFilter
         {
-            //open only form
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            destinationPanel.Controls.Add(childForm);
-            destinationPanel.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            today,
+            last7days,
+            last30days,
+            custom
         }
     }
 }

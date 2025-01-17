@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
   </ItemGroup>
 
   <ItemGroup>

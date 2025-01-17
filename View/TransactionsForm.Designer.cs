@@ -60,12 +60,12 @@
             panelMainLeft = new Panel();
             panelGridView = new Panel();
             panelBtnCustom = new Panel();
+            btnCustom = new FontAwesome.Sharp.IconButton();
             btnOk = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             label1 = new Label();
             dateTimePickerEnd = new DateTimePicker();
             dateTimePickerStart = new DateTimePicker();
-            btnCustom = new FontAwesome.Sharp.IconButton();
             btnToday = new FontAwesome.Sharp.IconButton();
             btnLast7Days = new FontAwesome.Sharp.IconButton();
             tableLayoutPanelTopButton = new TableLayoutPanel();
@@ -147,7 +147,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTransactions.GridColor = Color.Black;
-            dataGridViewTransactions.Location = new Point(0, 68);
+            dataGridViewTransactions.Location = new Point(0, 59);
             dataGridViewTransactions.Margin = new Padding(0);
             dataGridViewTransactions.Name = "dataGridViewTransactions";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -482,75 +482,19 @@
             // panelBtnCustom
             // 
             panelBtnCustom.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelBtnCustom.Controls.Add(btnCustom);
             panelBtnCustom.Controls.Add(btnOk);
             panelBtnCustom.Controls.Add(label2);
             panelBtnCustom.Controls.Add(label1);
             panelBtnCustom.Controls.Add(dateTimePickerEnd);
             panelBtnCustom.Controls.Add(dateTimePickerStart);
-            panelBtnCustom.Controls.Add(btnCustom);
-            panelBtnCustom.Location = new Point(453, 0);
+            panelBtnCustom.Location = new Point(419, 0);
             panelBtnCustom.Margin = new Padding(0);
-            panelBtnCustom.MaximumSize = new Size(120, 290);
-            panelBtnCustom.MinimumSize = new Size(120, 50);
+            panelBtnCustom.MaximumSize = new Size(160, 290);
+            panelBtnCustom.MinimumSize = new Size(160, 65);
             panelBtnCustom.Name = "panelBtnCustom";
-            panelBtnCustom.Size = new Size(120, 52);
+            panelBtnCustom.Size = new Size(160, 65);
             panelBtnCustom.TabIndex = 12;
-            // 
-            // btnOk
-            // 
-            btnOk.BackColor = Color.FromArgb(76, 86, 106);
-            btnOk.FlatAppearance.BorderSize = 0;
-            btnOk.FlatStyle = FlatStyle.Flat;
-            btnOk.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnOk.ForeColor = Color.FromArgb(236, 239, 244);
-            btnOk.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
-            btnOk.IconColor = Color.FromArgb(236, 239, 244);
-            btnOk.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnOk.IconSize = 32;
-            btnOk.Location = new Point(0, 232);
-            btnOk.Margin = new Padding(0, 10, 0, 15);
-            btnOk.Name = "btnOk";
-            btnOk.Size = new Size(120, 40);
-            btnOk.TabIndex = 17;
-            btnOk.Text = "Ok";
-            btnOk.TextAlign = ContentAlignment.MiddleRight;
-            btnOk.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnOk.UseVisualStyleBackColor = false;
-            btnOk.Click += btnOk_Click;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.Location = new Point(0, 143);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 31);
-            label2.TabIndex = 16;
-            label2.Text = "End Date";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Location = new Point(0, 63);
-            label1.Name = "label1";
-            label1.Size = new Size(120, 31);
-            label1.TabIndex = 15;
-            label1.Text = "Start Date";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dateTimePickerEnd
-            // 
-            dateTimePickerEnd.Location = new Point(3, 180);
-            dateTimePickerEnd.Name = "dateTimePickerEnd";
-            dateTimePickerEnd.Size = new Size(114, 31);
-            dateTimePickerEnd.TabIndex = 14;
-            // 
-            // dateTimePickerStart
-            // 
-            dateTimePickerStart.Location = new Point(3, 102);
-            dateTimePickerStart.Name = "dateTimePickerStart";
-            dateTimePickerStart.Size = new Size(114, 31);
-            dateTimePickerStart.TabIndex = 13;
             // 
             // btnCustom
             // 
@@ -566,13 +510,71 @@
             btnCustom.Location = new Point(0, 10);
             btnCustom.Margin = new Padding(0, 10, 0, 15);
             btnCustom.Name = "btnCustom";
-            btnCustom.Size = new Size(120, 40);
+            btnCustom.Size = new Size(160, 40);
             btnCustom.TabIndex = 12;
             btnCustom.Text = "Custom";
             btnCustom.TextAlign = ContentAlignment.MiddleRight;
             btnCustom.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCustom.UseVisualStyleBackColor = false;
             btnCustom.Click += btnCustom_Click;
+            // 
+            // btnOk
+            // 
+            btnOk.BackColor = Color.FromArgb(76, 86, 106);
+            btnOk.FlatAppearance.BorderSize = 0;
+            btnOk.FlatStyle = FlatStyle.Flat;
+            btnOk.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnOk.ForeColor = Color.FromArgb(236, 239, 244);
+            btnOk.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            btnOk.IconColor = Color.FromArgb(236, 239, 244);
+            btnOk.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnOk.IconSize = 32;
+            btnOk.Location = new Point(10, 232);
+            btnOk.Margin = new Padding(0, 10, 0, 15);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new Size(140, 40);
+            btnOk.TabIndex = 17;
+            btnOk.Text = "Ok";
+            btnOk.TextAlign = ContentAlignment.MiddleRight;
+            btnOk.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnOk.UseVisualStyleBackColor = false;
+            btnOk.Click += btnOk_Click;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Location = new Point(0, 143);
+            label2.Name = "label2";
+            label2.Size = new Size(160, 31);
+            label2.TabIndex = 16;
+            label2.Text = "End Date";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Location = new Point(0, 63);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 31);
+            label1.TabIndex = 15;
+            label1.Text = "Start Date";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePickerEnd
+            // 
+            dateTimePickerEnd.Format = DateTimePickerFormat.Short;
+            dateTimePickerEnd.Location = new Point(5, 180);
+            dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.Size = new Size(150, 31);
+            dateTimePickerEnd.TabIndex = 14;
+            // 
+            // dateTimePickerStart
+            // 
+            dateTimePickerStart.Format = DateTimePickerFormat.Short;
+            dateTimePickerStart.Location = new Point(5, 102);
+            dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.Size = new Size(150, 31);
+            dateTimePickerStart.TabIndex = 13;
             // 
             // btnToday
             // 
@@ -586,7 +588,7 @@
             btnToday.IconColor = Color.FromArgb(236, 239, 244);
             btnToday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnToday.IconSize = 32;
-            btnToday.Location = new Point(172, 10);
+            btnToday.Location = new Point(145, 10);
             btnToday.Margin = new Padding(0, 10, 0, 15);
             btnToday.Name = "btnToday";
             btnToday.Size = new Size(105, 40);
@@ -609,7 +611,7 @@
             btnLast7Days.IconColor = Color.FromArgb(236, 239, 244);
             btnLast7Days.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLast7Days.IconSize = 32;
-            btnLast7Days.Location = new Point(290, 10);
+            btnLast7Days.Location = new Point(260, 10);
             btnLast7Days.Margin = new Padding(0, 10, 0, 15);
             btnLast7Days.Name = "btnLast7Days";
             btnLast7Days.Size = new Size(150, 40);
@@ -639,7 +641,7 @@
             tableLayoutPanelTopButton.Name = "tableLayoutPanelTopButton";
             tableLayoutPanelTopButton.RowCount = 1;
             tableLayoutPanelTopButton.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelTopButton.Size = new Size(169, 65);
+            tableLayoutPanelTopButton.Size = new Size(142, 65);
             tableLayoutPanelTopButton.TabIndex = 10;
             // 
             // btnRefresh
@@ -653,7 +655,7 @@
             btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRefresh.IconSize = 32;
-            btnRefresh.Location = new Point(24, 10);
+            btnRefresh.Location = new Point(11, 10);
             btnRefresh.Margin = new Padding(0, 10, 0, 15);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(120, 40);

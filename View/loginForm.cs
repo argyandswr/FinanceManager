@@ -11,12 +11,13 @@ using Microsoft.Data.SqlClient;
 using System.Data.SqlClient;
 using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.View;
+using System.Runtime.InteropServices;
 
 namespace PersonalFinanceManager
 {
-    public partial class loginForm : Form
+    public partial class LoginForm : Form
     {
-        public loginForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -43,7 +44,7 @@ namespace PersonalFinanceManager
 
         private void reg_Btn_Click(object sender, EventArgs e)
         {
-            registerForm regForm = new registerForm();
+            RegisterForm regForm = new RegisterForm();
             regForm.Show();
 
             this.Hide();
@@ -58,6 +59,31 @@ namespace PersonalFinanceManager
             mainForm.Show();
 
             this.Hide();
+        }
+
+
+
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void panelTopBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        // Close maximize exit
+        private void iconExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

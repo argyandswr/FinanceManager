@@ -21,7 +21,7 @@ namespace PersonalFinanceManager.View
 
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; // Maximized window won't cover the taskbar
         }
-        
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorSnowWhite);
@@ -57,7 +57,7 @@ namespace PersonalFinanceManager.View
             ActivateButton(sender, colorSnowWhite);
             if (MessageBox.Show("Are you sure want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                loginForm logForm = new loginForm();
+                LoginForm logForm = new LoginForm();
                 logForm.Show();
 
                 this.Close();

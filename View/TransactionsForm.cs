@@ -7,19 +7,11 @@ namespace PersonalFinanceManager.View
 {
     public partial class transactionsForm : Form
     {
-        // Keep track of DataGridView selected filter and selected item
-        enum SelectedFilter
-        {
-            today,
-            last7days,
-            custom
-        }
-
         private IconButton currentBtn;
         private IconChar currentIcon;
         private static Color selectColor = Color.FromArgb(248, 249, 251);
 
-        private SelectedFilter selectedFilter = SelectedFilter.today;
+        private GlobalVariable.SelectedFilter selectedFilter = GlobalVariable.SelectedFilter.today;
         private string selectedRowCategory;
         private int headerRowTransID = 0;
         private DataTable categoryData = new DataTable(); // Save the current categories
@@ -196,7 +188,7 @@ namespace PersonalFinanceManager.View
         private bool btnCustomState = false;
         private void btnCustom_Click(object sender, EventArgs e)
         {
-            selectedFilter = SelectedFilter.custom;
+            selectedFilter = GlobalVariable.SelectedFilter.custom;
             ActivateButton(sender, selectColor);
 
             btnCustomState = !btnCustomState;
@@ -214,11 +206,12 @@ namespace PersonalFinanceManager.View
         {
             DisplayData(dateTimePickerStart.Value, dateTimePickerEnd.Value);
             panelBtnCustom.Size = panelBtnCustom.MinimumSize;
+            btnCustomState = false;
         }
 
         private void btnToday_Click(object sender, EventArgs e)
         {
-            selectedFilter = SelectedFilter.today;
+            selectedFilter = GlobalVariable.SelectedFilter.today;
             ActivateButton(sender, selectColor);
 
             DateTime start = DateTime.Today;
@@ -228,7 +221,7 @@ namespace PersonalFinanceManager.View
 
         private void btnLast7Days_Click(object sender, EventArgs e)
         {
-            selectedFilter = SelectedFilter.last7days;
+            selectedFilter = GlobalVariable.SelectedFilter.last7days;
             ActivateButton(sender, selectColor);
 
             DisplayData(DateTime.Today.AddDays(-7), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
@@ -275,11 +268,11 @@ namespace PersonalFinanceManager.View
 
         private void clickSelectedFilter()
         {
-            if (selectedFilter == SelectedFilter.today)
+            if (selectedFilter == GlobalVariable.SelectedFilter.today)
             {
                 btnToday.PerformClick();
             }
-            else if(selectedFilter == SelectedFilter.last7days)
+            else if(selectedFilter == GlobalVariable.SelectedFilter.last7days)
             {
                 btnLast7Days.PerformClick();
             }
@@ -307,7 +300,7 @@ namespace PersonalFinanceManager.View
             }
 
             // Close custom filter (if still expanded) if other filter is selected
-            if (btnCustomState == true && selectedFilter != SelectedFilter.custom)
+            if (btnCustomState == true && selectedFilter != GlobalVariable.SelectedFilter.custom)
             {
                 btnCustomState = false;
                 panelBtnCustom.Size = panelBtnCustom.MinimumSize;
