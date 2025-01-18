@@ -15,9 +15,9 @@ using System.Runtime.InteropServices;
 
 namespace PersonalFinanceManager
 {
-    public partial class LoginForm : Form
+    public partial class loginForm : Form
     {
-        public LoginForm()
+        public loginForm()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace PersonalFinanceManager
 
         private void reg_Btn_Click(object sender, EventArgs e)
         {
-            RegisterForm regForm = new RegisterForm();
+            registerForm regForm = new registerForm();
             regForm.Show();
 
             this.Hide();

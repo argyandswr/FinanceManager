@@ -57,7 +57,7 @@ namespace PersonalFinanceManager.View
             ActivateButton(sender, colorSnowWhite);
             if (MessageBox.Show("Are you sure want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                LoginForm logForm = new LoginForm();
+                loginForm logForm = new loginForm();
                 logForm.Show();
 
                 this.Close();
@@ -160,6 +160,11 @@ namespace PersonalFinanceManager.View
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            btnDashboard.PerformClick();
         }
     }
 }

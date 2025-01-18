@@ -147,7 +147,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewTransactions.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTransactions.GridColor = Color.Black;
-            dataGridViewTransactions.Location = new Point(0, 59);
+            dataGridViewTransactions.Location = new Point(0, 65);
             dataGridViewTransactions.Margin = new Padding(0);
             dataGridViewTransactions.Name = "dataGridViewTransactions";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -159,7 +159,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dataGridViewTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewTransactions.RowHeadersWidth = 62;
-            dataGridViewTransactions.Size = new Size(582, 576);
+            dataGridViewTransactions.Size = new Size(582, 570);
             dataGridViewTransactions.TabIndex = 4;
             dataGridViewTransactions.RowHeaderMouseClick += dataGridViewTransactions_RowHeaderMouseClick;
             // 

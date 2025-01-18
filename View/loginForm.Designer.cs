@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager
 {
-    partial class LoginForm
+    partial class loginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -319,7 +319,7 @@
             iconExit.UseVisualStyleBackColor = false;
             iconExit.Click += iconExit_Click;
             // 
-            // LoginForm
+            // loginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -329,7 +329,7 @@
             Controls.Add(panelTopBar);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "LoginForm";
+            Name = "loginForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             panelLeft.ResumeLayout(false);

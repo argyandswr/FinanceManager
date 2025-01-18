@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager
 {
-    partial class RegisterForm
+    partial class registerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -152,6 +152,7 @@
             signin_Btn.IconChar = FontAwesome.Sharp.IconChar.UserLarge;
             signin_Btn.IconColor = Color.FromArgb(76, 86, 106);
             signin_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            signin_Btn.IconSize = 40;
             signin_Btn.Location = new Point(115, 0);
             signin_Btn.Margin = new Padding(0);
             signin_Btn.Name = "signin_Btn";
@@ -331,7 +332,7 @@
             iconExit.UseVisualStyleBackColor = false;
             iconExit.Click += iconExit_Click;
             // 
-            // RegisterForm
+            // registerForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -341,7 +342,7 @@
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "RegisterForm";
+            Name = "registerForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             panelLeft.ResumeLayout(false);

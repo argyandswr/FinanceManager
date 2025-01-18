@@ -105,7 +105,8 @@ namespace PersonalFinanceManager.Model.Repository
             string sql = @"SELECT t.type AS Type, transaction_name AS Name, amount AS Amount, category_name AS Category, date AS Date, transaction_id AS ID
                            FROM transactions t
                            JOIN categories c ON t.category_id = c.category_id
-                           WHERE t.user_id = @user_id";
+                           WHERE t.user_id = @user_id
+                           ORDER BY date DESC";
             
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
@@ -124,7 +125,8 @@ namespace PersonalFinanceManager.Model.Repository
             string sql = @"SELECT t.type AS Type, transaction_name AS Name, amount AS Amount, category_name AS Category, date AS Date, transaction_id AS ID
                            FROM transactions t
                            JOIN categories c ON t.category_id = c.category_id
-                           WHERE t.user_id = @user_id AND t.date BETWEEN @startDate AND @endDate";
+                           WHERE t.user_id = @user_id AND t.date BETWEEN @startDate AND @endDate
+                           ORDER BY date DESC";
 
             using (SqlCommand cmd = new SqlCommand(sql, _conn))
             {
