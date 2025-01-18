@@ -29,18 +29,26 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            chartExpenses = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel1 = new Panel();
-            label6 = new Label();
+            labelTotalExpense = new Label();
             label5 = new Label();
             panel2 = new Panel();
-            label2 = new Label();
+            labelTransactionsRecorded = new Label();
             label1 = new Label();
             panel3 = new Panel();
-            label4 = new Label();
+            labelTotalIncome = new Label();
             label3 = new Label();
             tableLayoutPanelTop = new TableLayoutPanel();
             btnRefresh = new FontAwesome.Sharp.IconButton();
@@ -55,43 +63,54 @@
             label8 = new Label();
             dateTimePickerEnd = new DateTimePicker();
             dateTimePickerStart = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)chartExpenses).BeginInit();
+            tableLayoutPanelPieChart = new TableLayoutPanel();
+            panelChartLeft = new Panel();
+            chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartIncomeLegend = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panelChartRight = new Panel();
+            chartExpenseLegend = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)chartExpense).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             tableLayoutPanelTop.SuspendLayout();
             tableLayoutPanelBtnRefresh.SuspendLayout();
             panelBtnCustom.SuspendLayout();
+            tableLayoutPanelPieChart.SuspendLayout();
+            panelChartLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartIncome).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartIncomeLegend).BeginInit();
+            panelChartRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartExpenseLegend).BeginInit();
             SuspendLayout();
             // 
-            // chartExpenses
+            // chartExpense
             // 
-            chartExpenses.AccessibleRole = AccessibleRole.None;
-            chartExpenses.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            chartExpense.AccessibleRole = AccessibleRole.None;
+            chartExpense.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chartArea1.Name = "ChartArea1";
-            chartExpenses.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chartExpenses.Legends.Add(legend1);
-            chartExpenses.Location = new Point(12, 175);
-            chartExpenses.Name = "chartExpenses";
-            chartExpenses.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            chartExpense.ChartAreas.Add(chartArea1);
+            chartExpense.Location = new Point(0, 0);
+            chartExpense.Name = "chartExpense";
+            chartExpense.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
+            series1.Label = "#VALY{Rp#,#} (#PERCENT)";
+            series1.LegendText = "#VALX";
             series1.Name = "Series1";
-            chartExpenses.Series.Add(series1);
-            chartExpenses.Size = new Size(413, 272);
-            chartExpenses.TabIndex = 0;
-            chartExpenses.Text = "chart1";
+            chartExpense.Series.Add(series1);
+            chartExpense.Size = new Size(280, 269);
+            chartExpense.TabIndex = 0;
+            chartExpense.Text = "Expense Category";
             title1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
             title1.Name = "Title1";
             title1.Text = "Expenses Percentage";
-            chartExpenses.Titles.Add(title1);
+            chartExpense.Titles.Add(title1);
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(labelTotalExpense);
             panel1.Controls.Add(label5);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(559, 3);
@@ -99,16 +118,16 @@
             panel1.Size = new Size(274, 77);
             panel1.TabIndex = 1;
             // 
-            // label6
+            // labelTotalExpense
             // 
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(0, 34);
-            label6.Name = "label6";
-            label6.Size = new Size(274, 43);
-            label6.TabIndex = 5;
-            label6.Text = "0";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            labelTotalExpense.Dock = DockStyle.Fill;
+            labelTotalExpense.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelTotalExpense.Location = new Point(0, 34);
+            labelTotalExpense.Name = "labelTotalExpense";
+            labelTotalExpense.Size = new Size(274, 43);
+            labelTotalExpense.TabIndex = 5;
+            labelTotalExpense.Text = "0";
+            labelTotalExpense.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -124,7 +143,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(labelTransactionsRecorded);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 3);
@@ -132,16 +151,16 @@
             panel2.Size = new Size(272, 77);
             panel2.TabIndex = 2;
             // 
-            // label2
+            // labelTransactionsRecorded
             // 
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.Location = new Point(0, 34);
-            label2.Name = "label2";
-            label2.Size = new Size(272, 43);
-            label2.TabIndex = 1;
-            label2.Text = "0";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            labelTransactionsRecorded.Dock = DockStyle.Fill;
+            labelTransactionsRecorded.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelTransactionsRecorded.Location = new Point(0, 34);
+            labelTransactionsRecorded.Name = "labelTransactionsRecorded";
+            labelTransactionsRecorded.Size = new Size(272, 43);
+            labelTransactionsRecorded.TabIndex = 1;
+            labelTransactionsRecorded.Text = "0";
+            labelTransactionsRecorded.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -157,7 +176,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(labelTotalIncome);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(281, 3);
@@ -165,16 +184,16 @@
             panel3.Size = new Size(272, 77);
             panel3.TabIndex = 3;
             // 
-            // label4
+            // labelTotalIncome
             // 
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(0, 34);
-            label4.Name = "label4";
-            label4.Size = new Size(272, 43);
-            label4.TabIndex = 3;
-            label4.Text = "0";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            labelTotalIncome.Dock = DockStyle.Fill;
+            labelTotalIncome.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelTotalIncome.Location = new Point(0, 34);
+            labelTotalIncome.Name = "labelTotalIncome";
+            labelTotalIncome.Size = new Size(272, 43);
+            labelTotalIncome.TabIndex = 3;
+            labelTotalIncome.Text = "0";
+            labelTotalIncome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -415,6 +434,110 @@
             dateTimePickerStart.Size = new Size(150, 31);
             dateTimePickerStart.TabIndex = 13;
             // 
+            // tableLayoutPanelPieChart
+            // 
+            tableLayoutPanelPieChart.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanelPieChart.ColumnCount = 3;
+            tableLayoutPanelPieChart.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelPieChart.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+            tableLayoutPanelPieChart.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelPieChart.Controls.Add(panelChartLeft, 0, 0);
+            tableLayoutPanelPieChart.Controls.Add(panelChartRight, 2, 0);
+            tableLayoutPanelPieChart.Location = new Point(12, 192);
+            tableLayoutPanelPieChart.Name = "tableLayoutPanelPieChart";
+            tableLayoutPanelPieChart.RowCount = 1;
+            tableLayoutPanelPieChart.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelPieChart.Size = new Size(836, 269);
+            tableLayoutPanelPieChart.TabIndex = 20;
+            // 
+            // panelChartLeft
+            // 
+            panelChartLeft.Controls.Add(chartIncome);
+            panelChartLeft.Controls.Add(chartIncomeLegend);
+            panelChartLeft.Dock = DockStyle.Fill;
+            panelChartLeft.Location = new Point(0, 0);
+            panelChartLeft.Margin = new Padding(0);
+            panelChartLeft.Name = "panelChartLeft";
+            panelChartLeft.Size = new Size(413, 269);
+            panelChartLeft.TabIndex = 3;
+            // 
+            // chartIncome
+            // 
+            chartIncome.AccessibleRole = AccessibleRole.None;
+            chartIncome.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartArea2.Name = "ChartArea1";
+            chartIncome.ChartAreas.Add(chartArea2);
+            chartIncome.Location = new Point(0, 0);
+            chartIncome.Name = "chartIncome";
+            chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.IsValueShownAsLabel = true;
+            series2.IsVisibleInLegend = false;
+            series2.Label = "#VALY{Rp#,#} (#PERCENT)";
+            series2.LegendText = "#INDEX";
+            series2.Name = "Series1";
+            chartIncome.Series.Add(series2);
+            chartIncome.Size = new Size(280, 269);
+            chartIncome.TabIndex = 2;
+            chartIncome.Text = "Expense Category";
+            title2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            title2.Name = "Title1";
+            title2.Text = "Incomes Percentage";
+            chartIncome.Titles.Add(title2);
+            // 
+            // chartIncomeLegend
+            // 
+            chartArea3.Name = "ChartArea1";
+            chartIncomeLegend.ChartAreas.Add(chartArea3);
+            chartIncomeLegend.Dock = DockStyle.Fill;
+            legend1.Name = "Legend1";
+            legend1.TextWrapThreshold = 10;
+            chartIncomeLegend.Legends.Add(legend1);
+            chartIncomeLegend.Location = new Point(0, 0);
+            chartIncomeLegend.Name = "chartIncomeLegend";
+            chartIncomeLegend.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            chartIncomeLegend.Series.Add(series3);
+            chartIncomeLegend.Size = new Size(413, 269);
+            chartIncomeLegend.TabIndex = 0;
+            chartIncomeLegend.Text = "chart1";
+            // 
+            // panelChartRight
+            // 
+            panelChartRight.Controls.Add(chartExpense);
+            panelChartRight.Controls.Add(chartExpenseLegend);
+            panelChartRight.Dock = DockStyle.Fill;
+            panelChartRight.Location = new Point(423, 0);
+            panelChartRight.Margin = new Padding(0);
+            panelChartRight.Name = "panelChartRight";
+            panelChartRight.Size = new Size(413, 269);
+            panelChartRight.TabIndex = 21;
+            // 
+            // chartExpenseLegend
+            // 
+            chartArea4.Name = "ChartArea1";
+            chartExpenseLegend.ChartAreas.Add(chartArea4);
+            chartExpenseLegend.Dock = DockStyle.Fill;
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            legend2.TextWrapThreshold = 10;
+            chartExpenseLegend.Legends.Add(legend2);
+            chartExpenseLegend.Location = new Point(0, 0);
+            chartExpenseLegend.Name = "chartExpenseLegend";
+            chartExpenseLegend.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            chartExpenseLegend.Series.Add(series4);
+            chartExpenseLegend.Size = new Size(413, 269);
+            chartExpenseLegend.TabIndex = 3;
+            chartExpenseLegend.Text = "chart1";
+            // 
             // dashboardForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -422,37 +545,43 @@
             BackColor = Color.FromArgb(236, 239, 244);
             ClientSize = new Size(860, 670);
             Controls.Add(panelBtnCustom);
+            Controls.Add(tableLayoutPanelPieChart);
             Controls.Add(btnLast30Days);
             Controls.Add(tableLayoutPanelBtnRefresh);
             Controls.Add(btnToday);
             Controls.Add(btnLast7Days);
             Controls.Add(tableLayoutPanelTop);
-            Controls.Add(chartExpenses);
             FormBorderStyle = FormBorderStyle.None;
             Name = "dashboardForm";
             Text = "DashboardForm";
-            ((System.ComponentModel.ISupportInitialize)chartExpenses).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartExpense).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             tableLayoutPanelTop.ResumeLayout(false);
             tableLayoutPanelBtnRefresh.ResumeLayout(false);
             panelBtnCustom.ResumeLayout(false);
+            tableLayoutPanelPieChart.ResumeLayout(false);
+            panelChartLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartIncome).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartIncomeLegend).EndInit();
+            panelChartRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartExpenseLegend).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartExpenses;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartExpense;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
         private Panel panel3;
         private TableLayoutPanel tableLayoutPanelTop;
-        private Label label6;
+        private Label labelTotalExpense;
         private Label label5;
-        private Label label2;
-        private Label label4;
+        private Label labelTransactionsRecorded;
+        private Label labelTotalIncome;
         private Label label3;
         private FontAwesome.Sharp.IconButton btnRefresh;
         private FontAwesome.Sharp.IconButton btnToday;
@@ -466,5 +595,11 @@
         private Label label8;
         private DateTimePicker dateTimePickerEnd;
         private DateTimePicker dateTimePickerStart;
+        private TableLayoutPanel tableLayoutPanelPieChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartIncome;
+        private Panel panelChartLeft;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartIncomeLegend;
+        private Panel panelChartRight;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartExpenseLegend;
     }
 }

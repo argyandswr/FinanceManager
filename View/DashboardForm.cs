@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using PersonalFinanceManager.Controller;
+using PersonalFinanceManager.Model.Context;
+using PersonalFinanceManager.Model.Entity;
 
 namespace PersonalFinanceManager.View
 {
@@ -17,27 +21,42 @@ namespace PersonalFinanceManager.View
         IconButton currentBtn;
         IconChar currentIcon;
 
+        DashboardController controller;
+        Dashboard dashboardData;
+
+
+
         public dashboardForm()
         {
             InitializeComponent();
+            btnToday.PerformClick();
+
+            controller = new();
+            dashboardData = new();
         }
 
         private void btnToday_Click(object sender, EventArgs e)
         {
             selectedFilter = GlobalVariable.SelectedFilter.today;
             ActivateButton(sender);
+            dashboardData = controller.GetDashboardData(DateTime.Today, DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
+            LoadData();
         }
 
         private void btnLast7Days_Click(object sender, EventArgs e)
         {
             selectedFilter = GlobalVariable.SelectedFilter.last7days;
             ActivateButton(sender);
+            dashboardData = controller.GetDashboardData(DateTime.Today.AddDays(-7), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
+            LoadData();
         }
 
         private void btnLast30Days_Click(object sender, EventArgs e)
         {
             selectedFilter = GlobalVariable.SelectedFilter.last30days;
             ActivateButton(sender);
+            dashboardData = controller.GetDashboardData(DateTime.Today.AddDays(-30), DateTime.Today.AddHours(23).AddMinutes(59).AddSeconds(59));
+            LoadData();
         }
 
         private bool btnCustomState = false;
@@ -62,6 +81,9 @@ namespace PersonalFinanceManager.View
 
             panelBtnCustom.Size = panelBtnCustom.MinimumSize;
             btnCustomState = false;
+
+            dashboardData = controller.GetDashboardData(dateTimePickerStart.Value, dateTimePickerEnd.Value);
+            LoadData();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -111,6 +133,32 @@ namespace PersonalFinanceManager.View
             }
         }
 
-        
+        private void LoadData()
+        {
+            labelTransactionsRecorded.Text = dashboardData.TransactionsRecorded.ToString();
+            labelTotalIncome.Text = dashboardData.TotalIncomes.ToString("C0", CultureInfo.CreateSpecificCulture("id-ID"));
+            labelTotalExpense.Text = dashboardData.TotalExpenses.ToString("C0", CultureInfo.CreateSpecificCulture("id-ID"));
+            
+            chartExpense.DataSource = dashboardData.ExpenseCategory;
+            chartExpense.Series[0].XValueMember = "Key";
+            chartExpense.Series[0].YValueMembers = "Value";
+            chartExpense.DataBind();
+
+            chartExpenseLegend.DataSource = dashboardData.ExpenseCategory;
+            chartExpenseLegend.Series[0].XValueMember = "Key";
+            chartExpenseLegend.Series[0].YValueMembers = "Value";
+            chartExpenseLegend.DataBind();
+
+            chartIncome.DataSource = dashboardData.IncomeCategory;
+            chartIncome.Series[0].XValueMember = "Key";
+            chartIncome.Series[0].YValueMembers = "Value";
+            chartIncome.DataBind();
+
+            chartIncomeLegend.DataSource = dashboardData.IncomeCategory;
+            chartIncomeLegend.Series[0].XValueMember = "Key";
+            chartIncomeLegend.Series[0].YValueMembers = "Value";
+            chartIncomeLegend.DataBind();
+
+        }
     }
 }
