@@ -46,6 +46,7 @@ namespace PersonalFinanceManager.View
         private void btnAccount_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, selectColor);
+            OpenChildForm(new accountForm());
         }
 
 
