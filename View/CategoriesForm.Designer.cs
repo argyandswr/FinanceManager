@@ -82,11 +82,11 @@
             tableLayoutPanelMain.Location = new Point(0, 0);
             tableLayoutPanelMain.Margin = new Padding(0);
             tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            tableLayoutPanelMain.Padding = new Padding(10);
+            tableLayoutPanelMain.Padding = new Padding(8);
             tableLayoutPanelMain.RowCount = 2;
             tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanelMain.Size = new Size(634, 644);
+            tableLayoutPanelMain.Size = new Size(507, 515);
             tableLayoutPanelMain.TabIndex = 0;
             // 
             // panelDesktop
@@ -94,16 +94,17 @@
             panelDesktop.Controls.Add(tableLayoutPanel1);
             panelDesktop.Controls.Add(panelDataGridView);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(13, 13);
+            panelDesktop.Location = new Point(10, 10);
+            panelDesktop.Margin = new Padding(2);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(608, 430);
+            panelDesktop.Size = new Size(487, 345);
             panelDesktop.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(btnRefresh, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -111,8 +112,8 @@
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanel1.Size = new Size(608, 45);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel1.Size = new Size(487, 36);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // btnRefresh
@@ -127,10 +128,10 @@
             btnRefresh.IconColor = Color.FromArgb(236, 239, 244);
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRefresh.IconSize = 32;
-            btnRefresh.Location = new Point(235, 0);
+            btnRefresh.Location = new Point(188, 0);
             btnRefresh.Margin = new Padding(0);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(137, 45);
+            btnRefresh.Size = new Size(110, 36);
             btnRefresh.TabIndex = 9;
             btnRefresh.Text = "Refresh";
             btnRefresh.TextAlign = ContentAlignment.MiddleRight;
@@ -143,9 +144,10 @@
             panelDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDataGridView.Controls.Add(btnDelete);
             panelDataGridView.Controls.Add(dataGridViewCategories);
-            panelDataGridView.Location = new Point(0, 63);
+            panelDataGridView.Location = new Point(0, 50);
+            panelDataGridView.Margin = new Padding(2);
             panelDataGridView.Name = "panelDataGridView";
-            panelDataGridView.Size = new Size(608, 367);
+            panelDataGridView.Size = new Size(487, 295);
             panelDataGridView.TabIndex = 3;
             // 
             // btnDelete
@@ -160,10 +162,10 @@
             btnDelete.IconColor = Color.FromArgb(236, 239, 244);
             btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDelete.IconSize = 32;
-            btnDelete.Location = new Point(454, 275);
+            btnDelete.Location = new Point(364, 221);
             btnDelete.Margin = new Padding(0);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(137, 45);
+            btnDelete.Size = new Size(110, 36);
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
@@ -178,9 +180,10 @@
             dataGridViewCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCategories.Dock = DockStyle.Fill;
             dataGridViewCategories.Location = new Point(0, 0);
+            dataGridViewCategories.Margin = new Padding(2);
             dataGridViewCategories.Name = "dataGridViewCategories";
             dataGridViewCategories.RowHeadersWidth = 62;
-            dataGridViewCategories.Size = new Size(608, 367);
+            dataGridViewCategories.Size = new Size(487, 295);
             dataGridViewCategories.TabIndex = 1;
             dataGridViewCategories.RowHeaderMouseClick += dataGridViewCategories_RowHeaderMouseClick;
             // 
@@ -188,9 +191,10 @@
             // 
             panelMenu.Controls.Add(tableLayoutPanelMenu);
             panelMenu.Dock = DockStyle.Fill;
-            panelMenu.Location = new Point(13, 449);
+            panelMenu.Location = new Point(10, 359);
+            panelMenu.Margin = new Padding(2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(608, 182);
+            panelMenu.Size = new Size(487, 146);
             panelMenu.TabIndex = 1;
             // 
             // tableLayoutPanelMenu
@@ -209,7 +213,7 @@
             tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             tableLayoutPanelMenu.RowCount = 1;
             tableLayoutPanelMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelMenu.Size = new Size(608, 182);
+            tableLayoutPanelMenu.Size = new Size(487, 146);
             tableLayoutPanelMenu.TabIndex = 0;
             // 
             // panelMenuDescription
@@ -217,9 +221,10 @@
             panelMenuDescription.Controls.Add(labelDescription);
             panelMenuDescription.Controls.Add(richTextBoxDescription);
             panelMenuDescription.Dock = DockStyle.Fill;
-            panelMenuDescription.Location = new Point(367, 3);
+            panelMenuDescription.Location = new Point(294, 2);
+            panelMenuDescription.Margin = new Padding(2);
             panelMenuDescription.Name = "panelMenuDescription";
-            panelMenuDescription.Size = new Size(238, 176);
+            panelMenuDescription.Size = new Size(191, 142);
             panelMenuDescription.TabIndex = 0;
             // 
             // labelDescription
@@ -227,8 +232,9 @@
             labelDescription.Dock = DockStyle.Top;
             labelDescription.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelDescription.Location = new Point(0, 0);
+            labelDescription.Margin = new Padding(2, 0, 2, 0);
             labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(238, 50);
+            labelDescription.Size = new Size(191, 40);
             labelDescription.TabIndex = 5;
             labelDescription.Text = "Description";
             labelDescription.TextAlign = ContentAlignment.MiddleCenter;
@@ -236,9 +242,10 @@
             // richTextBoxDescription
             // 
             richTextBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBoxDescription.Location = new Point(13, 53);
+            richTextBoxDescription.Location = new Point(10, 42);
+            richTextBoxDescription.Margin = new Padding(2);
             richTextBoxDescription.Name = "richTextBoxDescription";
-            richTextBoxDescription.Size = new Size(211, 95);
+            richTextBoxDescription.Size = new Size(171, 78);
             richTextBoxDescription.TabIndex = 1;
             richTextBoxDescription.Text = "";
             // 
@@ -248,35 +255,38 @@
             panelMenuName.Controls.Add(menuNameSpacer);
             panelMenuName.Controls.Add(labelName);
             panelMenuName.Dock = DockStyle.Fill;
-            panelMenuName.Location = new Point(185, 3);
+            panelMenuName.Location = new Point(148, 2);
+            panelMenuName.Margin = new Padding(2);
             panelMenuName.Name = "panelMenuName";
-            panelMenuName.Size = new Size(176, 176);
+            panelMenuName.Size = new Size(142, 142);
             panelMenuName.TabIndex = 1;
             // 
             // panel2
             // 
             panel2.Controls.Add(addButtonSpacer);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 81);
+            panel2.Location = new Point(0, 65);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(176, 95);
+            panel2.Size = new Size(142, 77);
             panel2.TabIndex = 4;
             // 
             // addButtonSpacer
             // 
             addButtonSpacer.ColumnCount = 3;
-            addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
-            addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+            addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 12F));
+            addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
             addButtonSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             addButtonSpacer.Controls.Add(btnAdd, 1, 1);
             addButtonSpacer.Dock = DockStyle.Fill;
             addButtonSpacer.Location = new Point(0, 0);
+            addButtonSpacer.Margin = new Padding(2);
             addButtonSpacer.Name = "addButtonSpacer";
             addButtonSpacer.RowCount = 3;
             addButtonSpacer.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            addButtonSpacer.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            addButtonSpacer.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             addButtonSpacer.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            addButtonSpacer.Size = new Size(176, 95);
+            addButtonSpacer.Size = new Size(142, 77);
             addButtonSpacer.TabIndex = 5;
             // 
             // btnAdd
@@ -291,10 +301,10 @@
             btnAdd.IconColor = Color.FromArgb(236, 239, 244);
             btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAdd.IconSize = 32;
-            btnAdd.Location = new Point(15, 25);
+            btnAdd.Location = new Point(12, 20);
             btnAdd.Margin = new Padding(0);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(137, 45);
+            btnAdd.Size = new Size(110, 36);
             btnAdd.TabIndex = 9;
             btnAdd.Text = "Add";
             btnAdd.TextAlign = ContentAlignment.MiddleRight;
@@ -306,17 +316,19 @@
             // 
             menuNameSpacer.Controls.Add(textBoxName);
             menuNameSpacer.Dock = DockStyle.Top;
-            menuNameSpacer.Location = new Point(0, 50);
+            menuNameSpacer.Location = new Point(0, 40);
+            menuNameSpacer.Margin = new Padding(2);
             menuNameSpacer.Name = "menuNameSpacer";
-            menuNameSpacer.Size = new Size(176, 31);
+            menuNameSpacer.Size = new Size(142, 25);
             menuNameSpacer.TabIndex = 3;
             // 
             // textBoxName
             // 
             textBoxName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxName.Location = new Point(11, 0);
+            textBoxName.Location = new Point(9, 0);
+            textBoxName.Margin = new Padding(2);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(155, 31);
+            textBoxName.Size = new Size(126, 27);
             textBoxName.TabIndex = 0;
             // 
             // labelName
@@ -324,8 +336,9 @@
             labelName.Dock = DockStyle.Top;
             labelName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelName.Location = new Point(0, 0);
+            labelName.Margin = new Padding(2, 0, 2, 0);
             labelName.Name = "labelName";
-            labelName.Size = new Size(176, 50);
+            labelName.Size = new Size(142, 40);
             labelName.TabIndex = 4;
             labelName.Text = "Name";
             labelName.TextAlign = ContentAlignment.MiddleCenter;
@@ -336,35 +349,38 @@
             panelMenuType.Controls.Add(menuTypeSpacer);
             panelMenuType.Controls.Add(labelType);
             panelMenuType.Dock = DockStyle.Fill;
-            panelMenuType.Location = new Point(3, 3);
+            panelMenuType.Location = new Point(2, 2);
+            panelMenuType.Margin = new Padding(2);
             panelMenuType.Name = "panelMenuType";
-            panelMenuType.Size = new Size(176, 176);
+            panelMenuType.Size = new Size(142, 142);
             panelMenuType.TabIndex = 2;
             // 
             // panel1
             // 
             panel1.Controls.Add(typeBtnSpacer);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 83);
+            panel1.Location = new Point(0, 66);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(176, 93);
+            panel1.Size = new Size(142, 76);
             panel1.TabIndex = 4;
             // 
             // typeBtnSpacer
             // 
             typeBtnSpacer.ColumnCount = 3;
             typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
-            typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
+            typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            typeBtnSpacer.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 12F));
             typeBtnSpacer.Controls.Add(btnUpdate, 1, 1);
             typeBtnSpacer.Dock = DockStyle.Fill;
             typeBtnSpacer.Location = new Point(0, 0);
+            typeBtnSpacer.Margin = new Padding(2);
             typeBtnSpacer.Name = "typeBtnSpacer";
             typeBtnSpacer.RowCount = 3;
             typeBtnSpacer.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            typeBtnSpacer.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            typeBtnSpacer.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             typeBtnSpacer.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            typeBtnSpacer.Size = new Size(176, 93);
+            typeBtnSpacer.Size = new Size(142, 76);
             typeBtnSpacer.TabIndex = 11;
             // 
             // btnUpdate
@@ -379,10 +395,10 @@
             btnUpdate.IconColor = Color.FromArgb(236, 239, 244);
             btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUpdate.IconSize = 32;
-            btnUpdate.Location = new Point(24, 24);
+            btnUpdate.Location = new Point(20, 20);
             btnUpdate.Margin = new Padding(0);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(137, 45);
+            btnUpdate.Size = new Size(110, 36);
             btnUpdate.TabIndex = 10;
             btnUpdate.Text = "Update";
             btnUpdate.TextAlign = ContentAlignment.MiddleRight;
@@ -394,9 +410,10 @@
             // 
             menuTypeSpacer.Controls.Add(comboBoxType);
             menuTypeSpacer.Dock = DockStyle.Top;
-            menuTypeSpacer.Location = new Point(0, 50);
+            menuTypeSpacer.Location = new Point(0, 40);
+            menuTypeSpacer.Margin = new Padding(2);
             menuTypeSpacer.Name = "menuTypeSpacer";
-            menuTypeSpacer.Size = new Size(176, 33);
+            menuTypeSpacer.Size = new Size(142, 26);
             menuTypeSpacer.TabIndex = 3;
             // 
             // comboBoxType
@@ -404,9 +421,10 @@
             comboBoxType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Items.AddRange(new object[] { "Expense", "Income" });
-            comboBoxType.Location = new Point(11, 0);
+            comboBoxType.Location = new Point(9, 0);
+            comboBoxType.Margin = new Padding(2);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(155, 33);
+            comboBoxType.Size = new Size(126, 28);
             comboBoxType.TabIndex = 2;
             // 
             // labelType
@@ -414,20 +432,23 @@
             labelType.Dock = DockStyle.Top;
             labelType.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelType.Location = new Point(0, 0);
+            labelType.Margin = new Padding(2, 0, 2, 0);
             labelType.Name = "labelType";
-            labelType.Size = new Size(176, 50);
+            labelType.Size = new Size(142, 40);
             labelType.TabIndex = 3;
             labelType.Text = "Type";
             labelType.TextAlign = ContentAlignment.MiddleCenter;
+            labelType.Click += labelType_Click;
             // 
             // categoriesForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 239, 244);
-            ClientSize = new Size(634, 644);
+            ClientSize = new Size(507, 515);
             Controls.Add(tableLayoutPanelMain);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "categoriesForm";
             Text = "CategoriesForm";
             tableLayoutPanelMain.ResumeLayout(false);

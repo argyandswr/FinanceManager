@@ -133,5 +133,10 @@ namespace PersonalFinanceManager.View
             textBoxName.Clear();
             richTextBoxDescription.Clear();
         }
+
+        private void labelType_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

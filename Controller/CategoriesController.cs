@@ -51,6 +51,8 @@ namespace PersonalFinanceManager.Controller
             return result;
         }
 
+
+
         public int Update(Categories categories)
         {
             int result = 0;

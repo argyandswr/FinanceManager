@@ -148,5 +148,28 @@ namespace PersonalFinanceManager.Controller
 
             return result;
         }
+
+        public int Update(Users users)
+        {
+            int result = 0;
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new UsersRepository(context);
+
+                result = _repository.Create(users);
+            }
+
+            if (result > 0)
+            {
+                MessageBox.Show("Updated Successfully", "Information",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Failed to Update Transaction!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return result;
+        }
     }
 }
