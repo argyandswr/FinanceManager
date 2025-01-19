@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,20 @@ namespace PersonalFinanceManager.Model.Entity
         public int TransactionsRecorded { get; set; }
         public double TotalExpenses { get; set; }
         public double TotalIncomes { get; set; }
-        public Dictionary<string, double> ExpenseCategory { get; set; }
-        public Dictionary<string, double> IncomeCategory { get; set; }
+        public BindingList<KeyValuePair<string, double>> ExpenseCategory { get; set; }
+        public BindingList<KeyValuePair<string, double>> IncomeCategory { get; set; }
+        public DateTime CurrentBudgetStartDate { get; set; }
+        public DateTime CurrentBudgetEndDate { get; set; }
+        public BindingList<KeyValuePair<double, double>> CurrentUsage { get; set; }
+        public BindingList<KeyValuePair<string, double>> CurrentBudget {  get; set; }
+
 
         public Dashboard()
         {
-            ExpenseCategory = new Dictionary<string, double>();
-            IncomeCategory = new Dictionary<string, double>();
+            ExpenseCategory = new();
+            IncomeCategory = new ();
+            CurrentUsage = new();
+            CurrentBudget = new();
         }
     }
 }

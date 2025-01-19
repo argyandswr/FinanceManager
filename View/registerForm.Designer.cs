@@ -1,6 +1,6 @@
 ﻿namespace PersonalFinanceManager
 {
-    partial class registerForm
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             signup_Btn.Name = "signup_Btn";
             signup_Btn.Size = new Size(148, 55);
             signup_Btn.TabIndex = 4;
-            signup_Btn.Text = "SignUp";
+            signup_Btn.Text = "Sign Up";
             signup_Btn.UseVisualStyleBackColor = false;
             signup_Btn.Click += signup_Btn_Click;
             // 
@@ -332,7 +332,7 @@
             iconExit.UseVisualStyleBackColor = false;
             iconExit.Click += iconExit_Click;
             // 
-            // registerForm
+            // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -342,7 +342,7 @@
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "registerForm";
+            Name = "RegisterForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             panelLeft.ResumeLayout(false);

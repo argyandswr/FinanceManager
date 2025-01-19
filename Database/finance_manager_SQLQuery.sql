@@ -58,23 +58,3 @@ CREATE TABLE transactions (
 	category_id INT FOREIGN KEY REFERENCES categories(category_id),
 )
 GO
-
--- Default Value
-INSERT INTO users(username, password) VALUES ('joe', 'joe')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense', 'Education', 'Tuition, books, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Food', 'Daily food, weekly/monthly stocks, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Housing/supplies', 'Rent, toiletries, kitchen stuff, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Transportation', 'Services, gas, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Utilities', 'Electricity, WiFi, Water, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Clothing', 'Tops, shoes, pants, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Health', 'Hospital, medicine, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Expense',  'Finance', 'Savings, investment, etc.')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Income',  'Salary', 'Monthly work salary')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Income',  'Divident', 'Investment return')
-INSERT INTO categories(user_id, type, category_name, description) VALUES (1, 'Income',  'Bonus', 'Work bonus')
-
-INSERT INTO transactions (user_id, transaction_name, type, date, amount, category_id)
-                         VALUES (1, 'Tuition', 'Expense', '2024-12-29', 5500000, 1)
-
-
-

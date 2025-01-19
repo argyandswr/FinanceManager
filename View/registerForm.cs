@@ -14,10 +14,10 @@ using PersonalFinanceManager.Model.Entity;
 
 namespace PersonalFinanceManager
 {
-    public partial class registerForm : Form
+    public partial class RegisterForm : Form
     {
 
-        public registerForm()
+        public RegisterForm()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace PersonalFinanceManager
                 controller.Create(user);
 
                 this.DialogResult = DialogResult.OK;
-                loginForm logForm = new loginForm();
+                LoginForm logForm = new LoginForm();
                 logForm.Show();
                 this.Close();
             }
@@ -49,7 +49,7 @@ namespace PersonalFinanceManager
 
         private void signIn_Btn_Click(object sender, EventArgs e)
         {
-            loginForm logForm = new loginForm();
+            LoginForm logForm = new LoginForm();
             logForm.Show();
 
             this.Close();

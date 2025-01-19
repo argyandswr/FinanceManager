@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using FontAwesome.Sharp;
 using PersonalFinanceManager.Controller;
 using PersonalFinanceManager.Model.Context;
@@ -138,27 +139,29 @@ namespace PersonalFinanceManager.View
             labelTransactionsRecorded.Text = dashboardData.TransactionsRecorded.ToString();
             labelTotalIncome.Text = dashboardData.TotalIncomes.ToString("C0", CultureInfo.CreateSpecificCulture("id-ID"));
             labelTotalExpense.Text = dashboardData.TotalExpenses.ToString("C0", CultureInfo.CreateSpecificCulture("id-ID"));
-            
+
             chartExpense.DataSource = dashboardData.ExpenseCategory;
             chartExpense.Series[0].XValueMember = "Key";
             chartExpense.Series[0].YValueMembers = "Value";
             chartExpense.DataBind();
-
-            chartExpenseLegend.DataSource = dashboardData.ExpenseCategory;
-            chartExpenseLegend.Series[0].XValueMember = "Key";
-            chartExpenseLegend.Series[0].YValueMembers = "Value";
-            chartExpenseLegend.DataBind();
 
             chartIncome.DataSource = dashboardData.IncomeCategory;
             chartIncome.Series[0].XValueMember = "Key";
             chartIncome.Series[0].YValueMembers = "Value";
             chartIncome.DataBind();
 
-            chartIncomeLegend.DataSource = dashboardData.IncomeCategory;
-            chartIncomeLegend.Series[0].XValueMember = "Key";
-            chartIncomeLegend.Series[0].YValueMembers = "Value";
-            chartIncomeLegend.DataBind();
+            chartBudget.DataSource = dashboardData.CurrentBudget;
+            chartBudget.Series[0].XValueMember = "Key";
+            chartBudget.Series[0].YValueMembers = "Value";
+            chartBudget.DataBind();
 
+            //for (int i = 0; i < dashboardData.CurrentUsage.Count; i++)
+            //{
+            //    var item = dashboardData.CurrentUsage[i];
+            //    double percentage = (item.Key / item.Value) * 100;
+            //    string s = dashboardData.CurrentBudget[i].Key.ToString();
+            //    chartBudgetUsage.Series[0].Points.AddXY(s, percentage);
+            //}
         }
     }
 }
