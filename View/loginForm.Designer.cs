@@ -40,7 +40,6 @@
             passLogin_Txt = new TextBox();
             login_Btn = new Button();
             showPass = new CheckBox();
-            button1 = new Button();
             tableLayoutPanelMain = new TableLayoutPanel();
             panelRight = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -213,16 +212,6 @@
             showPass.UseVisualStyleBackColor = true;
             showPass.CheckedChanged += showPass_CheckedChanged;
             // 
-            // button1
-            // 
-            button1.Location = new Point(275, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 8;
-            button1.Text = "skip";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // tableLayoutPanelMain
             // 
             tableLayoutPanelMain.ColumnCount = 2;
@@ -241,7 +230,6 @@
             // panelRight
             // 
             panelRight.Controls.Add(tableLayoutPanel2);
-            panelRight.Controls.Add(button1);
             panelRight.Controls.Add(showPass);
             panelRight.Controls.Add(login_Btn);
             panelRight.Controls.Add(label3);
@@ -319,7 +307,7 @@
             iconExit.UseVisualStyleBackColor = false;
             iconExit.Click += iconExit_Click;
             // 
-            // loginForm
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -329,7 +317,7 @@
             Controls.Add(panelTopBar);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "loginForm";
+            Name = "LoginForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             panelLeft.ResumeLayout(false);
@@ -354,7 +342,6 @@
         private Button login_Btn;
         private Label label5;
         private CheckBox showPass;
-        private Button button1;
         private FontAwesome.Sharp.IconButton reg_Btn;
         private TableLayoutPanel tableLayoutPanelMain;
         private Panel panelRight;

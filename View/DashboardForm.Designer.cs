@@ -533,10 +533,10 @@
             chartBudget.Series.Add(series3);
             chartBudget.Size = new Size(830, 188);
             chartBudget.TabIndex = 1;
-            chartBudget.Text = "Expense Category";
+            chartBudget.Text = "Budget Usage";
             title3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
             title3.Name = "Title1";
-            title3.Text = "Expenses Percentage";
+            title3.Text = "Budget Usage";
             chartBudget.Titles.Add(title3);
             // 
             // dashboardForm
